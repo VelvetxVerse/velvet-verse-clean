@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+html,
+body,
+#app {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: #fff3ef !important;
+}
+
+#app > * {
+  width: 100% !important;
+  max-width: none !important;
+}
