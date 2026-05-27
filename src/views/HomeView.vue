@@ -11,9 +11,7 @@ import VelvetFooter from '../components/VelvetFooter.vue'
       <div class="hero-left">
         <p class="eyebrow">VELVET VERSE</p>
 
-        <h1>
-          Feminine websites for modern luxury brands.
-        </h1>
+        <h1>Feminine websites for modern luxury brands.</h1>
 
         <p class="intro">
           Luxury-inspired websites for creators, beauty brands, cafés,
@@ -39,9 +37,7 @@ import VelvetFooter from '../components/VelvetFooter.vue'
     <section class="services-section">
       <p class="eyebrow">WHY CLIENTS CHOOSE VELVET VERSE</p>
 
-      <h2>
-        Elegant strategy meets modern web design.
-      </h2>
+      <h2>Elegant strategy meets modern web design.</h2>
 
       <div class="services-grid">
         <article class="service-card">
@@ -80,35 +76,37 @@ import VelvetFooter from '../components/VelvetFooter.vue'
 
       <div class="archive-grid">
         <router-link to="/paris-edition" class="archive-card">
-          <img src="/cafe-tower.jpg" alt="">
+          <img src="/cafeparis.jpg" alt="Paris Edition">
+
           <div class="archive-copy">
             <p>FOOD & CAFÉ</p>
             <h3>Paris Edition</h3>
+            <div class="archive-price">Starting at $500</div>
             <span>View Collection</span>
           </div>
         </router-link>
 
         <article class="archive-card coming">
-          <div class="coming-overlay">
-            COMING SOON
-          </div>
+          <div class="coming-overlay">COMING SOON</div>
 
-          <img src="/demodubai.png" alt="">
+          <img src="/demodubai.png" alt="Dubai Edition">
+
           <div class="archive-copy">
             <p>LUXURY STUDIO</p>
             <h3>Dubai Edition</h3>
+            <div class="archive-price">Starting at $1,200</div>
           </div>
         </article>
 
         <article class="archive-card coming">
-          <div class="coming-overlay">
-            COMING SOON
-          </div>
+          <div class="coming-overlay">COMING SOON</div>
 
-         <img src="/nyc-demo.png" alt="">
+          <img src="/nyc-demo.png" alt="New York Noir">
+
           <div class="archive-copy">
-            <p>BEAUTY & BRANDING</p>
-            <h3>New York Muse</h3>
+            <p>PRIVATE HAIR ARTISTRY</p>
+            <h3>New York Noir</h3>
+            <div class="archive-price">Starting at $850</div>
           </div>
         </article>
       </div>
@@ -168,8 +166,6 @@ import VelvetFooter from '../components/VelvetFooter.vue'
   text-transform:uppercase;
   font-weight:800;
 }
-
-/* HERO */
 
 .hero{
   max-width:1180px;
@@ -241,8 +237,6 @@ import VelvetFooter from '../components/VelvetFooter.vue'
   border-radius:45% 45% 0 0;
 }
 
-/* SERVICES */
-
 .services-section,
 .testimonial-section{
   padding:55px 50px;
@@ -305,8 +299,6 @@ import VelvetFooter from '../components/VelvetFooter.vue'
   line-height:1.8;
   color:#655956;
 }
-
-/* ARCHIVE */
 
 .archive-section{
   padding:55px 50px;
@@ -377,10 +369,21 @@ import VelvetFooter from '../components/VelvetFooter.vue'
 
 .archive-copy h3{
   font-size:30px;
-  margin:14px 0 16px;
+  margin:14px 0 8px;
   font-style:italic;
   font-weight:300;
   line-height:1;
+}
+
+.archive-price{
+  display:block;
+  margin:10px 0 18px;
+  font-family:sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#b9857b;
+  font-weight:700;
 }
 
 .archive-copy span{
@@ -406,8 +409,6 @@ import VelvetFooter from '../components/VelvetFooter.vue'
   text-transform:uppercase;
   font-weight:800;
 }
-
-/* MOBILE */
 
 @media(max-width:900px){
   .hero,

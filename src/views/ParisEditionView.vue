@@ -25,7 +25,105 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
         </router-link>
       </nav>
 
-      <section class="edition-hero">
+      <!-- TOP SHOP SECTION -->
+
+      <section class="shop-pricing-hero">
+        <p class="shop-eyebrow">VELVET VERSE SHOP</p>
+
+        <h1>
+          Premade Website Collections<br>
+          For Modern Luxury Brands.
+        </h1>
+
+        <p class="shop-intro">
+          Explore available website editions, curated add-ons,<br>
+          and inquiry-based purchase options.
+        </p>
+
+        <div class="shop-product">
+          <div class="shop-image">
+            <img src="/cafeparis.jpg" alt="Paris Edition">
+          </div>
+
+          <div class="shop-copy">
+            <p class="shop-eyebrow small">AVAILABLE NOW</p>
+
+            <h2>Paris Edition</h2>
+
+            <p>
+              A romantic, luxury-inspired premade website collection
+              designed for cafés, bakeries, beauty brands, boutiques,
+              influencers, and modern feminine businesses.
+            </p>
+
+            <span class="price-label">STARTING AT</span>
+
+            <div class="price">$500</div>
+
+            <div class="shop-buttons">
+              <a href="#details" class="shop-btn dark">
+                VIEW DETAILS
+              </a>
+
+              <router-link to="/paris-demo" class="shop-btn outline">
+                VIEW DEMO
+              </router-link>
+            </div>
+          </div>
+        </div>
+
+        <div class="addons-box">
+          <div class="addons-title">
+            <span></span>
+            <p>SIGNATURE ENHANCEMENTS</p>
+            <span></span>
+          </div>
+
+          <h2>Add-ons available to personalize your experience.</h2>
+
+          <div class="addons-grid">
+            <article>
+              <span class="addon-icon">▧</span>
+              <strong>+$80</strong>
+              <p>Additional<br>Pages</p>
+            </article>
+
+            <article>
+              <span class="addon-icon">🎨</span>
+              <strong>+$60</strong>
+              <p>Custom Color<br>Palette</p>
+            </article>
+
+            <article>
+              <span class="addon-icon">✦</span>
+              <strong>+$90</strong>
+              <p>Luxury<br>Animations</p>
+            </article>
+
+            <article>
+              <span class="addon-icon">🚀</span>
+              <strong>+$120</strong>
+              <p>Priority<br>Launch</p>
+            </article>
+
+            <article>
+              <span class="addon-icon">▯</span>
+              <strong>+$50</strong>
+              <p>Mobile<br>Refinements</p>
+            </article>
+
+            <article>
+              <span class="addon-icon">◎</span>
+              <strong>+$40</strong>
+              <p>Instagram<br>Integration</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXISTING PAGE CONTENT -->
+
+      <section id="details" class="edition-hero">
         <div class="hero-copy">
           <p class="eyebrow">PARIS COLLECTION</p>
 
@@ -321,7 +419,7 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
   justify-content:space-between;
   align-items:center;
   gap:20px;
-  margin-bottom:64px;
+  margin-bottom:38px;
 }
 
 .edition-logo{
@@ -356,6 +454,215 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
   font-weight:800;
 }
 
+/* TOP SHOP */
+
+.shop-pricing-hero{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  padding:8px 0 58px;
+}
+
+.shop-eyebrow{
+  margin:0;
+  color:var(--accent);
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.shop-eyebrow.small{
+  text-align:left;
+}
+
+.shop-pricing-hero > h1{
+  margin:18px auto 16px;
+  max-width:860px;
+  color:var(--text);
+  font-size:clamp(38px,4.7vw,62px);
+  line-height:.98;
+  font-weight:300;
+  text-transform:uppercase;
+}
+
+.shop-intro{
+  max-width:620px;
+  margin:0 auto 34px;
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.shop-product{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:38px;
+  text-align:left;
+}
+
+.shop-image{
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid var(--gold-line);
+  box-shadow:var(--soft-shadow);
+}
+
+.shop-image img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+}
+
+.shop-copy h2{
+  margin:20px 0 14px;
+  color:var(--text);
+  font-size:clamp(38px,4vw,58px);
+  line-height:1;
+  font-weight:300;
+  text-transform:uppercase;
+}
+
+.shop-copy p{
+  max-width:520px;
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  font-size:15px;
+  line-height:1.8;
+}
+
+.price-label{
+  display:block;
+  margin-top:28px;
+  color:var(--accent);
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:800;
+}
+
+.price{
+  margin:6px 0 18px;
+  color:var(--text);
+  font-size:clamp(78px,9vw,118px);
+  line-height:.82;
+  font-weight:300;
+}
+
+.shop-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.shop-btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-width:170px;
+  padding:15px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.shop-btn.dark{
+  background:#101010;
+  color:white;
+}
+
+.shop-btn.outline{
+  border:1px solid var(--gold);
+  color:var(--text);
+  background:rgba(255,255,255,.45);
+}
+
+.addons-box{
+  margin-top:46px;
+  padding:0 24px 24px;
+  border:1px solid var(--gold-line);
+  border-radius:18px;
+  background:rgba(255,255,255,.34);
+}
+
+.addons-title{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+  margin-top:-10px;
+}
+
+.addons-title span{
+  height:1px;
+  background:var(--gold-line);
+}
+
+.addons-title p{
+  margin:0;
+  padding:0 6px;
+  color:var(--accent);
+  background:var(--cream);
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.addons-box h2{
+  margin:18px 0 26px;
+  color:var(--text);
+  font-size:34px;
+  font-weight:300;
+}
+
+.addons-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:18px;
+}
+
+.addons-grid article{
+  min-height:128px;
+  padding:20px 12px;
+  border:1px solid var(--gold-line);
+  border-radius:14px;
+  background:rgba(255,255,255,.48);
+  text-align:center;
+}
+
+.addon-icon{
+  display:block;
+  color:var(--accent);
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.addons-grid strong{
+  display:block;
+  color:var(--text);
+  font-size:30px;
+  font-weight:300;
+}
+
+.addons-grid p{
+  margin:8px 0 0;
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  line-height:1.45;
+}
+
+/* EXISTING CONTENT */
+
 .edition-hero{
   position:relative;
   z-index:3;
@@ -363,6 +670,7 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
   grid-template-columns:1fr .9fr;
   align-items:center;
   gap:44px;
+  margin-top:20px;
 }
 
 .hero-copy{
@@ -612,16 +920,32 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
 @media(max-width:1000px){
   .edition-hero,
   .preview-section,
-  .template-features{
+  .template-features,
+  .shop-product{
     grid-template-columns:1fr;
   }
 
-  .features-grid{
-    grid-template-columns:1fr;
+  .features-grid,
+  .addons-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   .template-features{
     text-align:center;
+  }
+
+  .shop-copy,
+  .shop-eyebrow.small{
+    text-align:center;
+  }
+
+  .shop-copy p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .shop-buttons{
+    justify-content:center;
   }
 }
 
@@ -641,18 +965,35 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
     display:none;
   }
 
-  .hero-image img{
+  .edition-nav{
+    flex-direction:column;
+  }
+
+  .shop-pricing-hero > h1{
+    font-size:34px;
+  }
+
+  .shop-intro{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:76px;
+  }
+
+  .hero-image img,
+  .shop-image img{
     height:420px;
+  }
+
+  .addons-grid{
+    grid-template-columns:1fr;
   }
 
   .includes-section,
   .template-features,
   .customize-section{
     padding:30px 20px;
-  }
-
-  .edition-nav{
-    flex-direction:column;
   }
 }
 </style>
