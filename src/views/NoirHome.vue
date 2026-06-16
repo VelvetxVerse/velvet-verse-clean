@@ -1,608 +1,613 @@
+<script setup>
+import NoirHeader from '../components/NoirHeader.vue'
+import NoirFooter from '../components/NoirFooter.vue'
+import NoirPaletteBar from '../components/NoirPaletteBar.vue'
+</script>
+
 <template>
   <main class="noir-page">
-
-    <!-- HERO -->
+    <NoirHeader />
+    <NoirPaletteBar />
 
     <section class="hero">
+      <div class="side-label">
+        <span>TAYLOR GIRONDA</span>
+      </div>
 
-      <header class="noir-header">
-
-        <router-link to="/noir-home" class="brand">
-          <span>NOIR ATELIER</span>
-          <small>NEW YORK</small>
-        </router-link>
-
-        <nav>
-          <a href="#about">ABOUT</a>
-          <a href="#services">SERVICES</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#gallery">GALLERY</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
-
-        <a href="#contact" class="book-btn">
-          BOOK PRIVATE
-        </a>
-
-      </header>
-
-      <img
-        src="/noir-hero.jpg"
-        class="hero-img"
-        alt=""
-      >
-
-      <div class="hero-shade"></div>
+      <div class="monogram">TG</div>
 
       <div class="hero-copy">
-
-        <p class="eyebrow">
-          PRIVATE HAIR ARTISTRY
-        </p>
+        <p class="eyebrow">Soft Glam Event Makeup Artist</p>
 
         <h1>
-          Private.<br>
-          Personal.<br>
-          Exceptional.
+          Effortless beauty.<br />
+          Unforgettable<br />
+          <em>moments.</em> <span>✦</span>
         </h1>
 
-        <p class="hero-sub">
-          Hair artistry, redefined.
+        <div class="thin-rule"></div>
+
+        <p class="services-line">Custom Color · Cuts · Bridal · Skin Care</p>
+
+        <p class="hero-body">
+          Elevated beauty experiences tailored with precision, artistry, and quiet luxury.
         </p>
 
-        <a href="#contact" class="outline-light">
-          BOOK YOUR EXPERIENCE
-        </a>
-
-        <p class="hero-note">
-          PRIVATE APPOINTMENTS<br>
-          IN NEW YORK CITY
-        </p>
-
+        <div class="hero-actions">
+          <router-link to="/noir/contact" class="btn-gold">Book Experience →</router-link>
+          <router-link to="/noir/services" class="btn-outline">Services</router-link>
+        </div>
       </div>
 
+      <div class="invitation-badge">
+        <small>By Invitation</small>
+        <em>Only</em>
+      </div>
     </section>
 
-    <!-- ABOUT -->
+    <section class="icon-strip">
+      <article>
+        <div class="icon">✂</div>
+        <h3>Color</h3>
+        <p>Bespoke color tailored to your lifestyle.</p>
+      </article>
 
-    <section id="about" class="split-section">
+      <article>
+        <div class="icon">◎</div>
+        <h3>Cuts</h3>
+        <p>Precision cuts designed to frame.</p>
+      </article>
 
-      <div class="split-image">
-        <img src="/noir-waves.jpg" alt="">
-      </div>
+      <article>
+        <div class="icon">◇</div>
+        <h3>Bridal</h3>
+        <p>Hair and makeup for your day.</p>
+      </article>
 
-      <div class="split-copy">
+      <article>
+        <div class="icon">⬡</div>
+        <h3>Skin Care</h3>
+        <p>Personalized care for radiant skin.</p>
+      </article>
+    </section>
 
-        <p class="eyebrow">
-          ABOUT
-        </p>
+    <section class="about-panel">
+      <div class="about-copy">
+        <p class="eyebrow">About Taylor</p>
 
         <h2>
-          Artistry in its most personal form.
+          Artistry. Passion.<br />
+          <em>Purpose.</em>
         </h2>
 
         <p>
-          Noir Atelier is a private hair artistry experience
-          offering discreet, on-location services for modern women,
-          brides, and clients who value elevated beauty,
-          privacy, and detail.
+          A refined private beauty experience designed around your natural
+          features, personal style, and most important moments.
         </p>
 
-        <a href="#services" class="outline-dark">
-          OUR PHILOSOPHY
-        </a>
-
+        <p class="signature">Taylor Gironda ♡</p>
+        <p class="license">Licensed Esthetician</p>
       </div>
 
+      <div class="about-img">
+        <img src="/noir-bridal.png" alt="Taylor Gironda Beauty" />
+      </div>
+
+      <div class="booking-card">
+        <p class="bc-label">Booking</p>
+        <h3>2026</h3>
+        <em>Bridal Season</em>
+        <p>Now accepting a limited number of private bridal dates.</p>
+
+        <router-link to="/noir/contact" class="btn-gold sm">
+          Inquire →
+        </router-link>
+      </div>
     </section>
 
-    <!-- SERVICES -->
+    <section class="values-row">
+      <article>
+        <h4>Luxury Experience</h4>
+        <p>Private, relaxing, elevated service.</p>
+      </article>
 
-    <section id="services" class="services">
+      <article>
+        <h4>Premium Products</h4>
+        <p>Only professional-quality products.</p>
+      </article>
 
-      <p class="eyebrow">
-        SERVICES
-      </p>
+      <article>
+        <h4>Discreet & Private</h4>
+        <p>Your comfort is always protected.</p>
+      </article>
 
-      <div class="services-grid">
-
-        <article>
-          <img src="/noir-styling.jpg" alt="">
-          <h3>Styling</h3>
-          <p>
-            Effortless, modern, and tailored to your moment.
-          </p>
-          <a href="#contact">LEARN MORE —</a>
-        </article>
-
-        <article>
-          <img src="/noir-color.jpg" alt="">
-          <h3>Color</h3>
-          <p>
-            Dimensional, refined color designed for you.
-          </p>
-          <a href="#contact">LEARN MORE —</a>
-        </article>
-
-        <article>
-          <img src="/noir-bridal.jpg" alt="">
-          <h3>Bridal</h3>
-          <p>
-            Soft glam and elegant bridal styling for 2026.
-          </p>
-          <a href="#contact">LEARN MORE —</a>
-        </article>
-
-      </div>
-
+      <article>
+        <h4>Appointment Only</h4>
+        <p>Personalized time reserved for you.</p>
+      </article>
     </section>
 
-    <!-- EXPERIENCE -->
+    <section class="follow-section">
+      <div>
+        <p class="eyebrow">Follow Along</p>
 
-    <section id="experience" class="experience">
-
-      <div class="experience-image">
-        <img src="/noir-city.jpg" alt="">
+        <div class="social-icons">
+          <a href="#">◎</a>
+          <a href="#">⊕</a>
+          <a href="#">♪</a>
+          <a href="#">✉</a>
+        </div>
       </div>
 
-      <div class="experience-copy">
-
-        <h2>
-          Beauty, wherever you are.
-        </h2>
-
-        <p>
-          Private appointments in your home, hotel, or event suite.
-          Discreet. Luxurious. Designed around you.
-        </p>
-
-        <a href="#contact" class="outline-dark">
-          BOOK PRIVATE
-        </a>
-
+      <div class="mini-gallery">
+        <img src="/noir-hair.jpg" alt="" />
+        <img src="/noir-flowers.png" alt="" />
+        <img src="/noir-brushes.png" alt="" />
+        <img src="/noir-bridal.png" alt="" />
       </div>
-
     </section>
 
-    <!-- CONTACT -->
-
-    <section id="contact" class="contact">
-
-      <p class="eyebrow">
-        BEGIN YOUR CONSULTATION
-      </p>
-
-      <h2>
-        Booking 2026 Bridal Season
-      </h2>
-
-      <p>
-        Custom Color • Cuts • Bridal • Skin Care<br>
-        Soft Glam Event Makeup Artist
-      </p>
-
-      <a
-        href="mailto:Girondataylor@gmail.com?subject=Noir Atelier Private Booking Inquiry"
-        class="contact-btn"
-      >
-        REQUEST PRIVATE BOOKING
-      </a>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer class="noir-footer">
-
-      <router-link to="/noir-home" class="brand">
-        <span>NOIR ATELIER</span>
-        <small>NEW YORK</small>
-      </router-link>
-
-      <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#services">SERVICES</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#gallery">GALLERY</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-
-      <div class="socials">
-        <a href="https://instagram.com/taylorgstylist" target="_blank">IG</a>
-        <a href="mailto:Girondataylor@gmail.com">✉</a>
-      </div>
-
-    </footer>
-
+    <NoirFooter />
   </main>
 </template>
 
 <style scoped>
-.noir-page{
-  min-height:100vh;
-  background:#080807;
-  color:#f4efe8;
-  font-family:'Cormorant Garamond', serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap");
 
-/* HEADER */
+.noir-page {
+  --muted: color-mix(in srgb, var(--text) 54%, transparent);
+  --line: color-mix(in srgb, var(--gold) 18%, transparent);
+  --gold-soft: color-mix(in srgb, var(--gold) 74%, transparent);
 
-.noir-header{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  z-index:10;
-
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:40px;
-
-  padding:34px 52px;
-}
-
-.brand{
-  color:#f4efe8;
-  text-decoration:none;
-  letter-spacing:3px;
-}
-
-.brand span{
-  display:block;
-  font-size:22px;
-  font-weight:300;
-}
-
-.brand small{
-  display:block;
-  margin-top:8px;
-  text-align:center;
-  font-family:Arial,sans-serif;
-  font-size:8px;
-  letter-spacing:4px;
-}
-
-.noir-header nav,
-.noir-footer nav{
-  display:flex;
-  justify-content:center;
-  gap:54px;
-}
-
-.noir-header nav a,
-.noir-footer nav a{
-  color:#f4efe8;
-  text-decoration:none;
-  font-family:Arial,sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
-  font-weight:700;
-}
-
-.book-btn{
-  padding:17px 34px;
-  border:1px solid rgba(244,239,232,.5);
-  color:#f4efe8;
-  text-decoration:none;
-  font-family:Arial,sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
 }
 
 /* HERO */
-
-.hero{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-}
-
-.hero-img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.hero-shade{
-  position:absolute;
-  inset:0;
+.hero {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   background:
     linear-gradient(
-      to right,
-      rgba(0,0,0,.9) 0%,
-      rgba(0,0,0,.65) 32%,
-      rgba(0,0,0,.18) 65%,
-      rgba(0,0,0,.45) 100%
-    );
+      90deg,
+      color-mix(in srgb, var(--bg) 98%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 80%, transparent) 38%,
+      color-mix(in srgb, var(--bg) 14%, transparent) 100%
+    ),
+    url("/noir-hair.jpg") center right / cover no-repeat;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.hero-copy{
-  position:relative;
-  z-index:3;
-
-  min-height:100vh;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-
-  max-width:520px;
-
-  padding-left:96px;
-  padding-top:80px;
+.side-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.eyebrow{
-  margin:0;
-  font-family:Arial,sans-serif;
-  font-size:10px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:#d8cfc5;
+.side-label span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 4px;
+  font-size: 7px;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.hero-copy h1{
-  margin:28px 0 22px;
-  font-size:clamp(54px,6vw,86px);
-  line-height:.96;
-  font-weight:300;
-  text-transform:uppercase;
+.monogram {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--gold-soft);
+  background: var(--bg);
 }
 
-.hero-sub{
-  font-family:Arial,sans-serif;
-  font-size:13px;
-  letter-spacing:5px;
-  text-transform:uppercase;
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  padding-left: 110px;
+  max-width: 430px;
 }
 
-.outline-light,
-.outline-dark,
-.contact-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  width:max-content;
-
-  margin-top:34px;
-
-  padding:17px 34px;
-
-  border:1px solid rgba(244,239,232,.45);
-
-  color:#f4efe8;
-
-  text-decoration:none;
-
-  font-family:Arial,sans-serif;
-
-  font-size:9px;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-  font-weight:700;
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 8px;
+  color: var(--gold-soft);
+  margin-bottom: 12px;
 }
 
-.hero-note{
-  margin-top:90px;
-  font-family:Arial,sans-serif;
-  font-size:10px;
-  letter-spacing:3px;
-  line-height:1.7;
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(34px, 3.4vw, 54px);
+  line-height: 0.98;
+  font-weight: 300;
+  margin: 0 0 14px;
 }
 
-/* SPLIT */
-
-.split-section{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-top:1px solid rgba(255,255,255,.15);
-  border-bottom:1px solid rgba(255,255,255,.15);
+.hero h1 em {
+  color: var(--gold);
+  font-style: italic;
 }
 
-.split-image img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  display:block;
+.hero h1 span {
+  color: var(--gold-soft);
+  font-size: 0.5em;
 }
 
-.split-copy{
-  padding:90px 80px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  background:#090909;
+.thin-rule {
+  width: 130px;
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 14px;
 }
 
-.split-copy h2,
-.experience-copy h2,
-.contact h2{
-  margin:24px 0;
-  max-width:520px;
-  font-size:clamp(38px,4vw,62px);
-  line-height:1;
-  font-weight:300;
-  text-transform:uppercase;
+.services-line {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--gold-soft);
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
 
-.split-copy p,
-.experience-copy p,
-.contact p{
-  max-width:520px;
-  color:#c4bcb4;
-  font-family:Arial,sans-serif;
-  font-size:13px;
-  line-height:2;
+.hero-body {
+  max-width: 280px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-.outline-dark{
-  border-color:rgba(244,239,232,.35);
+.hero-actions {
+  display: flex;
+  gap: 10px;
 }
 
-/* SERVICES */
-
-.services{
-  padding:70px 80px 90px;
-  text-align:center;
+.btn-gold,
+.btn-outline {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-size: 7.5px;
+  transition: 0.3s ease;
 }
 
-.services-grid{
-  max-width:1160px;
-  margin:36px auto 0;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:32px;
+.btn-gold {
+  background: var(--gold);
+  color: var(--bg);
+  padding: 10px 18px;
 }
 
-.services-grid article{
-  padding:0 26px 32px;
-  border-right:1px solid rgba(255,255,255,.15);
+.btn-outline {
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 9px 17px;
 }
 
-.services-grid article:last-child{
-  border-right:none;
+.btn-gold:hover,
+.btn-outline:hover {
+  opacity: 0.75;
 }
 
-.services-grid img{
-  width:100%;
-  height:210px;
-  object-fit:cover;
-  margin-bottom:28px;
+.btn-gold.sm {
+  padding: 9px 16px;
 }
 
-.services-grid h3{
-  margin:0;
-  font-size:22px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  font-weight:300;
+.invitation-badge {
+  position: absolute;
+  right: 70px;
+  top: 54px;
+  width: 78px;
+  height: 78px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: var(--gold-soft);
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
 }
 
-.services-grid p{
-  color:#c4bcb4;
-  font-family:Arial,sans-serif;
-  font-size:12px;
-  line-height:1.8;
+.invitation-badge small {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 5.5px;
 }
 
-.services-grid a{
-  color:#f4efe8;
-  text-decoration:none;
-  font-family:Arial,sans-serif;
-  font-size:8px;
-  letter-spacing:3px;
+.invitation-badge em {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-style: italic;
 }
 
-/* EXPERIENCE */
-
-.experience{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-top:1px solid rgba(255,255,255,.14);
-  border-bottom:1px solid rgba(255,255,255,.14);
+/* SMALL LUXURY BOXES */
+.icon-strip {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
 }
 
-.experience-image img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  filter:grayscale(100%);
-  display:block;
+.icon-strip article {
+  text-align: center;
+  padding: 18px 16px;
+  border-right: 1px solid var(--line);
 }
 
-.experience-copy{
-  padding:70px 80px;
+.icon-strip article:last-child {
+  border-right: none;
 }
 
-/* CONTACT */
-
-.contact{
-  padding:90px 24px;
-  text-align:center;
+.icon {
+  font-size: 16px;
+  color: var(--gold-soft);
+  margin-bottom: 8px;
 }
 
-.contact h2,
-.contact p{
-  margin-left:auto;
-  margin-right:auto;
+.icon-strip h3,
+.values-row h4 {
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  font-size: 7.5px;
+  color: var(--gold);
+  margin-bottom: 6px;
 }
 
-.contact-btn{
-  background:#f4efe8;
-  color:#090909;
+.icon-strip p,
+.values-row p {
+  color: var(--muted);
+  font-size: 9.5px;
+  line-height: 1.55;
+  max-width: 170px;
+  margin: 0 auto;
 }
 
-/* FOOTER */
-
-.noir-footer{
-  padding:28px 52px;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:30px;
-  border-top:1px solid rgba(255,255,255,.16);
+/* ABOUT */
+.about-panel {
+  max-width: 1180px;
+  margin: 22px auto 0;
+  padding: 28px 34px;
+  display: grid;
+  grid-template-columns: 33% 30% 37%;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 0 0;
+  background: var(--surface);
 }
 
-.socials{
-  display:flex;
-  gap:18px;
+.about-copy h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(26px, 2.5vw, 38px);
+  line-height: 1.05;
+  font-weight: 300;
+  margin: 0 0 12px;
 }
 
-.socials a{
-  color:#f4efe8;
-  text-decoration:none;
-  font-family:Arial,sans-serif;
-  font-size:10px;
+.about-copy h2 em {
+  color: var(--gold);
+  font-style: italic;
 }
 
-/* MOBILE */
+.about-copy p {
+  max-width: 285px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.75;
+}
 
-@media(max-width:1000px){
+.signature {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 19px !important;
+  color: var(--text) !important;
+  margin-top: 12px;
+}
 
-  .noir-header,
-  .noir-footer{
-    grid-template-columns:1fr;
-    text-align:center;
-    justify-items:center;
+.license {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 7px !important;
+}
+
+.about-img {
+  height: 220px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-card {
+  margin-left: 26px;
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  text-align: center;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+}
+
+.bc-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 7px;
+  color: var(--muted);
+}
+
+.booking-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 300;
+  margin: 4px 0;
+}
+
+.booking-card em {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--gold);
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.booking-card p {
+  color: var(--muted);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* VALUES */
+.values-row {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.values-row article {
+  text-align: center;
+  padding: 18px 16px;
+  border-right: 1px solid var(--line);
+}
+
+.values-row article:last-child {
+  border-right: none;
+}
+
+/* FOLLOW */
+.follow-section {
+  max-width: 1180px;
+  margin: 22px auto 42px;
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 26px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.mini-gallery img {
+  width: 100%;
+  height: 82px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero {
+    height: auto;
+    min-height: 420px;
   }
 
-  .noir-header nav,
-  .noir-footer nav{
-    flex-wrap:wrap;
-    gap:18px;
+  .hero-copy {
+    padding: 56px 24px 56px 60px;
   }
 
-  .hero-copy{
-    padding:140px 28px 60px;
-    max-width:100%;
+  .invitation-badge {
+    display: none;
   }
 
-  .split-section,
-  .experience,
-  .services-grid{
-    grid-template-columns:1fr;
+  .icon-strip,
+  .values-row {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 22px;
+    margin-right: 22px;
   }
 
-  .split-copy,
-  .experience-copy{
-    padding:60px 28px;
+  .about-panel {
+    grid-template-columns: 1fr;
+    margin-left: 22px;
+    margin-right: 22px;
+    gap: 20px;
   }
 
-  .services{
-    padding:70px 24px;
+  .booking-card {
+    margin-left: 0;
   }
 
-  .services-grid article{
-    border-right:none;
-    border-bottom:1px solid rgba(255,255,255,.15);
+  .follow-section {
+    grid-template-columns: 1fr;
+    margin-left: 22px;
+    margin-right: 22px;
   }
 
+  .mini-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .side-label,
+  .monogram {
+    display: none;
+  }
+
+  .hero-copy {
+    padding-left: 26px;
+  }
+
+  .icon-strip,
+  .values-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
 }
 </style>

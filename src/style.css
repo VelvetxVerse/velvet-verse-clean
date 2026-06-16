@@ -10,20 +10,188 @@ img {
   display: block;
   max-width: 100%;
 }
+
 html,
 body,
 #app {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-  background: #fff3ef !important;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  min-height: 100vh;
 }
 
 #app > * {
-  width: 100% !important;
-  max-width: none !important;
+  width: 100%;
+  max-width: none;
+}
+
+/* ==========================================
+   NOIR GLOBAL PALETTES
+   ========================================== */
+
+:root {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --text: #f5efe6;
+  --gold: #d4a276;
+  --accent: #1a1a1a;
+}
+
+/* CLASSIC NOIR */
+
+:root[data-noir-theme="classic"] {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --text: #f5efe6;
+  --gold: #d4a276;
+  --accent: #1a1a1a;
+}
+
+/* ROSE GOLD */
+
+:root[data-noir-theme="rosegold"] {
+  --bg: #fff7f1;
+  --surface: #f3ddd4;
+  --text: #2f211d;
+  --gold: #b76e79;
+  --accent: #e8b7ad;
+}
+
+/* IVORY PEARL */
+
+:root[data-noir-theme="ivory"] {
+  --bg: #f7efe1;
+  --surface: #fffaf2;
+  --text: #30241a;
+  --gold: #b88a44;
+  --accent: #ded0bd;
+}
+
+/* ESPRESSO */
+
+:root[data-noir-theme="espresso"] {
+  --bg: #2a160f;
+  --surface: #3a2417;
+  --text: #f5e6d8;
+  --gold: #c0894b;
+  --accent: #5b3625;
+}
+
+/* ==========================================
+   GLOBAL NOIR HELPERS
+   ========================================== */
+
+.noir-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.noir-card {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+}
+
+.noir-title {
+  color: var(--gold);
+}
+
+.noir-border {
+  border-color: var(--gold);
+}
+
+/* Smooth transitions */
+
+.noir-page,
+.noir-card,
+.noir-title,
+.noir-border,
+header,
+footer,
+section,
+article,
+button,
+a {
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease;
+}
+
+/* ==========================================
+   PARIS EDITION — PALETTE THEME CLASSES
+   Toggled on <body> by ParisPaletteBar.vue
+   ========================================== */
+
+/* Neutral (warm taupe) */
+body.theme-neutral {
+  --bg:        #fdf9f5;
+  --surface:   #f2ebe3;
+  --cream:     #fdf5ed;
+  --card:      rgba(255,255,255,0.65);
+  --text:      #2a1f1a;
+  --muted:     #6b5a50;
+  --gold:      #b49683;
+  --gold-line: #d4bfb0;
+  --accent:    #8c6b55;
+  --line:      #d4bfb0;
+}
+
+/* Blush (rose pink) */
+body.theme-blush {
+  --bg:        #fdf6f5;
+  --surface:   #f5e2e0;
+  --cream:     #fff0ee;
+  --card:      rgba(255,255,255,0.65);
+  --text:      #2a1a1a;
+  --muted:     #7a4a4a;
+  --gold:      #cf626b;
+  --gold-line: #e8a8ad;
+  --accent:    #b84a55;
+  --line:      #e8a8ad;
+}
+
+/* Almond (warm sand) */
+body.theme-almond {
+  --bg:        #fdfaf6;
+  --surface:   #f0e8dc;
+  --cream:     #fdf5ec;
+  --card:      rgba(255,255,255,0.65);
+  --text:      #2a2018;
+  --muted:     #6b5540;
+  --gold:      #9b836d;
+  --gold-line: #c8b09a;
+  --accent:    #7d6050;
+  --line:      #c8b09a;
+}
+
+/* Lavender (soft purple) */
+body.theme-lavender {
+  --bg:        #faf8fd;
+  --surface:   #ede8f5;
+  --cream:     #f6f2fb;
+  --card:      rgba(255,255,255,0.65);
+  --text:      #1e1a2a;
+  --muted:     #5a4e6b;
+  --gold:      #b8a5c9;
+  --gold-line: #d4c8e4;
+  --accent:    #8a6faa;
+  --line:      #d4c8e4;
+}
+
+/* Champagne (warm gold) */
+body.theme-champagne {
+  --bg:        #fdfaf4;
+  --surface:   #f5edda;
+  --cream:     #fdf8ee;
+  --card:      rgba(255,255,255,0.65);
+  --text:      #2a2010;
+  --muted:     #6b5830;
+  --gold:      #d2b184;
+  --gold-line: #e8d4a8;
+  --accent:    #b8903a;
+  --line:      #e8d4a8;
 }

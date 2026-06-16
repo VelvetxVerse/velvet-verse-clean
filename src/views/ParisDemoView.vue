@@ -1,7 +1,47 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
 import ParisHeader from '../components/ParisHeader.vue'
 import ParisPaletteBar from '../components/ParisPaletteBar.vue'
 import ParisFooter from '../components/ParisFooter.vue'
+
+// All palette class names — must match ParisPaletteBar.vue
+const PALETTE_CLASSES = [
+  'theme-neutral',
+  'theme-blush',
+  'theme-almond',
+  'theme-lavender',
+  'theme-champagne'
+]
+
+// Force Paris light theme — override the dark noir default
+let savedTheme = null
+onMounted(() => {
+  savedTheme = document.documentElement.getAttribute('data-noir-theme')
+  const r = document.documentElement
+  r.style.setProperty('--bg', '#fdf6f0')
+  r.style.setProperty('--surface', '#f5e8da')
+  r.style.setProperty('--text', '#2a1f1a')
+  r.style.setProperty('--gold', '#c9a882')
+  r.style.setProperty('--gold-line', '#dfc4a0')
+  r.style.setProperty('--accent', '#9c6b4e')
+  r.style.setProperty('--muted', '#6b4f42')
+  r.style.setProperty('--cream', '#fdf0e4')
+  r.style.setProperty('--card', 'rgba(255,255,255,0.65)')
+  r.style.setProperty('--shadow', '0 20px 60px rgba(100,60,20,0.1)')
+  r.style.setProperty('--soft-shadow', '0 8px 28px rgba(100,60,20,0.08)')
+  r.removeAttribute('data-noir-theme')
+})
+onUnmounted(() => {
+  // 1. Remove all inline CSS variable overrides set by this page
+  const r = document.documentElement
+  ;['--bg','--surface','--text','--gold','--gold-line','--accent','--muted','--cream','--card','--shadow','--soft-shadow'].forEach(v => r.style.removeProperty(v))
+
+  // 2. Remove all palette theme classes that ParisPaletteBar added to <body>
+  document.body.classList.remove(...PALETTE_CLASSES)
+
+  // 3. Restore the original data-noir-theme attribute
+  if (savedTheme) r.setAttribute('data-noir-theme', savedTheme)
+})
 </script>
 
 <template>

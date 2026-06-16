@@ -1,6 +1,65 @@
 <script setup>
+import { onMounted, onUnmounted, ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import ParisFooter from '../components/ParisFooter.vue'
 import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
+import { useGlobalCart } from '../composables/useGlobalCart'
+
+const router = useRouter()
+const { addService, addAddon, removeItem, isInCart, cartCount, total, cartItems } = useGlobalCart()
+
+// Paris Edition as a service item
+const PARIS_SERVICE = {
+  id: 'paris-edition',
+  tag: 'PARIS EDITION',
+  title: 'Paris Edition Website',
+  price: 500,
+}
+
+// Paris add-ons matching useGlobalCart ADDONS
+const PARIS_ADDONS = [
+  { id: 'pages',      icon: '▧', label: 'Additional Pages',    price: 80  },
+  { id: 'palette',   icon: '🎨', label: 'Custom Color Palette', price: 60  },
+  { id: 'animations',icon: '✦', label: 'Luxury Animations',   price: 90  },
+  { id: 'priority',  icon: '🚀', label: 'Priority Launch',     price: 120 },
+  { id: 'mobile',    icon: '▯', label: 'Mobile Refinements',  price: 50  },
+  { id: 'instagram', icon: '◎', label: 'Instagram Integration', price: 40 },
+]
+
+function toggleAddon(addon) {
+  if (isInCart(addon.id)) {
+    removeItem(addon.id)
+  } else {
+    addAddon(addon)
+  }
+}
+
+const hasItems = computed(() => cartCount.value > 0)
+
+// Force Velvet Verse light theme — matches main site palette
+let savedTheme = null
+onMounted(() => {
+  savedTheme = document.documentElement.getAttribute('data-noir-theme')
+  const r = document.documentElement
+  r.style.setProperty('--bg', '#fff8f5')
+  r.style.setProperty('--surface', '#fdf6f2')
+  r.style.setProperty('--text', '#2a2a2a')
+  r.style.setProperty('--gold', '#c8a49b')
+  r.style.setProperty('--gold-line', '#eadad6')
+  r.style.setProperty('--accent', '#b19790')
+  r.style.setProperty('--muted', '#655956')
+  r.style.setProperty('--cream', '#fff3ef')
+  r.style.setProperty('--card', 'rgba(255,255,255,0.9)')
+  r.style.setProperty('--shadow', '0 20px 60px rgba(0,0,0,0.06)')
+  r.style.setProperty('--soft-shadow', '0 8px 28px rgba(0,0,0,0.05)')
+  r.style.setProperty('--line', '#eadad6')
+  r.removeAttribute('data-noir-theme')
+})
+onUnmounted(() => {
+  const r = document.documentElement
+  ;['--bg','--surface','--text','--gold','--gold-line','--accent','--muted','--cream','--card','--shadow','--soft-shadow','--line'].forEach(v => r.style.removeProperty(v))
+  if (savedTheme) r.setAttribute('data-noir-theme', savedTheme)
+})
 </script>
 
 <template>
@@ -61,9 +120,13 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
             <div class="price">$500</div>
 
             <div class="shop-buttons">
-              <a href="#details" class="shop-btn dark">
-                VIEW DETAILS
-              </a>
+              <button
+                class="shop-btn dark"
+                :class="{ 'in-cart': isInCart('paris-edition') }"
+                @click="isInCart('paris-edition') ? router.push('/cart') : addService(PARIS_SERVICE)"
+              >
+                {{ isInCart('paris-edition') ? 'VIEW CART →' : 'ADD TO CART' }}
+              </button>
 
               <router-link to="/paris-demo" class="shop-btn outline">
                 VIEW DEMO
@@ -82,40 +145,16 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
           <h2>Add-ons available to personalize your experience.</h2>
 
           <div class="addons-grid">
-            <article>
-              <span class="addon-icon">▧</span>
-              <strong>+$80</strong>
-              <p>Additional<br>Pages</p>
-            </article>
-
-            <article>
-              <span class="addon-icon">🎨</span>
-              <strong>+$60</strong>
-              <p>Custom Color<br>Palette</p>
-            </article>
-
-            <article>
-              <span class="addon-icon">✦</span>
-              <strong>+$90</strong>
-              <p>Luxury<br>Animations</p>
-            </article>
-
-            <article>
-              <span class="addon-icon">🚀</span>
-              <strong>+$120</strong>
-              <p>Priority<br>Launch</p>
-            </article>
-
-            <article>
-              <span class="addon-icon">▯</span>
-              <strong>+$50</strong>
-              <p>Mobile<br>Refinements</p>
-            </article>
-
-            <article>
-              <span class="addon-icon">◎</span>
-              <strong>+$40</strong>
-              <p>Instagram<br>Integration</p>
+            <article
+              v-for="addon in PARIS_ADDONS"
+              :key="addon.id"
+              :class="['addon-article', { selected: isInCart(addon.id) }]"
+              @click="toggleAddon(addon)"
+            >
+              <div class="addon-check" v-if="isInCart(addon.id)">✓</div>
+              <span class="addon-icon">{{ addon.icon }}</span>
+              <strong>+${{ addon.price }}</strong>
+              <p>{{ addon.label }}</p>
             </article>
           </div>
         </div>
@@ -334,8 +373,20 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
       <ParisInstagramCTA />
     </section>
 
-    <ParisFooter />
   </main>
+
+  <!-- FLOATING CART BAR -->
+  <transition name="cart-bar">
+    <div v-if="hasItems" class="floating-cart">
+      <div class="floating-cart-inner">
+        <div class="floating-cart-info">
+          <span class="floating-cart-count">{{ cartCount }} item{{ cartCount > 1 ? 's' : '' }}</span>
+          <span class="floating-cart-total">${{ total }}</span>
+        </div>
+        <router-link to="/cart" class="floating-cart-btn">VIEW CART →</router-link>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <style scoped>
@@ -574,9 +625,78 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
 }
 
 .shop-btn.dark{
-  background:#101010;
+  background:#1f1b1b;
   color:white;
+  cursor:pointer;
+  border:none;
+  transition:.2s ease;
 }
+
+.shop-btn.dark:hover{ transform:translateY(-2px); }
+
+.shop-btn.dark.in-cart{
+  background:var(--accent);
+}
+
+/* FLOATING CART BAR */
+.floating-cart{
+  position:fixed;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+  pointer-events:auto;
+}
+
+.floating-cart-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#1f1b1b;
+  color:white;
+  padding:16px 24px;
+  border-radius:999px;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+
+.floating-cart-info{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-family:Arial,sans-serif;
+}
+
+.floating-cart-count{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:800;
+  color:rgba(255,255,255,.65);
+}
+
+.floating-cart-total{
+  font-size:22px;
+  font-weight:300;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.floating-cart-btn{
+  text-decoration:none;
+  background:white;
+  color:#1f1b1b;
+  padding:12px 22px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:800;
+  transition:.2s ease;
+}
+
+.floating-cart-btn:hover{ opacity:.85; }
+
+.cart-bar-enter-active,.cart-bar-leave-active{ transition:all .3s cubic-bezier(0.23,1,0.32,1); }
+.cart-bar-enter-from,.cart-bar-leave-to{ opacity:0; transform:translateX(-50%) translateY(20px); }
 
 .shop-btn.outline{
   border:1px solid var(--gold);
@@ -630,13 +750,38 @@ import ParisInstagramCTA from '../components/ParisInstagramCTA.vue'
   gap:18px;
 }
 
-.addons-grid article{
+.addon-article{
+  position:relative;
   min-height:128px;
   padding:20px 12px;
   border:1px solid var(--gold-line);
   border-radius:14px;
   background:rgba(255,255,255,.48);
   text-align:center;
+  cursor:pointer;
+  user-select:none;
+  transition:.2s ease;
+}
+
+.addon-article:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.addon-article.selected{
+  border-color:var(--text);
+  background:rgba(255,255,255,.8);
+}
+
+.addon-check{
+  position:absolute;
+  top:10px;
+  right:12px;
+  font-size:10px;
+  color:var(--accent);
+  font-weight:800;
+  font-family:Arial,sans-serif;
 }
 
 .addon-icon{

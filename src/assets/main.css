@@ -1,303 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap');
+/* ===================================== */
+/* GLOBAL RESETS                         */
+/* ===================================== */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+a {
+  text-decoration: none;
 }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Cormorant Garamond', serif;
-  transition:background .45s ease, color .45s ease;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-:root{
-  --bg:#f8f1ee;
-  --surface:#fff7f5;
-  --cream:#fffaf8;
-  --card:#fff9f8;
-  --text:#3c2b2f;
-  --muted:#6f5d61;
-  --accent:#cf626b;
-  --line:#ebc5c9;
-  --gold:#c89a56;
-  --gold-line:#ecd7ba;
-  --shadow:0 25px 60px rgba(126,82,89,.08);
-  --soft-shadow:0 12px 34px rgba(126,82,89,.06);
+html,
+body,
+#app {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  min-height: 100vh;
 }
 
-.theme-neutral{
-  --bg:#f4f0eb;
-  --surface:#fbf8f4;
-  --cream:#fffdfa;
-  --card:#fffdfa;
-  --text:#43352f;
-  --muted:#6d6058;
-  --accent:#b49683;
-  --line:#e5d7cc;
-  --gold:#c7a46a;
-  --gold-line:#eadcc8;
+#app > * {
+  width: 100%;
+  max-width: none;
 }
 
-.theme-blush{
-  --bg:#f8f1ee;
-  --surface:#fff7f5;
-  --cream:#fffaf8;
-  --card:#fff9f8;
-  --text:#3c2b2f;
-  --muted:#6f5d61;
-  --accent:#cf626b;
-  --line:#ebc5c9;
-  --gold:#c89a56;
-  --gold-line:#ecd7ba;
+/* ===================================== */
+/* NOIR THEME SYSTEM                     */
+/* Scoped to data-noir-theme only.       */
+/* Does NOT affect the main Velvet site. */
+/* ===================================== */
+
+/* DEFAULT (Classic Noir) — applied when no theme is set yet */
+:root {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --text: #f5efe6;
+  --gold: #d4a276;
+  --accent: #1a1a1a;
 }
 
-.theme-almond{
-  --bg:#f5efe8;
-  --surface:#fdf8f3;
-  --cream:#fffaf6;
-  --card:#fffaf7;
-  --text:#44342d;
-  --muted:#6f6159;
-  --accent:#9b836d;
-  --line:#dfcfbf;
-  --gold:#c39a63;
-  --gold-line:#ead8c3;
+/* CLASSIC NOIR */
+:root[data-noir-theme="classic"] {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --text: #f5efe6;
+  --gold: #d4a276;
+  --accent: #1a1a1a;
 }
 
-.theme-lavender{
-  --bg:#f6f2f8;
-  --surface:#fbf8fd;
-  --cream:#fdfbff;
-  --card:#fcf9ff;
-  --text:#3B2D3A;
-  --muted:#746577;
-  --accent:#B8A5C9;
-  --line:#d8c7d9;
-  --gold:#c8ab74;
-  --gold-line:#eadff0;
+/* ROSE GOLD */
+:root[data-noir-theme="rosegold"] {
+  --bg: #fff7f1;
+  --surface: #f3ddd4;
+  --text: #2f211d;
+  --gold: #b76e79;
+  --accent: #e8b7ad;
 }
 
-.theme-champagne{
-  --bg:#fbf5ed;
-  --surface:#fffaf5;
-  --cream:#fffdf9;
-  --card:#fffdfa;
-  --text:#4b3a33;
-  --muted:#7c6d65;
-  --accent:#d2b184;
-  --line:#eadcc8;
-  --gold:#cfaa6f;
-  --gold-line:#efe0c9;
+/* IVORY PEARL */
+:root[data-noir-theme="ivory"] {
+  --bg: #f7efe1;
+  --surface: #fffaf2;
+  --text: #30241a;
+  --gold: #b88a44;
+  --accent: #ded0bd;
 }
 
-a{
-  transition:.35s ease;
+/* ESPRESSO */
+:root[data-noir-theme="espresso"] {
+  --bg: #2a160f;
+  --surface: #3a2417;
+  --text: #f5e6d8;
+  --gold: #c0894b;
+  --accent: #5b3625;
 }
 
-button{
-  border:none;
-  outline:none;
-  font:inherit;
+/* ===================================== */
+/* GLOBAL NOIR HELPERS                   */
+/* Only apply to elements that explicitly */
+/* use these class names.                */
+/* ===================================== */
+
+.noir-page {
+  background: var(--bg);
+  color: var(--text);
 }
 
-img{
-  display:block;
-  max-width:100%;
+.noir-card {
+  background: var(--surface);
+  border: 1px solid var(--gold);
 }
 
-::selection{
-  background:var(--accent);
-  color:white;
+.noir-title {
+  color: var(--gold);
 }
 
-/* ROSE PALETTE BEHAVIOR */
-
-.theme-blush .rose-left,
-.theme-blush .rose-right,
-.theme-champagne .rose-left,
-.theme-champagne .rose-right{
-  opacity:.9;
-  filter:none;
+.noir-border {
+  border-color: var(--gold);
 }
 
-.theme-neutral .rose-left,
-.theme-neutral .rose-right,
-.theme-almond .rose-left,
-.theme-almond .rose-right{
-  opacity:.12;
-  filter:saturate(.65) brightness(1.08);
-}
+/* ===================================== */
+/* TRANSITIONS                           */
+/* Scoped to Noir page elements only.    */
+/* Does NOT apply globally to all links  */
+/* and buttons on the main Velvet site.  */
+/* ===================================== */
 
-.theme-lavender .rose-left,
-.theme-lavender .rose-right{
-  opacity:.16;
-  filter:hue-rotate(24deg) saturate(.72) brightness(1.08);
-}
-
-/* PARIS GLOBAL THEME FIXES */
-
-.paris-demo-page,
-.menu-page,
-.gallery-page,
-.edition-page,
-.about-page,
-.contact-page{
-  background:var(--bg);
-  color:var(--text);
-}
-
-.paris-logo,
-.edition-logo,
-.logo,
-.footer-logo,
-.card-body h3,
-.preview-grid h3,
-.menu-card h3,
-.features-grid h3{
-  color:var(--accent);
-}
-
-.paris-eyebrow,
-.eyebrow,
-.preview-label{
-  color:var(--accent);
-}
-
-.paris-links a,
-.edition-links a,
-.nav-links a,
-.menu-nav a{
-  color:var(--text);
-}
-
-.paris-links a:hover,
-.edition-links a:hover,
-.nav-links a:hover,
-.menu-nav a:hover{
-  color:var(--accent);
-}
-
-.paris-frame,
-.edition-frame,
-.menu-frame,
-.page-frame,
-.contact-frame,
-.about-frame{
-  background:
-    radial-gradient(circle at top,var(--surface),transparent 42%),
-    linear-gradient(to bottom,var(--cream),var(--surface));
-  border-color:var(--gold);
-}
-
-.section-card,
-.menu-card,
-.gallery-card,
-.features-grid article,
-.includes-section,
-.preview-section{
-  background:var(--card);
-  border-color:var(--gold-line);
-}
-
-.paris-btn.filled,
-.btn.filled,
-.custom-cake a,
-.instagram-btn{
-  background:var(--accent);
-  color:white;
-}
-
-.paris-btn.outline,
-.btn.outline,
-.paris-back,
-.edition-back,
-.back-btn{
-  border-color:var(--gold);
-  color:var(--text);
-}
-
-.corner,
-.arch-ornament,
-.image-ornament,
-.divider,
-.heart-divider,
-.paris-divider{
-  color:var(--gold);
-}
-
-/* FORCE PARIS FOOTER TO FOLLOW PALETTE */
-
-.paris-footer{
-  background:var(--bg) !important;
-  color:var(--text) !important;
-  border-color:var(--gold-line) !important;
-}
-
-.paris-footer *{
-  border-color:var(--gold-line) !important;
-}
-
-.paris-footer .footer-inner{
-  background:
-    linear-gradient(
-      to bottom,
-      var(--cream),
-      var(--surface)
-    ) !important;
-  border-color:var(--gold-line) !important;
-}
-
-.paris-footer .footer-logo,
-.paris-footer .footer-brand h2,
-.paris-footer h2,
-.paris-footer h3,
-.paris-footer a{
-  color:var(--accent) !important;
-}
-
-.paris-footer .footer-logo span,
-.paris-footer .footer-icons span,
-.paris-footer .footer-divider,
-.paris-footer .copyright{
-  color:var(--gold) !important;
-}
-
-.paris-footer p,
-.paris-footer small,
-.paris-footer .footer-bottom p,
-.paris-footer input{
-  color:var(--muted) !important;
-}
-
-.paris-footer input{
-  background:var(--cream) !important;
-}
-
-.paris-footer button{
-  background:var(--accent) !important;
-  color:white !important;
-}
-
-::-webkit-scrollbar{
-  width:10px;
-}
-
-::-webkit-scrollbar-track{
-  background:var(--cream);
-}
-
-::-webkit-scrollbar-thumb{
-  background:var(--gold-line);
-  border-radius:999px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-  background:var(--gold);
+.noir-page *,
+.noir-services * {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
 }
