@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velvet Verse — Blog Admin</title>
+  <script>
+    window.netlifyIdentity = { apiURL: "https://velvet-verse-clean.netlify.app/.netlify/identity" };
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -27,12 +30,7 @@
             fields: [
               { label: 'Title', name: 'title', widget: 'string' },
               { label: 'Publish Date', name: 'date', widget: 'datetime' },
-              {
-                label: 'Category',
-                name: 'category',
-                widget: 'select',
-                options: ['Tutorial', 'Review', 'Lifestyle', 'Tips', 'Collaboration']
-              },
+              { label: 'Category', name: 'category', widget: 'select', options: ['Tutorial', 'Review', 'Lifestyle', 'Tips', 'Collaboration'] },
               { label: 'Cover Image', name: 'image', widget: 'image', required: false },
               { label: 'Excerpt', name: 'excerpt', widget: 'text' },
               { label: 'Body', name: 'body', widget: 'markdown' },
@@ -41,7 +39,7 @@
           }
         ]
       }
-    });
+    } );
   </script>
 </body>
 </html>
