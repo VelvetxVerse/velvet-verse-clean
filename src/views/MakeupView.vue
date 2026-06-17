@@ -1,868 +1,279 @@
 <template>
-  <!-- ============================================================
-    MakeupView.vue — Renata Oliveira Makeup & Beauty Portal
-    Style: Black & white editorial luxury (Alessia Rose reference)
-    Colors: #faf9f7 (ivory bg), #111111 (near-black), #ffffff (white), #c8a97e (gold accent)
-    Fonts: Cormorant Garamond (headings), Parisienne (script), Jost (body)
-    Images: /mascara.png, /valentino.png, /thinking.png (public folder)
-  ============================================================ -->
-  <div class="mv-root">
+  <div class="makeup-page" style="background:#0a0a0a; color:#fff; font-family:'Cormorant Garamond', Georgia, serif; min-height:100vh;">
 
-    <!-- ── STICKY NAV ── -->
-    <nav class="mv-nav">
-      <a href="/" class="mv-nav-back">← Velvet Verse</a>
-      <div class="mv-nav-brand">
-        <span class="mv-nav-name">RENATA OLIVEIRA</span>
-        <span class="mv-nav-sub">Makeup Artist</span>
+    <!-- ── NAV ── -->
+    <nav style="position:sticky; top:0; z-index:100; background:#0a0a0a; border-bottom:1px solid #2a2a2a; padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:72px;">
+      <a href="/" style="color:#c9a96e; font-size:11px; letter-spacing:3px; text-decoration:none; font-family:'Montserrat',sans-serif; font-weight:500;">← VELVET VERSE</a>
+      <div style="display:flex; align-items:center; gap:8px; flex-direction:column; line-height:1;">
+        <span style="font-size:22px; letter-spacing:4px; font-weight:700; color:#fff;">RENATA OLIVEIRA</span>
+        <span style="font-size:10px; letter-spacing:5px; color:#c9a96e; font-family:'Montserrat',sans-serif;">BEAUTY & MAKEUP</span>
       </div>
-      <ul class="mv-nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div style="display:flex; gap:32px; font-family:'Montserrat',sans-serif; font-size:11px; letter-spacing:2px;">
+        <a href="#about" style="color:#ccc; text-decoration:none;">ABOUT</a>
+        <a href="#services" style="color:#ccc; text-decoration:none;">SERVICES</a>
+        <a href="#blog" style="color:#ccc; text-decoration:none;">JOURNAL</a>
+        <a href="#contact" style="color:#ccc; text-decoration:none;">CONTACT</a>
+      </div>
     </nav>
 
     <!-- ── HERO ── -->
-    <section id="home" class="mv-hero">
+    <section style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; min-height:85vh; position:relative;">
       <!-- Left text column -->
-      <div class="mv-hero-text">
-        <p class="mv-hero-eyebrow">Makeup Artist &amp; Beauty Influencer</p>
-        <h1 class="mv-hero-title">
-          Elevate Your<br>
-          <em>Natural Beauty</em>
+      <div style="background:#0a0a0a; display:flex; flex-direction:column; justify-content:center; padding:60px 48px; z-index:2;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:24px;">BEAUTY. CONFIDENCE. YOU.</p>
+        <h1 style="font-size:clamp(42px,5vw,72px); line-height:1.05; font-weight:700; margin:0 0 24px 0; color:#fff;">
+          Elevate<br>Your<br><em style="color:#c9a96e; font-style:italic;">Everyday</em><br>Beauty
         </h1>
-        <p class="mv-hero-desc">
-          Luxury beauty, honest reviews, and effortless elegance —
-          explore the world of premium makeup and artistry with me.
+        <div style="width:40px; height:2px; background:#c9a96e; margin-bottom:24px;"></div>
+        <p style="font-size:16px; line-height:1.7; color:#aaa; margin-bottom:40px; font-family:'Montserrat',sans-serif; font-weight:300;">
+          Luxury beauty made effortless. Expert tips, curated favorites, and timeless looks to bring out your most confident self.
         </p>
-        <a href="#about" class="mv-btn-primary">Explore Now</a>
+        <a href="#services" style="display:inline-block; border:1px solid #c9a96e; color:#c9a96e; padding:14px 32px; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; text-decoration:none; transition:all 0.3s; width:fit-content;"
+          onmouseover="this.style.background='#c9a96e';this.style.color='#0a0a0a'"
+          onmouseout="this.style.background='transparent';this.style.color='#c9a96e'">
+          EXPLORE THE WORLD OF BEAUTY
+        </a>
       </div>
-
-      <!-- Right 3-column photo grid -->
-      <div class="mv-hero-grid">
-        <div class="mv-hero-col mv-hero-col--tall">
-          <img src="/mascara.png" alt="Renata applying mascara" loading="eager" />
-        </div>
-        <div class="mv-hero-col mv-hero-col--mid">
-          <img src="/valentino.png" alt="Renata with Valentino lipstick" loading="eager" />
-        </div>
-        <div class="mv-hero-col mv-hero-col--short">
-          <img src="/thinking.png" alt="Renata beauty portrait" loading="eager" />
-        </div>
+      <!-- Photo 1 -->
+      <div style="overflow:hidden; position:relative;">
+        <img src="/mascara.png" alt="Mascara look" style="width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(0.9);" />
+      </div>
+      <!-- Photo 2 -->
+      <div style="overflow:hidden; position:relative;">
+        <img src="/valentino.png" alt="Valentino look" style="width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(0.9);" />
+      </div>
+      <!-- Photo 3 -->
+      <div style="overflow:hidden; position:relative;">
+        <img src="/thinking.png" alt="Editorial look" style="width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(0.9);" />
       </div>
     </section>
 
-    <!-- ── FEATURED WITH ── -->
-    <section class="mv-brands">
-      <p class="mv-brands-label">FEATURED &amp; COLLABORATED WITH</p>
-      <div class="mv-brands-row">
-        <span class="mv-brand-logo mv-brand-serif">DIOR</span>
-        <span class="mv-brand-logo mv-brand-serif">CHANEL</span>
-        <span class="mv-brand-logo mv-brand-serif">YSL</span>
-        <span class="mv-brand-logo mv-brand-serif">LA MER</span>
-        <span class="mv-brand-logo mv-brand-serif">VALENTINO</span>
-        <span class="mv-brand-logo mv-brand-serif">TOM FORD</span>
+    <!-- ── BRAND LOGOS ── -->
+    <section style="background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a; padding:28px 60px;">
+      <p style="text-align:center; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:4px; color:#c9a96e; margin-bottom:24px;">FEATURED & COLLABORATED WITH</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:60px; flex-wrap:wrap;">
+        <span style="font-size:22px; letter-spacing:3px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">DIOR</span>
+        <span style="color:#555;">|</span>
+        <span style="font-size:20px; letter-spacing:2px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">CHANEL</span>
+        <span style="color:#555;">|</span>
+        <span style="font-size:20px; letter-spacing:2px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">YSL</span>
+        <span style="color:#555;">|</span>
+        <span style="font-size:20px; letter-spacing:2px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">LA MER</span>
+        <span style="color:#555;">|</span>
+        <span style="font-size:20px; letter-spacing:2px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">VALENTINO</span>
+        <span style="color:#555;">|</span>
+        <span style="font-size:20px; letter-spacing:2px; font-weight:700; color:#fff; font-family:'Cormorant Garamond',serif;">TOM FORD</span>
+      </div>
+    </section>
+
+    <!-- ── CONTENT GRID + BLOG SIDEBAR ── -->
+    <section style="display:grid; grid-template-columns:1fr 1fr 1fr 320px; min-height:420px; border-bottom:1px solid #2a2a2a;">
+
+      <!-- Beauty Tips -->
+      <div style="position:relative; overflow:hidden; border-right:1px solid #2a2a2a;">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Beauty Tips" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.35); position:absolute; inset:0;" />
+        <div style="position:relative; z-index:2; padding:40px 36px; height:100%; display:flex; flex-direction:column; justify-content:flex-end;">
+          <div style="width:32px; height:32px; border:1px solid #c9a96e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+            <span style="color:#c9a96e; font-size:14px;">✦</span>
+          </div>
+          <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; color:#c9a96e; margin-bottom:10px;">BEAUTY TIPS</p>
+          <h3 style="font-size:26px; font-weight:600; color:#fff; margin-bottom:10px;">Expert advice to elevate your routine.</h3>
+          <a href="#blog" style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#c9a96e; text-decoration:none;">DISCOVER MORE ›</a>
+        </div>
+      </div>
+
+      <!-- Shop My Favorites -->
+      <div style="position:relative; overflow:hidden; border-right:1px solid #2a2a2a;">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="Shop Favorites" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.35); position:absolute; inset:0;" />
+        <div style="position:relative; z-index:2; padding:40px 36px; height:100%; display:flex; flex-direction:column; justify-content:flex-end;">
+          <div style="width:32px; height:32px; border:1px solid #c9a96e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+            <span style="color:#c9a96e; font-size:14px;">◇</span>
+          </div>
+          <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; color:#c9a96e; margin-bottom:10px;">SHOP MY FAVORITES</p>
+          <h3 style="font-size:26px; font-weight:600; color:#fff; margin-bottom:10px;">Handpicked luxury essentials I love.</h3>
+          <a href="#services" style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#c9a96e; text-decoration:none;">SHOP NOW ›</a>
+        </div>
+      </div>
+
+      <!-- Behind the Look -->
+      <div style="position:relative; overflow:hidden; border-right:1px solid #2a2a2a;">
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Behind the Look" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.35); position:absolute; inset:0;" />
+        <div style="position:relative; z-index:2; padding:40px 36px; height:100%; display:flex; flex-direction:column; justify-content:flex-end;">
+          <div style="width:32px; height:32px; border:1px solid #c9a96e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+            <span style="color:#c9a96e; font-size:14px;">▷</span>
+          </div>
+          <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; color:#c9a96e; margin-bottom:10px;">BEHIND THE LOOK</p>
+          <h3 style="font-size:26px; font-weight:600; color:#fff; margin-bottom:10px;">Step-by-step tutorials and beauty secrets.</h3>
+          <a href="#blog" style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#c9a96e; text-decoration:none;">WATCH NOW ›</a>
+        </div>
+      </div>
+
+      <!-- Latest on the Blog -->
+      <div style="background:#111; padding:36px 28px; display:flex; flex-direction:column;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; color:#c9a96e; margin-bottom:24px;">LATEST ON THE BLOG</p>
+        <div v-for="(post, i) in blogPosts" :key="i" style="display:flex; gap:14px; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #2a2a2a;">
+          <img :src="post.img" :alt="post.title" style="width:56px; height:56px; object-fit:cover; flex-shrink:0;" />
+          <div>
+            <p style="font-size:14px; font-weight:600; color:#fff; margin-bottom:4px; line-height:1.3;">{{ post.title }}</p>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; color:#666; letter-spacing:1px;">{{ post.date }}</p>
+          </div>
+        </div>
+        <a href="#blog" style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#c9a96e; text-decoration:none; margin-top:auto;">VIEW ALL POSTS ›</a>
       </div>
     </section>
 
     <!-- ── ABOUT ── -->
-    <section id="about" class="mv-about">
-      <div class="mv-about-inner">
-        <div class="mv-about-img-wrap">
-          <img src="/thinking.png" alt="Renata Oliveira portrait" />
-        </div>
-        <div class="mv-about-content">
-          <p class="mv-section-eyebrow">About Me</p>
-          <h2 class="mv-section-title">The Artist Behind<br><em>The Look</em></h2>
-          <p class="mv-about-text">
-            I'm Renata Oliveira — a professional makeup artist and luxury beauty influencer
-            with over 959K followers on Instagram. My passion is transforming everyday beauty
-            into editorial art, blending technique with storytelling.
-          </p>
-          <p class="mv-about-text">
-            From red-carpet glam to effortless everyday looks, I believe makeup is a form of
-            self-expression. I collaborate with the world's most prestigious beauty brands to
-            bring you honest, elevated content that inspires and empowers.
-          </p>
-          <div class="mv-about-stats">
-            <div class="mv-stat">
-              <span class="mv-stat-num">959K</span>
-              <span class="mv-stat-label">Instagram</span>
-            </div>
-            <div class="mv-stat">
-              <span class="mv-stat-num">55K</span>
-              <span class="mv-stat-label">Facebook</span>
-            </div>
-            <div class="mv-stat">
-              <span class="mv-stat-num">30K</span>
-              <span class="mv-stat-label">TikTok</span>
-            </div>
-            <div class="mv-stat">
-              <span class="mv-stat-num">80K</span>
-              <span class="mv-stat-label">Pinterest/mo</span>
-            </div>
+    <section id="about" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
+      <div style="overflow:hidden;">
+        <img src="/valentino.png" alt="Renata Oliveira" style="width:100%; height:100%; object-fit:cover; object-position:center top;" />
+      </div>
+      <div style="background:#111; display:flex; flex-direction:column; justify-content:center; padding:80px 64px;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:20px;">ABOUT RENATA</p>
+        <h2 style="font-size:clamp(32px,4vw,52px); font-weight:700; color:#fff; margin-bottom:24px; line-height:1.1;">Beauty is an art.<br><em style="color:#c9a96e;">You are the canvas.</em></h2>
+        <p style="font-size:17px; line-height:1.8; color:#aaa; margin-bottom:32px; font-family:'Montserrat',sans-serif; font-weight:300;">
+          With over a decade of experience in luxury beauty and content creation, I help brands and individuals discover their most radiant selves. My work has been featured alongside Dior, Chanel, Valentino, and more.
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+          <div v-for="stat in stats" :key="stat.label" style="text-align:center; border:1px solid #2a2a2a; padding:20px;">
+            <p style="font-size:28px; font-weight:700; color:#c9a96e; margin-bottom:4px;">{{ stat.value }}</p>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#666;">{{ stat.label }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ── SERVICES ── -->
-    <section id="services" class="mv-services">
-      <div class="mv-services-inner">
-        <p class="mv-section-eyebrow mv-light">What I Offer</p>
-        <h2 class="mv-section-title mv-light">Services &amp; <em>Expertise</em></h2>
-        <div class="mv-services-grid">
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>Brand Collaborations</h3>
-            <p>Sponsored content, product launches, and long-term ambassador partnerships with luxury beauty brands.</p>
-          </div>
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>UGC Content Creation</h3>
-            <p>High-quality user-generated content — tutorials, reviews, and reels crafted for maximum engagement.</p>
-          </div>
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>Makeup Artistry</h3>
-            <p>Professional makeup services for editorial shoots, events, weddings, and special occasions.</p>
-          </div>
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>Beauty Education</h3>
-            <p>Masterclasses, tutorials, and 1-on-1 coaching sessions for aspiring makeup artists and beauty enthusiasts.</p>
-          </div>
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>Social Media Strategy</h3>
-            <p>Consulting and content strategy for beauty brands looking to grow their presence on Instagram and TikTok.</p>
-          </div>
-          <div class="mv-service-card">
-            <div class="mv-service-icon">✦</div>
-            <h3>Product Reviews</h3>
-            <p>Authentic, in-depth product reviews and first impressions for new launches and hero products.</p>
-          </div>
+    <section id="services" style="background:#0a0a0a; padding:100px 60px;">
+      <div style="text-align:center; margin-bottom:60px;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:16px;">WHAT I OFFER</p>
+        <h2 style="font-size:clamp(36px,4vw,56px); font-weight:700; color:#fff;">Services</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;">
+        <div v-for="service in services" :key="service.title"
+          style="background:#111; padding:48px 40px; border:1px solid #1a1a1a; transition:border-color 0.3s; cursor:default;"
+          onmouseover="this.style.borderColor='#c9a96e'"
+          onmouseout="this.style.borderColor='#1a1a1a'">
+          <div style="font-size:28px; margin-bottom:20px;">{{ service.icon }}</div>
+          <h3 style="font-size:22px; font-weight:600; color:#fff; margin-bottom:12px;">{{ service.title }}</h3>
+          <p style="font-size:15px; line-height:1.7; color:#888; font-family:'Montserrat',sans-serif; font-weight:300; margin-bottom:20px;">{{ service.desc }}</p>
+          <p style="font-family:'Montserrat',sans-serif; font-size:11px; letter-spacing:2px; color:#c9a96e;">{{ service.price }}</p>
         </div>
       </div>
     </section>
 
     <!-- ── BLOG ── -->
-    <section id="blog" class="mv-blog">
-      <div class="mv-blog-inner">
-        <p class="mv-section-eyebrow">Beauty Journal</p>
-        <h2 class="mv-section-title">Latest from<br><em>The Blog</em></h2>
-        <p class="mv-blog-intro">
-          Tutorials, product reviews, and beauty secrets — updated regularly.
-        </p>
-
-        <!-- Blog posts — populated from Decap CMS -->
-        <div class="mv-blog-grid" id="mv-blog-posts">
-          <!-- Sample post 1 -->
-          <article class="mv-blog-card">
-            <div class="mv-blog-card-img">
-              <img src="/mascara.png" alt="5 Steps to Perfect Lashes" />
-            </div>
-            <div class="mv-blog-card-body">
-              <span class="mv-blog-tag">Tutorial</span>
-              <h3>5 Steps to Perfect Lashes Every Time</h3>
-              <p>The exact mascara technique I use to get that dramatic, volumized lash look in under 3 minutes.</p>
-              <a href="#blog" class="mv-blog-read">Read More →</a>
-            </div>
-          </article>
-          <!-- Sample post 2 -->
-          <article class="mv-blog-card">
-            <div class="mv-blog-card-img">
-              <img src="/valentino.png" alt="Valentino Beauty Review" />
-            </div>
-            <div class="mv-blog-card-body">
-              <span class="mv-blog-tag">Review</span>
-              <h3>Valentino Beauty Rosso Valentino Lipstick Review</h3>
-              <p>Is it worth the splurge? I tested the iconic Valentino lipstick for 30 days — here's my honest verdict.</p>
-              <a href="#blog" class="mv-blog-read">Read More →</a>
-            </div>
-          </article>
-          <!-- Sample post 3 -->
-          <article class="mv-blog-card">
-            <div class="mv-blog-card-img">
-              <img src="/thinking.png" alt="Smoky Eye Tutorial" />
-            </div>
-            <div class="mv-blog-card-body">
-              <span class="mv-blog-tag">Tutorial</span>
-              <h3>The Smoky Eye Guide for Brown Eyes</h3>
-              <p>My signature smoky eye technique — perfect for brown eyes and every skin tone. Step-by-step breakdown.</p>
-              <a href="#blog" class="mv-blog-read">Read More →</a>
-            </div>
-          </article>
+    <section id="blog" style="background:#111; padding:100px 60px;">
+      <div style="text-align:center; margin-bottom:60px;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:16px;">THE JOURNAL</p>
+        <h2 style="font-size:clamp(36px,4vw,56px); font-weight:700; color:#fff;">Latest Posts</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;">
+        <div v-for="post in featuredPosts" :key="post.title" style="background:#0a0a0a; overflow:hidden; cursor:pointer;">
+          <div style="overflow:hidden; height:280px;">
+            <img :src="post.img" :alt="post.title" style="width:100%; height:100%; object-fit:cover; transition:transform 0.6s;"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div style="padding:32px;">
+            <p style="font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:3px; color:#c9a96e; margin-bottom:12px;">{{ post.category }}</p>
+            <h3 style="font-size:22px; font-weight:600; color:#fff; margin-bottom:12px; line-height:1.3;">{{ post.title }}</h3>
+            <p style="font-size:14px; line-height:1.7; color:#888; font-family:'Montserrat',sans-serif; font-weight:300; margin-bottom:20px;">{{ post.excerpt }}</p>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#c9a96e;">READ MORE ›</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="mv-blog-cta">
-          <p class="mv-blog-cms-note">
-            ✦ This blog is powered by <strong>Decap CMS</strong> — Renata can add new posts at
-            <code>velvetxverse.com/admin</code> without touching any code.
-          </p>
+    <!-- ── NEWSLETTER ── -->
+    <section style="background:#0a0a0a; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a; padding:60px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:32px; max-width:1100px; margin:0 auto;">
+        <div>
+          <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:8px;">JOIN THE GLAM COMMUNITY</p>
+          <p style="font-size:18px; color:#aaa; font-family:'Montserrat',sans-serif; font-weight:300;">Exclusive beauty tips, early access, and insider-only content—just for you.</p>
+        </div>
+        <div style="display:flex; gap:0; flex:1; max-width:500px;">
+          <input type="email" placeholder="Enter your email" style="flex:1; background:#111; border:1px solid #333; border-right:none; padding:14px 20px; color:#fff; font-family:'Montserrat',sans-serif; font-size:13px; outline:none;" />
+          <button style="background:#c9a96e; color:#0a0a0a; border:none; padding:14px 28px; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; cursor:pointer; font-weight:600; white-space:nowrap;">SUBSCRIBE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TRUST BADGES ── -->
+    <section style="background:#111; padding:32px 60px;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1100px; margin:0 auto;">
+        <div v-for="badge in badges" :key="badge.label" style="display:flex; align-items:center; gap:16px; padding:0 20px; border-right:1px solid #2a2a2a;">
+          <span style="font-size:24px; color:#c9a96e;">{{ badge.icon }}</span>
+          <div>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2px; color:#fff; margin-bottom:2px;">{{ badge.label }}</p>
+            <p style="font-family:'Montserrat',sans-serif; font-size:11px; color:#666;">{{ badge.desc }}</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ── CONTACT ── -->
-    <section id="contact" class="mv-contact">
-      <div class="mv-contact-inner">
-        <p class="mv-section-eyebrow mv-light">Get In Touch</p>
-        <h2 class="mv-section-title mv-light">Let's Work <em>Together</em></h2>
-        <p class="mv-contact-desc">
-          Interested in a collaboration, partnership, or booking? I'd love to hear from you.
-        </p>
-        <div class="mv-contact-links">
-          <a href="mailto:renataxoliveiraofficial@gmail.com" class="mv-btn-outline-light">
-            renataxoliveiraofficial@gmail.com
-          </a>
-          <a href="https://www.instagram.com/renata.oliveiramua" target="_blank" rel="noopener" class="mv-btn-outline-light">
-            @renata.oliveiramua
-          </a>
-        </div>
-        <div class="mv-contact-socials">
-          <a href="https://www.instagram.com/renata.oliveiramua" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@renata.oliveiramua" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
-          </a>
-          <a href="https://www.pinterest.com/renata.oliveiramua" target="_blank" rel="noopener" aria-label="Pinterest">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-          </a>
-        </div>
+    <section id="contact" style="background:#0a0a0a; padding:80px 60px; text-align:center;">
+      <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:16px;">GET IN TOUCH</p>
+      <h2 style="font-size:clamp(32px,4vw,52px); font-weight:700; color:#fff; margin-bottom:24px;">Let's Work Together</h2>
+      <p style="font-size:17px; color:#aaa; font-family:'Montserrat',sans-serif; font-weight:300; margin-bottom:40px;">For brand collaborations, tutorials, and beauty partnerships.</p>
+      <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <a href="mailto:velvetverse@velvetxverse.com" style="border:1px solid #c9a96e; color:#c9a96e; padding:14px 40px; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; text-decoration:none;"
+          onmouseover="this.style.background='#c9a96e';this.style.color='#0a0a0a'"
+          onmouseout="this.style.background='transparent';this.style.color='#c9a96e'">
+          EMAIL ME
+        </a>
+        <a href="https://instagram.com/velvetxverse" target="_blank" style="background:#c9a96e; color:#0a0a0a; padding:14px 40px; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; text-decoration:none; font-weight:600;">
+          INSTAGRAM
+        </a>
       </div>
     </section>
 
     <!-- ── FOOTER ── -->
-    <footer class="mv-footer">
-      <p>© 2025 Renata Oliveira · <a href="https://www.velvetxverse.com">velvetxverse.com</a></p>
-      <p class="mv-footer-sub">Makeup Artist &amp; Beauty Influencer · renataxoliveiraofficial@gmail.com</p>
+    <footer style="background:#111; border-top:1px solid #2a2a2a; padding:24px 60px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <span style="font-family:'Montserrat',sans-serif; font-size:11px; color:#555;">© 2024 Renata Oliveira. All rights reserved.</span>
+      <div style="display:flex; gap:32px;">
+        <a href="/" style="font-family:'Montserrat',sans-serif; font-size:11px; color:#555; text-decoration:none;">Velvet Verse</a>
+        <a href="/privacy-policy" style="font-family:'Montserrat',sans-serif; font-size:11px; color:#555; text-decoration:none;">Privacy</a>
+        <a href="/terms-conditions" style="font-family:'Montserrat',sans-serif; font-size:11px; color:#555; text-decoration:none;">Terms</a>
+      </div>
     </footer>
 
   </div>
 </template>
 
 <script setup>
-// MakeupView.vue — Renata Oliveira Makeup & Beauty Portal
-// No external dependencies required — pure Vue 3 <script setup>
+const blogPosts = [
+  { title: 'My Nighttime Skincare Routine', date: 'MAY 21, 2024', img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=120&q=80' },
+  { title: 'The Perfect Smoky Eye', date: 'MAY 16, 2024', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=120&q=80' },
+  { title: 'Summer Beauty Must-Haves', date: 'MAY 10, 2024', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=120&q=80' },
+]
+
+const stats = [
+  { value: '959K', label: 'INSTAGRAM' },
+  { value: '55K', label: 'FACEBOOK' },
+  { value: '30K', label: 'TIKTOK' },
+  { value: '80K', label: 'PINTEREST' },
+]
+
+const services = [
+  { icon: '✦', title: 'Brand Collaborations', desc: 'Full-service UGC content creation for luxury beauty and lifestyle brands. From concept to final delivery.', price: 'INQUIRE FOR PRICING' },
+  { icon: '◇', title: 'Makeup Tutorials', desc: 'Step-by-step video and photo tutorials tailored to your brand\'s aesthetic and target audience.', price: 'STARTING FROM $500' },
+  { icon: '▷', title: 'Beauty Consulting', desc: 'One-on-one sessions to develop your personal beauty routine and product selection.', price: 'STARTING FROM $150/HR' },
+  { icon: '✧', title: 'Event Glam', desc: 'Professional makeup artistry for editorial shoots, events, and special occasions.', price: 'STARTING FROM $300' },
+  { icon: '◈', title: 'Social Media Strategy', desc: 'Content strategy and planning for beauty brands looking to grow their social presence.', price: 'STARTING FROM $800/MO' },
+  { icon: '❋', title: 'Product Reviews', desc: 'Honest, in-depth reviews of luxury beauty products for your brand\'s marketing campaigns.', price: 'INQUIRE FOR PRICING' },
+]
+
+const featuredPosts = [
+  { category: 'TUTORIAL', title: 'The Perfect Smoky Eye in 10 Minutes', excerpt: 'Master the classic smoky eye with these professional techniques and my favorite products from Tom Ford and Charlotte Tilbury.', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80', date: 'MAY 16, 2024' },
+  { category: 'REVIEW', title: 'Dior Addict Lip Maximizer: Worth the Hype?', excerpt: 'I tested this iconic lip plumper for 30 days straight. Here\'s my honest take on whether it lives up to its luxury price tag.', img: 'https://images.unsplash.com/photo-1586495777744-4e6232bf2f9e?w=600&q=80', date: 'MAY 10, 2024' },
+  { category: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin', excerpt: 'The exact 15-minute routine I follow every morning to achieve that lit-from-within glow — featuring La Mer and Chanel.', img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80', date: 'MAY 5, 2024' },
+]
+
+const badges = [
+  { icon: '◈', label: 'EXCLUSIVE CONTENT', desc: 'Only for subscribers' },
+  { icon: '◇', label: 'LUXURY CURATED', desc: 'Handpicked. High-end. Always.' },
+  { icon: '✦', label: 'EXPERT TIPS', desc: 'Professional beauty advice' },
+  { icon: '❋', label: 'BRAND PARTNERSHIPS', desc: 'Trusted by luxury brands' },
+]
 </script>
-
-<style scoped>
-/* ============================================================
-   MakeupView.vue — Scoped Styles
-   Design: Black & white editorial luxury (Alessia Rose reference)
-   All values hardcoded with !important to avoid global conflicts
-   All class names prefixed with mv- to avoid conflicts
-   ============================================================ */
-
-/* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Parisienne&family=Jost:wght@300;400;500;600&display=swap');
-
-/* ── Root ── */
-.mv-root {
-  font-family: 'Jost', sans-serif !important;
-  color: #111111 !important;
-  background: #faf9f7 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  scroll-behavior: smooth !important;
-}
-
-/* ── NAV ── */
-.mv-nav {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 100 !important;
-  background: #ffffff !important;
-  border-bottom: 1px solid #e8e4df !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 0 40px !important;
-  height: 68px !important;
-  gap: 20px !important;
-}
-
-.mv-nav-back {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  color: #888 !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  transition: color 0.2s !important;
-}
-.mv-nav-back:hover { color: #111 !important; }
-
-.mv-nav-brand {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  line-height: 1.1 !important;
-}
-.mv-nav-name {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.2em !important;
-  color: #111 !important;
-}
-.mv-nav-sub {
-  font-family: 'Parisienne', cursive !important;
-  font-size: 11px !important;
-  color: #c8a97e !important;
-  letter-spacing: 0.05em !important;
-}
-
-.mv-nav-links {
-  display: flex !important;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  gap: 32px !important;
-}
-.mv-nav-links a {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.12em !important;
-  color: #111 !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
-  transition: color 0.2s !important;
-}
-.mv-nav-links a:hover { color: #c8a97e !important; }
-
-/* ── HERO ── */
-.mv-hero {
-  display: flex !important;
-  align-items: center !important;
-  min-height: 88vh !important;
-  background: #faf9f7 !important;
-  overflow: hidden !important;
-  padding: 60px 60px 60px 80px !important;
-  gap: 60px !important;
-  max-width: 100% !important;
-}
-
-.mv-hero-text {
-  flex: 0 0 420px !important;
-  max-width: 420px !important;
-  z-index: 2 !important;
-}
-
-.mv-hero-eyebrow {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: #888 !important;
-  margin: 0 0 20px !important;
-}
-
-.mv-hero-title {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(48px, 5vw, 72px) !important;
-  font-weight: 300 !important;
-  line-height: 1.1 !important;
-  color: #111 !important;
-  margin: 0 0 24px !important;
-}
-.mv-hero-title em {
-  font-style: italic !important;
-  font-weight: 400 !important;
-  color: #111 !important;
-}
-
-.mv-hero-desc {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300 !important;
-  line-height: 1.7 !important;
-  color: #555 !important;
-  margin: 0 0 36px !important;
-}
-
-.mv-btn-primary {
-  display: inline-block !important;
-  font-family: 'Jost', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  color: #111 !important;
-  background: transparent !important;
-  border: 1.5px solid #111 !important;
-  padding: 14px 36px !important;
-  text-decoration: none !important;
-  transition: background 0.25s, color 0.25s !important;
-}
-.mv-btn-primary:hover {
-  background: #111 !important;
-  color: #fff !important;
-}
-
-/* ── HERO PHOTO GRID ── */
-.mv-hero-grid {
-  flex: 1 !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  gap: 12px !important;
-  height: 75vh !important;
-  min-height: 480px !important;
-  max-height: 680px !important;
-}
-
-.mv-hero-col {
-  flex: 1 !important;
-  overflow: hidden !important;
-  border-radius: 0 !important;
-}
-.mv-hero-col img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: top center !important;
-  display: block !important;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
-}
-.mv-hero-col:hover img {
-  transform: scale(1.04) !important;
-}
-
-.mv-hero-col--tall { height: 100% !important; }
-.mv-hero-col--mid  { height: 85% !important; }
-.mv-hero-col--short { height: 70% !important; }
-
-/* ── BRANDS ── */
-.mv-brands {
-  background: #ffffff !important;
-  border-top: 1px solid #e8e4df !important;
-  border-bottom: 1px solid #e8e4df !important;
-  padding: 36px 60px !important;
-  text-align: center !important;
-}
-.mv-brands-label {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.25em !important;
-  color: #aaa !important;
-  margin: 0 0 24px !important;
-  text-transform: uppercase !important;
-}
-.mv-brands-row {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 48px !important;
-  flex-wrap: wrap !important;
-}
-.mv-brand-logo {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.12em !important;
-  color: #111 !important;
-  opacity: 0.7 !important;
-  transition: opacity 0.2s !important;
-}
-.mv-brand-logo:hover { opacity: 1 !important; }
-
-/* ── SECTION SHARED ── */
-.mv-section-eyebrow {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.3em !important;
-  text-transform: uppercase !important;
-  color: #c8a97e !important;
-  margin: 0 0 16px !important;
-}
-.mv-section-eyebrow.mv-light { color: #c8a97e !important; }
-
-.mv-section-title {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(36px, 4vw, 56px) !important;
-  font-weight: 300 !important;
-  line-height: 1.15 !important;
-  color: #111 !important;
-  margin: 0 0 32px !important;
-}
-.mv-section-title.mv-light { color: #ffffff !important; }
-.mv-section-title em {
-  font-style: italic !important;
-  font-weight: 400 !important;
-}
-
-/* ── ABOUT ── */
-.mv-about {
-  background: #faf9f7 !important;
-  padding: 100px 80px !important;
-}
-.mv-about-inner {
-  max-width: 1180px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 80px !important;
-}
-.mv-about-img-wrap {
-  flex: 0 0 380px !important;
-  height: 500px !important;
-  overflow: hidden !important;
-}
-.mv-about-img-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: top center !important;
-  display: block !important;
-}
-.mv-about-content {
-  flex: 1 !important;
-}
-.mv-about-text {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300 !important;
-  line-height: 1.8 !important;
-  color: #444 !important;
-  margin: 0 0 20px !important;
-}
-.mv-about-stats {
-  display: flex !important;
-  gap: 40px !important;
-  margin-top: 40px !important;
-  padding-top: 40px !important;
-  border-top: 1px solid #e8e4df !important;
-}
-.mv-stat {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
-}
-.mv-stat-num {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 32px !important;
-  font-weight: 500 !important;
-  color: #111 !important;
-  line-height: 1 !important;
-}
-.mv-stat-label {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase !important;
-  color: #888 !important;
-}
-
-/* ── SERVICES ── */
-.mv-services {
-  background: #111111 !important;
-  padding: 100px 80px !important;
-}
-.mv-services-inner {
-  max-width: 1180px !important;
-  margin: 0 auto !important;
-}
-.mv-services-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 2px !important;
-  margin-top: 20px !important;
-}
-.mv-service-card {
-  background: #1a1a1a !important;
-  padding: 48px 36px !important;
-  border: 1px solid #2a2a2a !important;
-  transition: background 0.25s !important;
-}
-.mv-service-card:hover {
-  background: #222 !important;
-}
-.mv-service-icon {
-  font-size: 18px !important;
-  color: #c8a97e !important;
-  margin-bottom: 20px !important;
-}
-.mv-service-card h3 {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 22px !important;
-  font-weight: 500 !important;
-  color: #ffffff !important;
-  margin: 0 0 14px !important;
-  line-height: 1.2 !important;
-}
-.mv-service-card p {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 300 !important;
-  line-height: 1.7 !important;
-  color: #aaa !important;
-  margin: 0 !important;
-}
-
-/* ── BLOG ── */
-.mv-blog {
-  background: #faf9f7 !important;
-  padding: 100px 80px !important;
-}
-.mv-blog-inner {
-  max-width: 1180px !important;
-  margin: 0 auto !important;
-}
-.mv-blog-intro {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300 !important;
-  color: #666 !important;
-  margin: 0 0 48px !important;
-}
-.mv-blog-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 32px !important;
-}
-.mv-blog-card {
-  background: #ffffff !important;
-  border: 1px solid #e8e4df !important;
-  overflow: hidden !important;
-  transition: transform 0.25s, box-shadow 0.25s !important;
-}
-.mv-blog-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08) !important;
-}
-.mv-blog-card-img {
-  height: 240px !important;
-  overflow: hidden !important;
-}
-.mv-blog-card-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: top center !important;
-  display: block !important;
-  transition: transform 0.5s !important;
-}
-.mv-blog-card:hover .mv-blog-card-img img {
-  transform: scale(1.05) !important;
-}
-.mv-blog-card-body {
-  padding: 28px !important;
-}
-.mv-blog-tag {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 9px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: #c8a97e !important;
-  display: block !important;
-  margin-bottom: 10px !important;
-}
-.mv-blog-card-body h3 {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 20px !important;
-  font-weight: 500 !important;
-  color: #111 !important;
-  margin: 0 0 12px !important;
-  line-height: 1.3 !important;
-}
-.mv-blog-card-body p {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 300 !important;
-  line-height: 1.7 !important;
-  color: #666 !important;
-  margin: 0 0 18px !important;
-}
-.mv-blog-read {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.1em !important;
-  color: #111 !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid #111 !important;
-  padding-bottom: 2px !important;
-  transition: color 0.2s, border-color 0.2s !important;
-}
-.mv-blog-read:hover {
-  color: #c8a97e !important;
-  border-color: #c8a97e !important;
-}
-.mv-blog-cta {
-  margin-top: 48px !important;
-  padding: 24px 32px !important;
-  background: #f0ece6 !important;
-  border-left: 3px solid #c8a97e !important;
-}
-.mv-blog-cms-note {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 13px !important;
-  color: #555 !important;
-  margin: 0 !important;
-}
-.mv-blog-cms-note code {
-  background: #e8e4df !important;
-  padding: 2px 6px !important;
-  font-size: 12px !important;
-  color: #111 !important;
-}
-
-/* ── CONTACT ── */
-.mv-contact {
-  background: #111111 !important;
-  padding: 100px 80px !important;
-  text-align: center !important;
-}
-.mv-contact-inner {
-  max-width: 700px !important;
-  margin: 0 auto !important;
-}
-.mv-contact-desc {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 300 !important;
-  color: #aaa !important;
-  margin: 0 0 40px !important;
-  line-height: 1.7 !important;
-}
-.mv-contact-links {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 16px !important;
-  margin-bottom: 40px !important;
-}
-.mv-btn-outline-light {
-  display: inline-block !important;
-  font-family: 'Jost', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  color: #ffffff !important;
-  border: 1px solid #444 !important;
-  padding: 14px 32px !important;
-  text-decoration: none !important;
-  transition: border-color 0.2s, color 0.2s !important;
-}
-.mv-btn-outline-light:hover {
-  border-color: #c8a97e !important;
-  color: #c8a97e !important;
-}
-.mv-contact-socials {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 24px !important;
-}
-.mv-contact-socials a {
-  color: #666 !important;
-  transition: color 0.2s !important;
-  display: flex !important;
-  align-items: center !important;
-}
-.mv-contact-socials a:hover { color: #c8a97e !important; }
-
-/* ── FOOTER ── */
-.mv-footer {
-  background: #0a0a0a !important;
-  padding: 32px 60px !important;
-  text-align: center !important;
-  border-top: 1px solid #1e1e1e !important;
-}
-.mv-footer p {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 300 !important;
-  color: #555 !important;
-  margin: 0 0 4px !important;
-}
-.mv-footer a {
-  color: #888 !important;
-  text-decoration: none !important;
-}
-.mv-footer a:hover { color: #c8a97e !important; }
-.mv-footer-sub {
-  font-size: 11px !important;
-  color: #444 !important;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .mv-hero {
-    flex-direction: column !important;
-    padding: 60px 40px !important;
-    min-height: auto !important;
-  }
-  .mv-hero-text {
-    flex: none !important;
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-  .mv-hero-grid {
-    width: 100% !important;
-    height: 50vw !important;
-    min-height: 300px !important;
-    max-height: 400px !important;
-  }
-  .mv-about-inner {
-    flex-direction: column !important;
-    gap: 40px !important;
-  }
-  .mv-about-img-wrap {
-    flex: none !important;
-    width: 100% !important;
-    height: 400px !important;
-  }
-  .mv-services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .mv-blog-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .mv-nav {
-    padding: 0 20px !important;
-    height: 60px !important;
-  }
-  .mv-nav-links {
-    display: none !important;
-  }
-  .mv-hero {
-    padding: 40px 24px !important;
-  }
-  .mv-about,
-  .mv-services,
-  .mv-blog,
-  .mv-contact {
-    padding: 60px 24px !important;
-  }
-  .mv-services-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .mv-blog-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .mv-about-stats {
-    flex-wrap: wrap !important;
-    gap: 24px !important;
-  }
-  .mv-brands {
-    padding: 28px 24px !important;
-  }
-  .mv-brands-row {
-    gap: 24px !important;
-  }
-}
-</style>
