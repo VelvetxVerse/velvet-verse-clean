@@ -4,12 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velvet Verse — Blog Admin</title>
-  <!-- Netlify Identity Widget — handles login -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- Decap CMS mounts here automatically -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'git-gateway',
+          branch: 'main'
+        },
+        media_folder: 'public/blog-images',
+        public_folder: '/blog-images',
+        collections: [
+          {
+            name: 'blog',
+            label: 'Blog Posts',
+            folder: 'src/content/blog',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Publish Date', name: 'date', widget: 'datetime' },
+              { label: 'Category', name: 'category', widget: 'select', options: ['Tutorial', 'Review', 'Lifestyle', 'Tips', 'Collaboration'] },
+              { label: 'Cover Image', name: 'image', widget: 'image', required: false },
+              { label: 'Excerpt', name: 'excerpt', widget: 'text' },
+              { label: 'Body', name: 'body', widget: 'markdown' },
+              { label: 'Featured', name: 'featured', widget: 'boolean', default: false }
+            ]
+          }
+        ]
+      }
+    } );
+  </script>
 </body>
 </html>
