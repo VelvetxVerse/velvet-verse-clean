@@ -11,6 +11,7 @@ import ShopConfirmation from './views/ShopConfirmation.vue'
 import CartView from './views/CartView.vue'
 import CollaborateView from './views/CollaborateView.vue'
 import MakeupView from './views/MakeupView.vue'
+import MakeupMediaKit from './views/MakeupMediaKit.vue'
 
 /* PARIS */
 import ParisEditionView from './views/ParisEditionView.vue'
@@ -104,6 +105,13 @@ const routes = [
     path: '/makeup',
     name: 'makeup',
     component: MakeupView,
+  },
+
+  /* MAKEUP MEDIA KIT */
+  {
+    path: '/makeup-media-kit',
+    name: 'makeup-media-kit',
+    component: MakeupMediaKit,
   },
 
   /* PARIS COLLECTION */
