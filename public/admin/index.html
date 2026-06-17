@@ -4,11 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velvet Verse — Blog Admin</title>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
   <script>
     CMS.init({
       config: {
@@ -28,7 +27,12 @@
             fields: [
               { label: 'Title', name: 'title', widget: 'string' },
               { label: 'Publish Date', name: 'date', widget: 'datetime' },
-              { label: 'Category', name: 'category', widget: 'select', options: ['Tutorial', 'Review', 'Lifestyle', 'Tips', 'Collaboration'] },
+              {
+                label: 'Category',
+                name: 'category',
+                widget: 'select',
+                options: ['Tutorial', 'Review', 'Lifestyle', 'Tips', 'Collaboration']
+              },
               { label: 'Cover Image', name: 'image', widget: 'image', required: false },
               { label: 'Excerpt', name: 'excerpt', widget: 'text' },
               { label: 'Body', name: 'body', widget: 'markdown' },
@@ -37,7 +41,7 @@
           }
         ]
       }
-    } );
+    });
   </script>
 </body>
 </html>

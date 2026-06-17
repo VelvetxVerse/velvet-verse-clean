@@ -10,6 +10,7 @@ import ShopCheckout from './views/ShopCheckout.vue'
 import ShopConfirmation from './views/ShopConfirmation.vue'
 import CartView from './views/CartView.vue'
 import CollaborateView from './views/CollaborateView.vue'
+import MakeupView from './views/MakeupView.vue'
 
 /* PARIS */
 import ParisEditionView from './views/ParisEditionView.vue'
@@ -98,8 +99,14 @@ const routes = [
     component: CollaborateView,
   },
 
-  /* PARIS COLLECTION */
+  /* MAKEUP & BEAUTY */
+  {
+    path: '/makeup',
+    name: 'makeup',
+    component: MakeupView,
+  },
 
+  /* PARIS COLLECTION */
   {
     path: '/paris-edition',
     name: 'paris-edition',
@@ -167,7 +174,6 @@ const routes = [
   },
 
   /* NOIR COLLECTION */
-
   {
     path: '/noir',
     name: 'noir-home',
@@ -199,7 +205,6 @@ const routes = [
   },
 
   /* LEGAL */
-
   {
     path: '/privacy-policy',
     name: 'privacy-policy',
