@@ -1,7 +1,5 @@
 <template>
   <div class="makeup-page">
-
-    <!-- NAV -->
     <nav class="nav">
       <a href="/" class="back-link">← VELVET VERSE</a>
 
@@ -18,9 +16,8 @@
       </div>
     </nav>
 
-    <!-- NEW HERO TOP ONLY -->
+    <!-- SMALLER LUXURY HERO -->
     <section class="luxury-hero">
-
       <div class="hero-main-img">
         <img src="/valentino.png" alt="Renata Oliveira" />
       </div>
@@ -44,7 +41,6 @@
         <p class="hero-copy">
           Luxury beauty creator, makeup artist, and brand collaborator with
           a combined reach of over <strong>972K</strong> followers across Instagram.
-          Trusted by the world’s most prestigious beauty houses.
         </p>
 
         <div class="hero-buttons">
@@ -56,10 +52,8 @@
       <div class="side-panel">
         <p>BEAUTY · CONFIDENCE · ARTISTRY</p>
       </div>
-
     </section>
 
-    <!-- BRAND LOGOS -->
     <section class="brand-logos">
       <p>FEATURED & COLLABORATED WITH</p>
       <div>
@@ -77,9 +71,7 @@
       </div>
     </section>
 
-    <!-- CONTENT GRID + BLOG SIDEBAR -->
     <section class="content-grid">
-
       <div class="feature-card">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" />
         <div>
@@ -120,10 +112,8 @@
 
         <a href="#blog">VIEW ALL POSTS ›</a>
       </div>
-
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="about">
       <div>
         <img src="/valentino.png" alt="Renata Oliveira" />
@@ -147,7 +137,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="services">
       <div class="section-heading">
         <p class="section-label">WHAT I OFFER</p>
@@ -164,7 +153,6 @@
       </div>
     </section>
 
-    <!-- BLOG -->
     <section id="blog" class="blog">
       <div class="section-heading">
         <p class="section-label">THE JOURNAL</p>
@@ -184,7 +172,6 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
     <section class="newsletter">
       <div>
         <p class="section-label">JOIN THE GLAM COMMUNITY</p>
@@ -197,7 +184,6 @@
       </form>
     </section>
 
-    <!-- TRUST BADGES -->
     <section class="badges">
       <div v-for="badge in badges" :key="badge.label">
         <span>{{ badge.icon }}</span>
@@ -208,7 +194,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact">
       <p class="section-label">GET IN TOUCH</p>
       <h2>Let’s Work Together</h2>
@@ -220,7 +205,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <span>© 2024 Renata Oliveira. All rights reserved.</span>
 
@@ -230,7 +214,6 @@
         <a href="/terms-conditions">Terms</a>
       </div>
     </footer>
-
   </div>
 </template>
 
@@ -340,8 +323,8 @@ const badges = [
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 72px;
-  padding: 0 40px;
+  height: 58px;
+  padding: 0 32px;
   background: #0a0a0a;
   border-bottom: 1px solid #2a2a2a;
   display: flex;
@@ -361,7 +344,7 @@ const badges = [
 
 .back-link {
   color: #c9a96e;
-  font-size: 11px;
+  font-size: 9px;
   letter-spacing: 3px;
   text-decoration: none;
 }
@@ -373,35 +356,38 @@ const badges = [
 }
 
 .brand span {
-  font-size: 22px;
+  font-size: 16px;
   letter-spacing: 4px;
   font-weight: 700;
 }
 
 .brand small {
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: 5px;
   color: #c9a96e;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
   color: #ccc;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 9px;
   letter-spacing: 2px;
 }
 
 .luxury-hero {
   display: grid;
-  grid-template-columns: 38% 22% 32% 8%;
-  min-height: 82vh;
+  grid-template-columns: 32% 18% 44% 6%;
+  height: 58vh;
+  max-height: 560px;
+  min-height: 460px;
   border-bottom: 1px solid #2a2a2a;
+  overflow: hidden;
 }
 
 .hero-main-img,
@@ -442,25 +428,25 @@ const badges = [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 58px;
+  padding: 38px;
 }
 
 .eyebrow,
 .section-label {
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: 4px;
   color: #c9a96e;
 }
 
 .gold-line {
-  width: 40px;
+  width: 32px;
   height: 1px;
   background: #c9a96e;
-  margin: 22px 0;
+  margin: 16px 0;
 }
 
 .hero-content h1 {
-  font-size: clamp(54px, 5vw, 82px);
+  font-size: clamp(38px, 3vw, 58px);
   line-height: 0.9;
   margin: 0;
   letter-spacing: 3px;
@@ -474,32 +460,32 @@ const badges = [
 
 .subtitle {
   font-family: Montserrat, sans-serif;
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: 3px;
   color: #aaa;
-  margin: 28px 0;
+  margin: 18px 0;
 }
 
 .hero-copy {
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.7;
   color: #999;
-  max-width: 520px;
+  max-width: 420px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .gold-btn,
 .outline-btn {
   text-decoration: none;
-  padding: 14px 30px;
-  font-size: 10px;
+  padding: 10px 20px;
+  font-size: 8px;
   letter-spacing: 3px;
 }
 
@@ -526,34 +512,34 @@ const badges = [
   color: #c9a96e;
   letter-spacing: 5px;
   font-family: Montserrat, sans-serif;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .brand-logos {
   background: #111;
   border-bottom: 1px solid #2a2a2a;
-  padding: 28px 60px;
+  padding: 22px 48px;
   text-align: center;
 }
 
 .brand-logos p {
   font-family: Montserrat, sans-serif;
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 4px;
   color: #c9a96e;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .brand-logos div {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 42px;
+  gap: 34px;
   flex-wrap: wrap;
 }
 
 .brand-logos span {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 2px;
 }
 
@@ -891,16 +877,18 @@ footer a {
 
   .luxury-hero {
     grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
   }
 
   .hero-main-img {
-    height: 430px;
+    height: 360px;
   }
 
   .hero-stack {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
-    height: 300px;
+    height: 240px;
   }
 
   .side-panel {
@@ -908,7 +896,7 @@ footer a {
   }
 
   .hero-content {
-    padding: 40px 24px;
+    padding: 32px 24px;
   }
 
   .content-grid,
