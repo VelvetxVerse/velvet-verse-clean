@@ -12,6 +12,7 @@ import CartView from './views/CartView.vue'
 import CollaborateView from './views/CollaborateView.vue'
 import MakeupView from './views/MakeupView.vue'
 import MakeupMediaKit from './views/MakeupMediaKit.vue'
+import BlogView from './views/BlogView.vue'
 
 /* PARIS */
 import ParisEditionView from './views/ParisEditionView.vue'
@@ -112,6 +113,13 @@ const routes = [
     path: '/makeup-media-kit',
     name: 'makeup-media-kit',
     component: MakeupMediaKit,
+  },
+
+  /* BLOG */
+  {
+    path: '/blog',
+    name: 'blog',
+    component: BlogView,
   },
 
   /* PARIS COLLECTION */
@@ -230,11 +238,18 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 
-  scrollBehavior() {
-    return {
-      top: 0,
-      behavior: 'smooth',
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        top: 80,
+      }
     }
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0, behavior: 'smooth' }
   },
 })
 
