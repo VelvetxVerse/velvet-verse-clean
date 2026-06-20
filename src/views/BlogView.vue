@@ -32,6 +32,21 @@
         </div>
       </section>
 
+      <!-- ── BRANDS STRIP ── -->
+      <section class="brands-strip">
+        <p class="brands-eyebrow">FEATURED & COLLABORATED WITH</p>
+        <div class="brands-row">
+          <span>Dior</span><span class="div">|</span>
+          <span>Pixi Beauty</span><span class="div">|</span>
+          <span>YSL</span><span class="div">|</span>
+          <span>IT Cosmetics</span><span class="div">|</span>
+          <span>NYX Cosmetics</span><span class="div">|</span>
+          <span>Eucerin</span><span class="div">|</span>
+          <span>L'Oréal</span><span class="div">|</span>
+          <span>Bobbi Brown</span>
+        </div>
+      </section>
+
       <!-- ── BROWSE BY CATEGORY ── -->
       <section class="box cats-section">
         <div class="cats-header">
@@ -52,18 +67,31 @@
       <!-- ── FEATURED + SIDEBAR ── -->
       <section id="featured" class="featured-layout">
 
-        <!-- Featured post -->
+        <!-- Featured posts -->
         <div class="box featured-box">
-          <p class="eyebrow">FEATURED POST</p>
+          <p class="eyebrow">FEATURED POSTS</p>
           <div class="featured-inner">
-            <div class="featured-img-wrap">
-              <img src="/mk5.png" alt="Featured post" />
+            <div class="feat-post">
+              <div class="featured-img-wrap">
+                <img src="/mk5.png" alt="Featured post 1" />
+              </div>
+              <div class="featured-text">
+                <p class="category">MAKEUP TUTORIAL</p>
+                <h2>STEP-BY-STEP:<br><em>Bronzed Soft Glam</em></h2>
+                <p>Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish.</p>
+                <a href="#" class="read-btn">Read More</a>
+              </div>
             </div>
-            <div class="featured-text">
-              <p class="category">MAKEUP TUTORIAL</p>
-              <h2>STEP-BY-STEP:<br><em>Bronzed Soft Glam</em></h2>
-              <p>Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish.</p>
-              <a href="#" class="read-btn">Read More</a>
+            <div class="feat-post">
+              <div class="featured-img-wrap">
+                <img src="/mk4.png" alt="Featured post 2" />
+              </div>
+              <div class="featured-text">
+                <p class="category">SKINCARE</p>
+                <h2>SKIN PREP:<br><em>Glowing Base Routine</em></h2>
+                <p>The exact steps I follow before every makeup application for a flawless, long-lasting finish.</p>
+                <a href="#" class="read-btn">Read More</a>
+              </div>
             </div>
           </div>
         </div>
@@ -150,6 +178,33 @@
       </section>
 
     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-social">
+        <a href="https://instagram.com/renataoliveiraofficial" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @renataoliveiraofficial
+        </a>
+        <a href="https://instagram.com/renataxolivermakeup" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @renataxolivermakeup
+        </a>
+        <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          TikTok
+        </a>
+        <a href="https://pinterest.com" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.37 1.27-5.37s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.21-2.46 3.21-5.37 0-2.22-1.5-3.88-4.22-3.88-3.08 0-5 2.3-5 4.87 0 .88.26 1.5.67 1.98.19.22.21.31.14.57-.05.18-.16.63-.2.8-.07.27-.28.37-.51.27-1.44-.6-2.11-2.21-2.11-4.02 0-2.98 2.52-6.56 7.54-6.56 4.03 0 6.68 2.93 6.68 6.07 0 4.16-2.3 7.27-5.68 7.27-1.14 0-2.21-.61-2.57-1.3l-.7 2.69c-.25.97-.93 2.18-1.39 2.92.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Pinterest
+        </a>
+        <a href="mailto:velvetverse@velvetxverse.com" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          velvetverse@velvetxverse.com
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2024 Renata Oliveira &middot; All rights reserved</p>
+    </footer>
   </div>
 </template>
 
@@ -271,6 +326,47 @@ main {
 .nav-btn:hover {
   background: #c8a16b;
   color: #fff;
+}
+
+/* BRANDS STRIP */
+.brands-strip {
+  background: #fff;
+  border: 1px solid #e8ddd0;
+  border-radius: 18px;
+  padding: 22px 36px;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.brands-eyebrow {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #c8a16b;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.brands-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.brands-row span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2a2a2a;
+}
+
+.brands-row .div {
+  color: #e8ddd0;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* BOX */
@@ -455,11 +551,26 @@ main {
 }
 
 .featured-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 20px;
+}
+
+.feat-post {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-top: 20px;
+  gap: 24px;
   align-items: start;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e8ddd0;
+}
+
+.feat-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .featured-img-wrap {
@@ -792,6 +903,45 @@ p {
 
 .subscribe-row button:hover {
   background: #b5905a;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 22px 28px;
+  border-top: 1px solid #e8ddd0;
+  background: #fffaf5;
+  margin-top: 10px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c625b;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: #c8a16b;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #bbb;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 @media (max-width: 900px) {

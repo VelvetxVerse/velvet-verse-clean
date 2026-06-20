@@ -88,11 +88,11 @@
         <p class="eyebrow">FEATURED & COLLABORATED WITH</p>
         <div>
           <span>Dior</span>
-          <span>Chanel</span>
-          <span>YSL</span>
-          <span>Medicude</span>
-          <span>Revlon</span>
           <span>Pixi Beauty</span>
+          <span>YSL</span>
+          <span>IT Cosmetics</span>
+          <span>NYX Cosmetics</span>
+          <span>Eucerin</span>
           <span>L'Oréal</span>
           <span>Bobbi Brown</span>
         </div>
