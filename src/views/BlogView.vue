@@ -8,7 +8,7 @@
         <small>MAKEUP & BEAUTY</small>
       </div>
       <div class="nav-links">
-        <a href="/makeup#hero">Home</a>
+        <a href="/makeup">Home</a>
         <a href="/makeup#about">About</a>
         <a href="/makeup#brands">Brands</a>
         <a href="/makeup#services">Services</a>
@@ -24,19 +24,27 @@
       <section class="hero box">
         <img src="/mk1.png" alt="Blog hero" class="hero-img" />
         <div class="hero-overlay">
-          <p class="eyebrow">NEW ON THE BLOG</p>
+          <p class="eyebrow-light">NEW ON THE BLOG</p>
           <h1>EFFORTLESS<br>EVERYDAY GLAM</h1>
+          <div class="hero-divider"></div>
           <p>A soft, radiant makeup look that enhances your natural beauty and boosts your confidence.</p>
           <a href="#featured" class="hero-btn">Read the Post</a>
         </div>
       </section>
 
-      <!-- ── CATEGORIES ── -->
-      <section class="box cats-box">
-        <div class="cats">
-          <div v-for="(cat, i) in categories" :key="i" class="cat-item" :class="{ last: i === categories.length - 1 }">
-            <span class="cat-icon">{{ cat.icon }}</span>
-            <span class="cat-label">{{ cat.label }}</span>
+      <!-- ── BROWSE BY CATEGORY ── -->
+      <section class="box cats-section">
+        <div class="cats-header">
+          <h2 class="script-heading">Browse by <em>Category</em></h2>
+          <div class="cats-arrows">
+            <button class="arrow-btn">&#8592;</button>
+            <button class="arrow-btn">&#8594;</button>
+          </div>
+        </div>
+        <div class="cats-grid">
+          <div v-for="(cat, i) in categories" :key="i" class="cat-card">
+            <img :src="cat.img" :alt="cat.label" />
+            <p class="cat-label">{{ cat.label }}</p>
           </div>
         </div>
       </section>
@@ -62,7 +70,6 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-          <!-- Welcome -->
           <div class="box sidebar-welcome">
             <p class="eyebrow center">WELCOME</p>
             <div class="welcome-photo">
@@ -72,7 +79,6 @@
             <p class="signature">xo, Renata</p>
           </div>
 
-          <!-- Popular posts -->
           <div class="box sidebar-popular">
             <p class="eyebrow">POPULAR POSTS</p>
             <div v-for="(post, i) in popularPosts" :key="i" class="pop-post">
@@ -87,12 +93,25 @@
         </div>
       </section>
 
+      <!-- ── WHAT'S ON THE BLOG ── -->
+      <section class="whats-on-blog">
+        <h2 class="script-heading-lg">what's on the blog</h2>
+        <div class="filter-tabs">
+          <button v-for="tab in tabs" :key="tab"
+            class="tab-btn"
+            :class="{ active: activeTab === tab }"
+            @click="activeTab = tab">{{ tab }}</button>
+        </div>
+      </section>
+
       <!-- ── RECENT POSTS ── -->
       <section id="recent" class="box posts-box">
         <p class="eyebrow">RECENT POSTS</p>
         <div class="blog-grid">
           <article v-for="post in recentPosts" :key="post.title" class="post-card">
-            <img :src="post.img" :alt="post.title" />
+            <div class="post-img-wrap">
+              <img :src="post.img" :alt="post.title" />
+            </div>
             <div class="post-body">
               <p class="category">{{ post.cat }}</p>
               <h3>{{ post.title }}</h3>
@@ -107,7 +126,9 @@
       <section class="box posts-box">
         <div class="blog-grid">
           <article v-for="post in morePosts" :key="post.title" class="post-card">
-            <img :src="post.img" :alt="post.title" />
+            <div class="post-img-wrap">
+              <img :src="post.img" :alt="post.title" />
+            </div>
             <div class="post-body">
               <p class="category">{{ post.cat }}</p>
               <h3>{{ post.title }}</h3>
@@ -133,12 +154,19 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const activeTab = ref('REVIEWS')
+
+const tabs = ['REVIEWS', 'SKIN', 'MAKEUP', 'HAIR', 'BODY', 'FRAGRANCE', 'NAILS']
+
 const categories = [
-  { icon: '💄', label: 'Makeup Tutorials' },
-  { icon: '✨', label: 'Product Reviews' },
-  { icon: '🖌️', label: 'Beauty Tips' },
-  { icon: '🧴', label: 'Skincare Routine' },
-  { icon: '🤍', label: 'Favorites' },
+  { label: 'REVIEWS', img: '/mk4.png' },
+  { label: 'MAKEUP', img: '/mk5.png' },
+  { label: 'BEAUTY TIPS', img: '/mk6.png' },
+  { label: 'SKINCARE', img: '/mk7.png' },
+  { label: 'TUTORIALS', img: '/mk8.png' },
+  { label: 'FAVORITES', img: '/mk9.png' },
 ]
 
 const popularPosts = [
@@ -161,6 +189,8 @@ const morePosts = [
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap');
+
 .blog-page {
   min-height: 100vh;
   background: #faf7f2;
@@ -256,40 +286,59 @@ main {
 /* HERO */
 .hero {
   position: relative;
-  height: 460px;
+  height: 440px;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
   display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(15,10,8,0.72) 44%, rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(to right, rgba(15,10,8,0.75) 42%, rgba(0,0,0,0.05) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 56px;
-  max-width: 520px;
+  max-width: 540px;
 }
 
-.hero-overlay p {
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 12px;
+.eyebrow-light {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c8a16b;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .hero-overlay h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(34px, 4.5vw, 54px);
+  font-size: clamp(36px, 4.5vw, 56px);
   font-weight: 400;
   color: #fff;
   line-height: 1.05;
   margin-bottom: 14px;
+}
+
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background: #c8a16b;
+  margin-bottom: 16px;
+}
+
+.hero-overlay p {
+  color: rgba(255,255,255,0.82);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-weight: 300;
 }
 
 .hero-btn {
@@ -302,7 +351,6 @@ main {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 8px;
   width: fit-content;
   transition: background 0.2s;
 }
@@ -311,52 +359,93 @@ main {
   background: #b5905a;
 }
 
-/* CATEGORIES */
-.cats-box {
-  padding: 0;
+/* BROWSE BY CATEGORY */
+.cats-section {
+  padding: 36px 36px 32px;
 }
 
-.cats {
+.cats-header {
   display: flex;
-}
-
-.cat-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 22px 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.script-heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  color: #2a2a2a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.script-heading em {
+  font-style: italic;
+}
+
+.cats-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e8ddd0;
+  background: #fff;
   cursor: pointer;
-  border-right: 1px solid #e8ddd0;
-  transition: background 0.2s;
+  font-size: 16px;
+  color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 
-.cat-item.last {
-  border-right: none;
+.arrow-btn:hover {
+  border-color: #c8a16b;
+  color: #c8a16b;
 }
 
-.cat-item:hover {
-  background: #fffaf5;
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
 }
 
-.cat-icon {
-  font-size: 22px;
+.cat-card {
+  cursor: pointer;
+  text-align: center;
+}
+
+.cat-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.cat-card:hover img {
+  transform: scale(1.03);
 }
 
 .cat-label {
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #888;
-  text-align: center;
+  color: #2a2a2a;
   font-weight: 600;
+  margin: 10px 0 0;
 }
 
 /* FEATURED + SIDEBAR */
 .featured-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 300px;
   gap: 26px;
   margin-bottom: 26px;
 }
@@ -367,7 +456,7 @@ main {
 
 .featured-inner {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
   margin-top: 20px;
   align-items: start;
@@ -376,11 +465,12 @@ main {
 .featured-img-wrap {
   overflow: hidden;
   border-radius: 14px;
+  height: 300px;
 }
 
 .featured-img-wrap img {
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
@@ -392,9 +482,11 @@ main {
 }
 
 .featured-text h2 {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
   line-height: 1.2;
   margin-bottom: 12px;
+  color: #2a2a2a;
 }
 
 .read-btn {
@@ -444,9 +536,8 @@ main {
 }
 
 .signature {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
   color: #c8a16b;
   margin-top: 8px;
 }
@@ -465,9 +556,10 @@ main {
 }
 
 .pop-post img {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 8px;
   flex-shrink: 0;
 }
@@ -500,6 +592,53 @@ main {
   color: #fff;
 }
 
+/* WHAT'S ON THE BLOG */
+.whats-on-blog {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+
+.script-heading-lg {
+  font-family: 'Dancing Script', cursive;
+  font-size: 52px;
+  color: #2a2a2a;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 1px solid #e8ddd0;
+  margin-bottom: 26px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: #c8a16b;
+}
+
+.tab-btn.active {
+  color: #2a2a2a;
+  border-bottom-color: #2a2a2a;
+  font-weight: 600;
+}
+
 /* POSTS */
 .posts-box {
   padding: 36px;
@@ -508,7 +647,7 @@ main {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -524,17 +663,22 @@ main {
   box-shadow: 0 8px 24px rgba(80,55,35,0.1);
 }
 
-.post-card img {
+.post-img-wrap {
+  height: 220px;
+  overflow: hidden;
+}
+
+.post-img-wrap img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
   transition: transform 0.4s;
 }
 
-.post-card:hover img {
-  transform: scale(1.03);
+.post-card:hover .post-img-wrap img {
+  transform: scale(1.04);
 }
 
 .post-body {
@@ -542,9 +686,18 @@ main {
 }
 
 .post-body h3 {
-  font-size: 17px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
   margin-bottom: 8px;
   line-height: 1.35;
+  color: #2a2a2a;
+}
+
+.post-body p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
 .post-body a {
@@ -555,13 +708,41 @@ main {
   text-decoration: none;
 }
 
-/* CATEGORY */
+/* SHARED */
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c8a16b;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
 .category {
   color: #c8a16b;
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 6px;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  color: #2a2a2a;
+  margin: 0 0 16px;
+}
+
+p {
+  color: #7a7a7a;
+  line-height: 1.75;
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.center {
+  text-align: center;
 }
 
 /* NEWSLETTER */
@@ -613,47 +794,12 @@ main {
   background: #b5905a;
 }
 
-/* SHARED */
-.eyebrow {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: #c8a16b;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #2a2a2a;
-  margin: 0;
-}
-
-h2 {
-  font-size: 34px;
-  margin-bottom: 16px;
-}
-
-h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-p {
-  color: #7a7a7a;
-  line-height: 1.75;
-  font-size: 14px;
-  margin: 0 0 10px;
-}
-
-.center {
-  text-align: center;
-}
-
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .featured-layout { grid-template-columns: 1fr; }
   .featured-inner, .blog-grid { grid-template-columns: 1fr; }
-  .cats { flex-wrap: wrap; }
-  .hero-overlay { padding: 0 28px; }
+  .cats-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-overlay { padding: 0 28px; max-width: 100%; }
+  .filter-tabs { flex-wrap: wrap; }
 }
 </style>
