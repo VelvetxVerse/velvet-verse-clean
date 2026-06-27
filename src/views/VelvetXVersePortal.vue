@@ -61,7 +61,7 @@ const worlds = [
     title: 'Web Design',
     desc: 'Elegant websites for feminine brands with a luxury feel.',
     link: '/collections',
-    image: '/vxv-card-webdesign.png'
+    image: '/webdesignfrontpage.png'
   },
   {
     title: 'Social Media',
