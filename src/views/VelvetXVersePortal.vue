@@ -73,13 +73,13 @@ const worlds = [
     title: 'Travel',
     desc: 'Luxury travel storytelling, global experiences, and visual inspiration.',
     link: '/travel',
-    image: '/vxv-card-travel.png'
+    image: '/santorini26.png'
   },
   {
     title: 'Beauty',
     desc: 'Makeup, skincare, wellness, and beauty content with purpose.',
     link: '/makeup',
-    image: '/vxv-card-makeup.png'
+    image: '/makeup1.png'
   }
 ]
 </script>
