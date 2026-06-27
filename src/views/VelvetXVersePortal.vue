@@ -1,47 +1,39 @@
 <template>
   <main class="vxv-page">
     <header class="vxv-header">
-      <div class="brand">
+      <a href="/" class="brand">
         <div class="crown">♕</div>
         <div class="logo">VELVETXVERSE</div>
         <div class="byline">by Renata Oliver</div>
-      </div>
+      </a>
 
-      <nav>
-        <a>Home</a>
-        <a>About</a>
-        <a>Services</a>
-        <a>Portfolio</a>
-        <a>Media Kit</a>
-        <a>Contact</a>
+      <nav class="vxv-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/collaborate">Media Kit</a>
+        <a href="/contact">Contact</a>
       </nav>
 
-      <a class="work-btn">Work With Me <span>→</span></a>
+      <a href="/contact" class="work-btn">Work With Me <span>→</span></a>
     </header>
 
     <section class="hero">
-      <div class="hero-text">
-        <div class="tiny-line">
-          <span></span>♕<span></span>
-        </div>
-
-        <h1>
-          Four Passions.<br />
-          One Purpose. <span>♡</span>
-        </h1>
-
-        <p>
-          Everything I do is rooted in creativity, connection, and purpose.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#worlds">Explore My Worlds →</a>
-          <a href="/contact" class="outline">Work With Me →</a>
-        </div>
+      <div class="tiny-line">
+        <span></span>
+        <b>♕</b>
+        <span></span>
       </div>
 
-      <div class="hero-image">
-        <img src="/vxv-hero-laptop.png" alt="VelvetXVerse" />
+      <h1>Four Passions. One Purpose. <span>♡</span></h1>
+
+      <p>Everything I do is rooted in creativity, connection, and purpose.</p>
+
+      <div class="hero-star">
+        <span></span>
+        <b>✦</b>
+        <span></span>
       </div>
     </section>
 
@@ -66,7 +58,10 @@
     </section>
 
     <footer>
-      Creating Beauty. Building Brands. Inspiring Lives. ♡
+      <span></span>
+      <b>♡</b>
+      <span></span>
+      <p>Creating Beauty. Building Brands. Inspiring Lives. ♡</p>
     </footer>
   </main>
 </template>
@@ -100,13 +95,6 @@ const worlds = [
     link: '/makeup',
     image: '/vxv-card-makeup.png',
     icon: '♢'
-  },
-  {
-    title: 'Media Kit & Insights',
-    desc: 'Audience insights, brand partnerships, and collaboration opportunities.',
-    link: '/collaborate',
-    image: '/vxv-card-social.png',
-    icon: '♡'
   }
 ]
 </script>
@@ -116,100 +104,116 @@ const worlds = [
 
 .vxv-page {
   min-height: 100vh;
-  background: #fbf2ea;
+  background: radial-gradient(circle at top, #fffaf6 0%, #fbf2ea 45%, #f8eee6 100%);
   color: #2c1d16;
   font-family: 'DM Sans', sans-serif;
-  padding: 32px 44px 28px;
+  padding: 28px 44px 26px;
 }
 
 .vxv-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 290px 1fr 230px;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 46px;
+  gap: 24px;
+  margin-bottom: 44px;
 }
 
 .brand {
   text-align: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .crown {
   color: #c6975b;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1;
 }
 
 .logo {
   font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 6px;
+  letter-spacing: 7px;
   font-size: 27px;
+  line-height: 1;
 }
 
 .byline {
   font-family: 'Parisienne', cursive;
-  font-size: 18px;
+  font-size: 19px;
   color: #6f4d3d;
+  margin-top: 8px;
 }
 
-nav {
+.vxv-nav {
   display: flex;
-  gap: 44px;
+  justify-content: center;
+  gap: clamp(22px, 3vw, 50px);
 }
 
-nav a {
+.vxv-nav a {
   text-transform: uppercase;
   font-size: 13px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-decoration: none;
   color: #201612;
 }
 
-.work-btn,
-.hero-buttons a {
+.work-btn {
+  justify-self: end;
   background: #efd4ca;
   border-radius: 999px;
-  padding: 15px 34px;
+  padding: 16px 34px;
   text-decoration: none;
   color: #201612;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  white-space: nowrap;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 43% 57%;
-  align-items: center;
-  min-height: 420px;
-  margin-bottom: 34px;
-}
-
-.hero-text {
   text-align: center;
-  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto 36px;
 }
 
-.tiny-line {
+.tiny-line,
+.hero-star {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   color: #c6975b;
-  margin-bottom: 20px;
 }
 
-.tiny-line span {
-  width: 90px;
+.tiny-line {
+  margin-bottom: 22px;
+}
+
+.hero-star {
+  margin-top: 20px;
+}
+
+.tiny-line span,
+.hero-star span {
+  width: 110px;
   height: 1px;
-  background: rgba(198, 151, 91, 0.35);
+  background: rgba(198, 151, 91, 0.28);
+}
+
+.tiny-line b,
+.hero-star b {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(58px, 6vw, 92px);
+  font-size: clamp(58px, 5vw, 86px);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 1;
   margin: 0;
+  letter-spacing: -1px;
 }
 
 .hero h1 span {
@@ -218,40 +222,21 @@ nav a {
 
 .hero p {
   font-family: 'Parisienne', cursive;
-  font-size: 30px;
+  font-size: clamp(25px, 2.2vw, 34px);
   color: #936958;
-  margin: 24px auto 30px;
-  max-width: 620px;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.hero-buttons .outline {
-  background: transparent;
-  border: 1px solid #d6a878;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 430px;
-  object-fit: cover;
-  border-radius: 34px;
+  margin: 16px auto 0;
 }
 
 .worlds {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
 
 .world-card {
   position: relative;
-  background: #fff8f3;
-  border: 1px solid rgba(198, 151, 91, 0.25);
+  background: rgba(255, 248, 243, 0.92);
+  border: 1px solid rgba(198, 151, 91, 0.23);
   border-radius: 22px;
   overflow: hidden;
   text-align: center;
@@ -262,13 +247,13 @@ nav a {
 
 .world-card img {
   width: 100%;
-  height: 230px;
+  height: 315px;
   object-fit: cover;
 }
 
 .icon {
-  width: 70px;
-  height: 70px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
   background: #fffaf6;
   border: 1px solid rgba(198, 151, 91, 0.28);
@@ -276,18 +261,18 @@ nav a {
   place-items: center;
   color: #d2a06b;
   font-size: 30px;
-  margin: -36px auto 18px;
+  margin: -38px auto 18px;
   position: relative;
   z-index: 2;
 }
 
 .card-body {
-  padding: 0 24px 28px;
+  padding: 0 28px 28px;
 }
 
 .card-body h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 31px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 0.95;
   margin: 0;
@@ -301,7 +286,8 @@ nav a {
 .card-body p {
   font-size: 14px;
   line-height: 1.55;
-  margin-bottom: 26px;
+  margin: 0 auto 26px;
+  max-width: 300px;
 }
 
 .card-body span {
@@ -312,19 +298,40 @@ nav a {
 
 footer {
   text-align: center;
-  margin-top: 28px;
+  margin-top: 30px;
+  color: #2c1d16;
+}
+
+footer span {
+  display: inline-block;
+  width: 190px;
+  height: 1px;
+  background: rgba(198, 151, 91, 0.28);
+  vertical-align: middle;
+}
+
+footer b {
+  color: #c6975b;
+  font-size: 22px;
+  margin: 0 18px;
+  font-weight: 400;
+}
+
+footer p {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 13px;
+  margin: 18px 0 0;
 }
 
-@media (max-width: 1100px) {
-  nav {
-    display: none;
+@media (max-width: 1200px) {
+  .vxv-header {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
+  .work-btn {
+    justify-self: center;
   }
 
   .worlds {
@@ -332,25 +339,33 @@ footer {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .vxv-page {
-    padding: 20px;
+    padding: 22px 18px;
   }
 
-  .vxv-header {
-    flex-direction: column;
-    gap: 20px;
+  .vxv-nav {
+    flex-wrap: wrap;
+    gap: 18px;
   }
 
   .hero h1 {
-    font-size: 50px;
+    font-size: 46px;
   }
 
   .worlds {
     grid-template-columns: 1fr;
   }
 
-  footer {
+  .world-card img {
+    height: 260px;
+  }
+
+  footer span {
+    width: 80px;
+  }
+
+  footer p {
     letter-spacing: 3px;
     line-height: 1.8;
   }
