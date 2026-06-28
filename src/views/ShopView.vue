@@ -115,4 +115,5 @@ and purchase directly online.</p>
       </div>
     </section>
 
- 
+  </main>
+</template>
