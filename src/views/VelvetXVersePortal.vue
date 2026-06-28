@@ -68,13 +68,13 @@ const worlds = [
     title: 'Social Media',
     desc: 'Intentional content strategy for brands that want to grow beautifully.',
     link: '/social-media',
-    image: '/vxv-card-social.png'
+    image: '/social-media2.png'
   },
   {
     title: 'Travel',
     desc: 'Luxury travel storytelling, global experiences, and visual inspiration.',
     link: '/travel',
-    image: '/santorini26.png'
+    image: '/greece.png'
   },
   {
     title: 'Beauty',
