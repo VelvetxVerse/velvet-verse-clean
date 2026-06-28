@@ -13,6 +13,7 @@ import CollaborateView from './views/CollaborateView.vue'
 import MakeupView from './views/MakeupView.vue'
 import MakeupMediaKit from './views/MakeupMediaKit.vue'
 import BlogView from './views/BlogView.vue'
+import LinksPageView from './views/LinksPageView.vue'
 
 /* PARIS */
 import ParisEditionView from './views/ParisEditionView.vue'
@@ -45,49 +46,41 @@ const routes = [
     name: 'home',
     component: VelvetXVersePortal,
   },
-
   {
     path: '/collections',
     name: 'collections',
     component: CollectionsView,
   },
-
   {
     path: '/shop',
     name: 'shop',
     component: ShopView,
   },
-
   {
     path: '/shop-checkout',
     name: 'shop-checkout',
     component: ShopCheckout,
   },
-
   {
     path: '/shop-confirmation',
     name: 'shop-confirmation',
     component: ShopConfirmation,
   },
-
   {
     path: '/cart',
     name: 'cart',
     component: CartView,
   },
-
   {
     path: '/services',
     name: 'services',
     component: ServicesView,
   },
-
   {
     path: '/founder',
     name: 'founder',
     component: FounderView,
   },
-
   {
     path: '/presentation',
     name: 'presentation',
@@ -122,67 +115,64 @@ const routes = [
     component: BlogView,
   },
 
+  /* LINKS PAGE */
+  {
+    path: '/links',
+    name: 'links',
+    component: LinksPageView,
+  },
+
   /* PARIS COLLECTION */
   {
     path: '/paris-edition',
     name: 'paris-edition',
     component: ParisEditionView,
   },
-
   {
     path: '/paris-demo',
     name: 'paris-demo',
     component: ParisDemoView,
   },
-
   {
     path: '/paris-gallery',
     name: 'paris-gallery',
     component: ParisGallery,
   },
-
   {
     path: '/paris-menu',
     name: 'paris-menu',
     component: ParisMenu,
   },
-
   {
     path: '/paris-visit',
     name: 'paris-visit',
     component: ParisVisit,
   },
-
   {
     path: '/paris-recipe-croissant',
     name: 'paris-recipe-croissant',
     component: ParisRecipeCroissant,
   },
-
   {
     path: '/paris-recipe-cookies',
     name: 'paris-recipe-cookies',
     component: ParisRecipeCookies,
   },
-
   {
     path: '/paris-recipe-cake',
     name: 'paris-recipe-cake',
     component: ParisRecipeCake,
   },
-
   {
     path: '/paris-recipe-brunch',
     name: 'paris-recipe-brunch',
     component: ParisRecipeBrunch,
   },
-
   {
     path: '/paris-about',
     name: 'paris-about',
     component: ParisAbout,
   },
-
   {
     path: '/paris-contact',
     name: 'paris-contact',
@@ -195,25 +185,21 @@ const routes = [
     name: 'noir-home',
     component: NoirHome,
   },
-
   {
     path: '/noir/about',
     name: 'noir-about',
     component: NoirAbout,
   },
-
   {
     path: '/noir/services',
     name: 'noir-services',
     component: NoirServices,
   },
-
   {
     path: '/noir/gallery',
     name: 'noir-gallery',
     component: NoirGallery,
   },
-
   {
     path: '/noir/contact',
     name: 'noir-contact',
@@ -226,7 +212,6 @@ const routes = [
     name: 'privacy-policy',
     component: PrivacyPolicy,
   },
-
   {
     path: '/terms-conditions',
     name: 'terms-conditions',
