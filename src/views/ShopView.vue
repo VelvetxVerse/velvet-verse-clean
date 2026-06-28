@@ -96,7 +96,7 @@ onUnmounted(() => {
           <h3>Dubai Edition</h3>
         </article>
         <article>
-          <img src="/santorini.jpg" alt="">
+          <img src="/santorini26.png" alt="">
           <span>COMING SOON</span>
           <h3>Santorini Escape</h3>
         </article>
