@@ -16,7 +16,8 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a href="/contact" class="work-btn">Work With Me</a>
+      <a href="/media-kit.png" download="Renata-Oliveira-Media-Kit.png" class="work-btn">⬇ Download Media Kit</a>
+
     </header>
 
     <section class="hero">
