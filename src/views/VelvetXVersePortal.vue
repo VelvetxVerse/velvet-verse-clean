@@ -13,7 +13,7 @@
         <a href="/services">Services</a>
         <a href="/portfolio">Portfolio</a>
         <a href="/collaborate">Media Kit</a>
-        <a href="/contact">Contact</a>
+        <a href="/links">Links</a>
       </nav>
 
       <a href="/media-kit.png" download="Renata-Oliveira-Media-Kit.png" class="work-btn">⬇ Download Media Kit</a>
@@ -86,7 +86,7 @@ const worlds = [
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap' );
 
 .vxv-page {
   min-height: 100vh;
