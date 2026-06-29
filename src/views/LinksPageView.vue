@@ -1,11 +1,14 @@
 <template>
   <main class="links-page">
     <section class="hero">
-      <div class="hero-text">
+      <img class="hero-image" src="/images/renata-hero.jpg" alt="Renata Oliveira" />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
         <h1>Renata Oliveira</h1>
         <p>BEAUTY • TRAVEL • LIFESTYLE</p>
 
-        <div class="social-icons">
+        <div class="socials">
           <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
             {{ social.icon }}
           </a>
@@ -13,30 +16,38 @@
       </div>
     </section>
 
-    <section class="links-wrapper">
-      <div class="left-column">
+    <section class="page-content">
+      <aside class="link-column">
         <img class="avatar" src="/images/renata-profile.jpg" alt="Renata Oliveira" />
         <h2>@renataoliveiraofficial</h2>
 
         <a
           v-for="link in links"
           :key="link.title"
-          class="link-card"
+          class="link-button"
           :href="link.url"
           target="_blank"
         >
-          <span class="circle">{{ link.icon }}</span>
-          <span class="link-text">
+          <span class="icon">{{ link.icon }}</span>
+
+          <span class="text">
             <strong>{{ link.title }}</strong>
             <small>{{ link.subtitle }}</small>
           </span>
+
           <span class="arrow">›</span>
         </a>
-      </div>
 
-      <div class="right-column">
+        <div class="bottom-socials">
+          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
+            {{ social.icon }}
+          </a>
+        </div>
+      </aside>
+
+      <section class="cards-column">
         <a
-          v-for="card in featureCards"
+          v-for="card in cards"
           :key="card.title"
           class="feature-card"
           :href="card.url"
@@ -47,7 +58,7 @@
           <div class="feature-text">
             <h3>{{ card.title }}</h3>
             <p>{{ card.subtitle }}</p>
-            <span class="round-arrow">→</span>
+            <span>→</span>
           </div>
         </a>
 
@@ -55,7 +66,7 @@
           <p>Thank you for being here!</p>
           <strong>♡ xo Renata</strong>
         </div>
-      </div>
+      </section>
     </section>
   </main>
 </template>
@@ -128,6 +139,12 @@ const links = [
     url: '#'
   },
   {
+    title: 'Work With Me',
+    subtitle: 'PR, brands & collaborations',
+    icon: '✉',
+    url: 'mailto:welovejetlag@gmail.com'
+  },
+  {
     title: 'Follow Me on Instagram',
     subtitle: '@renataoliveiraofficial',
     icon: '◎',
@@ -147,7 +164,7 @@ const links = [
   }
 ]
 
-const featureCards = [
+const cards = [
   {
     title: 'Shop My Recent Post',
     subtitle: 'All the links from my latest posts',
@@ -178,20 +195,41 @@ const featureCards = [
 }
 
 .hero {
-  min-height: 440px;
-  background-image:
-    linear-gradient(to bottom, rgba(255,250,247,0) 45%, #fffaf7 96%),
-    url('/images/renata-hero.jpg');
-  background-size: cover;
-  background-position: center top;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px 60px;
+  position: relative;
+  height: 620px;
+  overflow: hidden;
 }
 
-.hero-text h1 {
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 250, 247, 0) 35%,
+    rgba(255, 250, 247, 0.65) 70%,
+    #fffaf7 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  left: 50%;
+  bottom: 55px;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(4.8rem, 10vw, 8rem);
   font-weight: 400;
@@ -199,40 +237,44 @@ const featureCards = [
   margin: 0;
 }
 
-.hero-text p {
+.hero-content p {
+  margin: 8px 0 26px;
   letter-spacing: 0.35em;
   font-size: 0.95rem;
-  margin: 10px 0 28px;
+  color: #221b18;
 }
 
-.social-icons {
+.socials,
+.bottom-socials {
   display: flex;
   justify-content: center;
   gap: 34px;
 }
 
-.social-icons a {
+.socials a,
+.bottom-socials a {
   color: #b88d68;
   font-size: 2rem;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
-.social-icons a:hover {
-  transform: translateY(-3px);
+.socials a:hover,
+.bottom-socials a:hover {
   color: #7c563f;
+  transform: translateY(-3px);
 }
 
-.links-wrapper {
+.page-content {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 25px 24px 80px;
+  padding: 30px 24px 80px;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 48px;
 }
 
-.left-column {
+.link-column {
   text-align: center;
 }
 
@@ -242,14 +284,15 @@ const featureCards = [
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 14px;
+  box-shadow: 0 14px 35px rgba(105, 73, 50, 0.12);
 }
 
-.left-column h2 {
+.link-column h2 {
   font-size: 1rem;
   margin: 0 0 22px;
 }
 
-.link-card {
+.link-button {
   display: grid;
   grid-template-columns: 48px 1fr 20px;
   gap: 12px;
@@ -266,13 +309,13 @@ const featureCards = [
   transition: 0.3s ease;
 }
 
-.link-card:hover {
+.link-button:hover {
   transform: translateY(-3px);
   border-color: #cda18c;
   box-shadow: 0 18px 45px rgba(105, 73, 50, 0.12);
 }
 
-.circle {
+.icon {
   width: 39px;
   height: 39px;
   border-radius: 50%;
@@ -283,14 +326,14 @@ const featureCards = [
   font-size: 1.3rem;
 }
 
-.link-text strong {
+.text strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.28rem;
   font-weight: 500;
 }
 
-.link-text small {
+.text small {
   color: #6f625b;
   font-size: 0.92rem;
 }
@@ -301,7 +344,11 @@ const featureCards = [
   font-weight: 300;
 }
 
-.right-column {
+.bottom-socials {
+  margin-top: 24px;
+}
+
+.cards-column {
   display: grid;
   gap: 22px;
 }
@@ -350,7 +397,7 @@ const featureCards = [
   line-height: 1.5;
 }
 
-.round-arrow {
+.feature-text span {
   margin-top: 24px;
   width: 46px;
   height: 46px;
@@ -385,20 +432,19 @@ const featureCards = [
 
 @media (max-width: 850px) {
   .hero {
-    min-height: 420px;
-    background-position: center top;
+    height: 520px;
   }
 
-  .hero-text h1 {
-    font-size: 4.7rem;
+  .hero-content h1 {
+    font-size: 4.4rem;
   }
 
-  .hero-text p {
-    letter-spacing: 0.2em;
-    font-size: 0.8rem;
+  .hero-content p {
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
   }
 
-  .links-wrapper {
+  .page-content {
     grid-template-columns: 1fr;
     padding: 20px 16px 60px;
     gap: 30px;
