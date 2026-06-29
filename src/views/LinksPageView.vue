@@ -5,9 +5,8 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
+        <p class="eyebrow">BEAUTY • TRAVEL • LIFESTYLE</p>
         <h1>Renata Oliveira</h1>
-        <p>BEAUTY • TRAVEL • LIFESTYLE</p>
-
         <div class="socials">
           <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
             {{ social.icon }}
@@ -16,36 +15,33 @@
       </div>
     </section>
 
-    <section class="page-content">
-      <aside class="link-column">
+    <section class="content">
+      <aside class="profile">
         <img class="avatar" src="/images/renata-profile.jpg" alt="Renata Oliveira" />
         <h2>@renataoliveiraofficial</h2>
+        <p class="bio">Curated beauty, travel, lifestyle and favorite finds.</p>
 
-        <a
-          v-for="link in links"
-          :key="link.title"
-          class="link-button"
-          :href="link.url"
-          target="_blank"
-        >
-          <span class="icon">{{ link.icon }}</span>
+        <div class="links">
+          <a
+            v-for="link in links"
+            :key="link.title"
+            class="link-card"
+            :href="link.url"
+            target="_blank"
+          >
+            <span class="icon">{{ link.icon }}</span>
 
-          <span class="text">
-            <strong>{{ link.title }}</strong>
-            <small>{{ link.subtitle }}</small>
-          </span>
+            <span class="link-copy">
+              <strong>{{ link.title }}</strong>
+              <small>{{ link.subtitle }}</small>
+            </span>
 
-          <span class="arrow">›</span>
-        </a>
-
-        <div class="bottom-socials">
-          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
-            {{ social.icon }}
+            <span class="arrow">›</span>
           </a>
         </div>
       </aside>
 
-      <section class="cards-column">
+      <section class="features">
         <a
           v-for="card in cards"
           :key="card.title"
@@ -55,15 +51,15 @@
         >
           <img :src="card.image" :alt="card.title" />
 
-          <div class="feature-text">
+          <div class="feature-copy">
+            <p>{{ card.label }}</p>
             <h3>{{ card.title }}</h3>
-            <p>{{ card.subtitle }}</p>
-            <span>→</span>
+            <span>Explore →</span>
           </div>
         </a>
 
-        <div class="thank-you">
-          <p>Thank you for being here!</p>
+        <div class="signature">
+          <p>Thank you for being here</p>
           <strong>♡ xo Renata</strong>
         </div>
       </section>
@@ -89,9 +85,9 @@ const socials = [
     url: 'https://www.amazon.com/shop/renataoliveiraofficial'
   },
   {
-    name: 'YouTube',
-    icon: '▶',
-    url: 'https://www.youtube.com/'
+    name: 'Email',
+    icon: '✉',
+    url: 'mailto:welovejetlag@gmail.com'
   }
 ]
 
@@ -104,38 +100,32 @@ const links = [
   },
   {
     title: 'Expedia Hotels',
-    subtitle: 'My favorite places to stay',
+    subtitle: 'Hotels I love & recommend',
     icon: '✈',
     url: '#'
   },
   {
     title: 'CapCut Templates',
-    subtitle: 'Edit like me',
+    subtitle: 'Edit your videos like me',
     icon: '✂',
     url: '#'
   },
   {
-    title: 'Shop My Recent Post',
-    subtitle: 'Links from my latest posts',
-    icon: '⌑',
-    url: '#'
-  },
-  {
     title: 'Amazon Storefront',
-    subtitle: 'My favorite finds',
+    subtitle: 'Shop my favorite finds',
     icon: 'a',
     url: 'https://www.amazon.com/shop/renataoliveiraofficial'
   },
   {
-    title: 'Travel With Me',
-    subtitle: 'Destinations & guides',
-    icon: '◎',
+    title: 'Shop My Recent Post',
+    subtitle: 'Links from my latest content',
+    icon: '⌑',
     url: '#'
   },
   {
-    title: 'Exclusive Content',
-    subtitle: 'Behind the scenes & more',
-    icon: '✦',
+    title: 'Travel With Me',
+    subtitle: 'Guides, hotels & inspiration',
+    icon: '◎',
     url: '#'
   },
   {
@@ -143,43 +133,25 @@ const links = [
     subtitle: 'PR, brands & collaborations',
     icon: '✉',
     url: 'mailto:welovejetlag@gmail.com'
-  },
-  {
-    title: 'Follow Me on Instagram',
-    subtitle: '@renataoliveiraofficial',
-    icon: '◎',
-    url: 'https://www.instagram.com/renataoliveiraofficial'
-  },
-  {
-    title: 'Follow Me on TikTok',
-    subtitle: '@renataoliveiraofficial',
-    icon: '♪',
-    url: 'https://www.tiktok.com/@renataoliveiraofficial'
-  },
-  {
-    title: 'Follow Me on YouTube',
-    subtitle: 'Renata Oliveira',
-    icon: '▶',
-    url: 'https://www.youtube.com/'
   }
 ]
 
 const cards = [
   {
+    label: 'Latest Finds',
     title: 'Shop My Recent Post',
-    subtitle: 'All the links from my latest posts',
     image: '/images/shop-post.jpg',
     url: '#'
   },
   {
+    label: 'Curated Favorites',
     title: 'Amazon Storefront',
-    subtitle: 'My favorite finds, all in one place',
     image: '/images/amazon-finds.jpg',
     url: 'https://www.amazon.com/shop/renataoliveiraofficial'
   },
   {
-    title: 'Travel With Me',
-    subtitle: 'Destinations, guides & travel favorites',
+    label: 'Travel Edit',
+    title: 'Hotels & Destinations',
     image: '/images/travel.jpg',
     url: '#'
   }
@@ -190,186 +162,201 @@ const cards = [
 .links-page {
   min-height: 100vh;
   background: #fffaf7;
-  color: #2a211d;
+  color: #2f2520;
   font-family: 'Inter', sans-serif;
 }
 
+/* HERO */
 .hero {
   position: relative;
-  height: 620px;
+  height: 430px;
   overflow: hidden;
+  background: #f8eee8;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
   display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 250, 247, 0) 35%,
-    rgba(255, 250, 247, 0.65) 70%,
-    #fffaf7 100%
-  );
+  background:
+    linear-gradient(to bottom, rgba(255, 250, 247, 0.05), #fffaf7 98%),
+    linear-gradient(to right, rgba(255, 250, 247, 0.2), rgba(255, 250, 247, 0.65));
 }
 
 .hero-content {
   position: absolute;
-  left: 50%;
-  bottom: 55px;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 0 20px;
+  right: 9%;
+  bottom: 58px;
+  max-width: 420px;
   text-align: center;
 }
 
-.hero-content h1 {
+.eyebrow {
+  margin: 0 0 8px;
+  color: #9f7b64;
+  font-size: 0.68rem;
+  letter-spacing: 0.36em;
+  font-weight: 500;
+}
+
+.hero h1 {
+  margin: 0;
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(4.8rem, 10vw, 8rem);
+  font-size: clamp(3.8rem, 7vw, 5.8rem);
   font-weight: 400;
   color: #7c563f;
-  margin: 0;
+  line-height: 0.9;
 }
 
-.hero-content p {
-  margin: 8px 0 26px;
-  letter-spacing: 0.35em;
-  font-size: 0.95rem;
-  color: #221b18;
-}
-
-.socials,
-.bottom-socials {
+.socials {
+  margin-top: 22px;
   display: flex;
   justify-content: center;
-  gap: 34px;
+  gap: 24px;
 }
 
-.socials a,
-.bottom-socials a {
-  color: #b88d68;
-  font-size: 2rem;
+.socials a {
+  color: #b58c6c;
+  font-size: 1.35rem;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.socials a:hover,
-.bottom-socials a:hover {
+.socials a:hover {
   color: #7c563f;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.page-content {
-  max-width: 1180px;
+/* CONTENT */
+.content {
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 30px 24px 80px;
+  padding: 76px 28px 90px;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px;
+  grid-template-columns: 330px 1fr;
+  gap: 78px;
 }
 
-.link-column {
+.profile {
   text-align: center;
 }
 
 .avatar {
-  width: 112px;
-  height: 112px;
-  object-fit: cover;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 14px;
-  box-shadow: 0 14px 35px rgba(105, 73, 50, 0.12);
+  box-shadow: 0 16px 35px rgba(101, 70, 48, 0.12);
 }
 
-.link-column h2 {
-  font-size: 1rem;
-  margin: 0 0 22px;
+.profile h2 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #5c4032;
 }
 
-.link-button {
+.bio {
+  max-width: 250px;
+  margin: 8px auto 26px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #7b6c64;
+}
+
+.links {
   display: grid;
-  grid-template-columns: 48px 1fr 20px;
-  gap: 12px;
-  align-items: center;
-  text-align: left;
-  background: #fffdfb;
-  border: 1px solid #e6d5ca;
-  border-radius: 18px;
-  padding: 13px 18px;
-  margin-bottom: 12px;
-  color: #2a211d;
-  text-decoration: none;
-  box-shadow: 0 14px 35px rgba(105, 73, 50, 0.06);
-  transition: 0.3s ease;
+  gap: 14px;
 }
 
-.link-button:hover {
+.link-card {
+  display: grid;
+  grid-template-columns: 36px 1fr 16px;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  min-height: 58px;
+  text-align: left;
+  text-decoration: none;
+  color: #2f2520;
+  background: rgba(255, 253, 251, 0.86);
+  border: 1px solid #ead9cf;
+  border-radius: 15px;
+  box-shadow: 0 12px 28px rgba(101, 70, 48, 0.05);
+  transition: 0.25s ease;
+}
+
+.link-card:hover {
   transform: translateY(-3px);
-  border-color: #cda18c;
-  box-shadow: 0 18px 45px rgba(105, 73, 50, 0.12);
+  border-color: #d1aa94;
+  box-shadow: 0 18px 38px rgba(101, 70, 48, 0.11);
 }
 
 .icon {
-  width: 39px;
-  height: 39px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #d7aa99;
-  color: white;
   display: grid;
   place-items: center;
-  font-size: 1.3rem;
+  background: #d6aa98;
+  color: #fff;
+  font-size: 0.95rem;
 }
 
-.text strong {
+.link-copy strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.28rem;
+  font-size: 1.12rem;
   font-weight: 500;
+  color: #4a342b;
 }
 
-.text small {
-  color: #6f625b;
-  font-size: 0.92rem;
+.link-copy small {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.74rem;
+  color: #83736b;
 }
 
 .arrow {
-  color: #8a634e;
-  font-size: 1.8rem;
+  color: #a87f63;
+  font-size: 1.35rem;
   font-weight: 300;
 }
 
-.bottom-socials {
-  margin-top: 24px;
-}
-
-.cards-column {
+/* FEATURE CARDS */
+.features {
   display: grid;
-  gap: 22px;
+  gap: 26px;
 }
 
 .feature-card {
+  min-height: 180px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 230px;
+  grid-template-columns: 0.92fr 1.08fr;
   overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid #e6d5ca;
-  background: #fffdfb;
-  color: #2a211d;
   text-decoration: none;
-  box-shadow: 0 18px 45px rgba(105, 73, 50, 0.07);
-  transition: 0.3s ease;
+  color: #2f2520;
+  background: #fffdfb;
+  border: 1px solid #ead9cf;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(101, 70, 48, 0.07);
+  transition: 0.25s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  border-color: #cda18c;
+  border-color: #d1aa94;
+  box-shadow: 0 24px 52px rgba(101, 70, 48, 0.12);
 }
 
 .feature-card img {
@@ -378,76 +365,97 @@ const cards = [
   object-fit: cover;
 }
 
-.feature-text {
-  padding: 35px;
+.feature-copy {
+  padding: 28px 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.feature-text h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin: 0 0 14px;
+.feature-copy p {
+  margin: 0 0 8px;
+  color: #b58c6c;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
-.feature-text p {
+.feature-copy h3 {
   margin: 0;
-  line-height: 1.5;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #5c4032;
 }
 
-.feature-text span {
-  margin-top: 24px;
-  width: 46px;
-  height: 46px;
-  border: 1px solid #b98d67;
-  color: #b98d67;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
+.feature-copy span {
+  margin-top: 22px;
+  color: #9f7358;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
 }
 
-.thank-you {
-  padding: 48px 24px;
+.signature {
+  padding: 38px 24px;
   text-align: center;
   border-radius: 18px;
-  border: 1px solid #e6d5ca;
+  border: 1px solid #ead9cf;
   background: linear-gradient(135deg, #fffdfb, #faeee8);
-  color: #b98d67;
 }
 
-.thank-you p {
+.signature p {
+  margin: 0 0 6px;
   font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  margin: 0 0 8px;
+  font-size: 2.5rem;
+  color: #b58c6c;
 }
 
-.thank-you strong {
+.signature strong {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 400;
+  color: #7c563f;
 }
 
+/* MOBILE */
 @media (max-width: 850px) {
   .hero {
-    height: 520px;
+    height: 420px;
   }
 
-  .hero-content h1 {
-    font-size: 4.4rem;
+  .hero-image {
+    object-position: center top;
   }
 
-  .hero-content p {
-    letter-spacing: 0.18em;
-    font-size: 0.78rem;
+  .hero-content {
+    right: auto;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 20px;
   }
 
-  .page-content {
+  .hero h1 {
+    font-size: 4.1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+  }
+
+  .content {
     grid-template-columns: 1fr;
-    padding: 20px 16px 60px;
-    gap: 30px;
+    padding: 54px 18px 70px;
+    gap: 48px;
+  }
+
+  .profile {
+    max-width: 370px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .feature-card {
@@ -455,11 +463,15 @@ const cards = [
   }
 
   .feature-card img {
-    height: 220px;
+    height: 190px;
   }
 
-  .feature-text h3 {
-    font-size: 2.2rem;
+  .feature-copy {
+    padding: 28px;
+  }
+
+  .feature-copy h3 {
+    font-size: 1.9rem;
   }
 }
 </style>
