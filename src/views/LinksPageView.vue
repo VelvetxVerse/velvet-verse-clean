@@ -1,47 +1,53 @@
 <template>
   <main class="links-page">
     <section class="hero">
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
+      <div class="hero-text">
         <h1>Renata Oliveira</h1>
         <p>BEAUTY • TRAVEL • LIFESTYLE</p>
 
-        <div class="socials">
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
-          <a href="#">Amazon</a>
-          <a href="#">YouTube</a>
+        <div class="social-icons">
+          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
+            {{ social.icon }}
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="content">
-      <aside class="profile-card">
-        <img src="/images/renata-profile.jpg" alt="Renata Oliveira" class="avatar" />
-
+    <section class="links-wrapper">
+      <div class="left-column">
+        <img class="avatar" src="/images/renata-profile.jpg" alt="Renata Oliveira" />
         <h2>@renataoliveiraofficial</h2>
 
-        <div class="links">
-          <a v-for="item in sideLinks" :key="item.title" :href="item.url" class="side-link">
-            <span class="icon">{{ item.icon }}</span>
-            <span>
-              <strong>{{ item.title }}</strong>
-              <small>{{ item.subtitle }}</small>
-            </span>
-            <b>›</b>
-          </a>
-        </div>
-      </aside>
+        <a
+          v-for="link in links"
+          :key="link.title"
+          class="link-card"
+          :href="link.url"
+          target="_blank"
+        >
+          <span class="circle">{{ link.icon }}</span>
+          <span class="link-text">
+            <strong>{{ link.title }}</strong>
+            <small>{{ link.subtitle }}</small>
+          </span>
+          <span class="arrow">›</span>
+        </a>
+      </div>
 
-      <section class="feature-cards">
-        <a v-for="card in cards" :key="card.title" :href="card.url" class="feature-card">
+      <div class="right-column">
+        <a
+          v-for="card in featureCards"
+          :key="card.title"
+          class="feature-card"
+          :href="card.url"
+          target="_blank"
+        >
           <img :src="card.image" :alt="card.title" />
 
-          <div>
+          <div class="feature-text">
             <h3>{{ card.title }}</h3>
             <p>{{ card.subtitle }}</p>
-            <span>→</span>
+            <span class="round-arrow">→</span>
           </div>
         </a>
 
@@ -49,13 +55,36 @@
           <p>Thank you for being here!</p>
           <strong>♡ xo Renata</strong>
         </div>
-      </section>
+      </div>
     </section>
   </main>
 </template>
 
 <script setup>
-const sideLinks = [
+const socials = [
+  {
+    name: 'Instagram',
+    icon: '◎',
+    url: 'https://www.instagram.com/renataoliveiraofficial'
+  },
+  {
+    name: 'TikTok',
+    icon: '♪',
+    url: 'https://www.tiktok.com/@renataoliveiraofficial'
+  },
+  {
+    name: 'Amazon',
+    icon: 'a',
+    url: 'https://www.amazon.com/shop/renataoliveiraofficial'
+  },
+  {
+    name: 'YouTube',
+    icon: '▶',
+    url: 'https://www.youtube.com/'
+  }
+]
+
+const links = [
   {
     title: 'My Fave Things',
     subtitle: 'All my favorite finds',
@@ -77,14 +106,14 @@ const sideLinks = [
   {
     title: 'Shop My Recent Post',
     subtitle: 'Links from my latest posts',
-    icon: '🛍',
+    icon: '⌑',
     url: '#'
   },
   {
     title: 'Amazon Storefront',
     subtitle: 'My favorite finds',
     icon: 'a',
-    url: '#'
+    url: 'https://www.amazon.com/shop/renataoliveiraofficial'
   },
   {
     title: 'Travel With Me',
@@ -97,10 +126,28 @@ const sideLinks = [
     subtitle: 'Behind the scenes & more',
     icon: '✦',
     url: '#'
+  },
+  {
+    title: 'Follow Me on Instagram',
+    subtitle: '@renataoliveiraofficial',
+    icon: '◎',
+    url: 'https://www.instagram.com/renataoliveiraofficial'
+  },
+  {
+    title: 'Follow Me on TikTok',
+    subtitle: '@renataoliveiraofficial',
+    icon: '♪',
+    url: 'https://www.tiktok.com/@renataoliveiraofficial'
+  },
+  {
+    title: 'Follow Me on YouTube',
+    subtitle: 'Renata Oliveira',
+    icon: '▶',
+    url: 'https://www.youtube.com/'
   }
 ]
 
-const cards = [
+const featureCards = [
   {
     title: 'Shop My Recent Post',
     subtitle: 'All the links from my latest posts',
@@ -111,7 +158,7 @@ const cards = [
     title: 'Amazon Storefront',
     subtitle: 'My favorite finds, all in one place',
     image: '/images/amazon-finds.jpg',
-    url: '#'
+    url: 'https://www.amazon.com/shop/renataoliveiraofficial'
   },
   {
     title: 'Travel With Me',
@@ -126,133 +173,135 @@ const cards = [
 .links-page {
   min-height: 100vh;
   background: #fffaf7;
-  color: #2c211b;
-  font-family: Inter, sans-serif;
+  color: #2a211d;
+  font-family: 'Inter', sans-serif;
 }
 
 .hero {
-  min-height: 430px;
-  background-image: url('/images/renata-hero.jpg');
+  min-height: 440px;
+  background-image:
+    linear-gradient(to bottom, rgba(255,250,247,0) 45%, #fffaf7 96%),
+    url('/images/renata-hero.jpg');
   background-size: cover;
   background-position: center top;
-  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   text-align: center;
+  padding: 40px 20px 60px;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 35%, #fffaf7 95%);
-}
-
-.hero-content {
-  position: relative;
-  padding: 0 20px 45px;
-}
-
-.hero h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+.hero-text h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(4.8rem, 10vw, 8rem);
   font-weight: 400;
-  color: #7a553e;
+  color: #7c563f;
   margin: 0;
 }
 
-.hero p {
+.hero-text p {
   letter-spacing: 0.35em;
   font-size: 0.95rem;
-  margin: 10px 0 24px;
+  margin: 10px 0 28px;
 }
 
-.socials {
+.social-icons {
   display: flex;
   justify-content: center;
-  gap: 26px;
-  flex-wrap: wrap;
+  gap: 34px;
 }
 
-.socials a {
-  color: #b58b63;
+.social-icons a {
+  color: #b88d68;
+  font-size: 2rem;
   text-decoration: none;
-  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.content {
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: #7c563f;
+}
+
+.links-wrapper {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 45px 24px 80px;
+  padding: 25px 24px 80px;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 46px;
+  gap: 48px;
 }
 
-.profile-card {
+.left-column {
   text-align: center;
 }
 
 .avatar {
-  width: 116px;
-  height: 116px;
-  border-radius: 50%;
+  width: 112px;
+  height: 112px;
   object-fit: cover;
-  margin-bottom: 16px;
+  border-radius: 50%;
+  margin-bottom: 14px;
 }
 
-.profile-card h2 {
+.left-column h2 {
   font-size: 1rem;
-  margin-bottom: 22px;
+  margin: 0 0 22px;
 }
 
-.links {
-  display: grid;
-  gap: 13px;
-}
-
-.side-link {
+.link-card {
   display: grid;
   grid-template-columns: 48px 1fr 20px;
+  gap: 12px;
   align-items: center;
   text-align: left;
-  padding: 14px 18px;
-  border: 1px solid #e5d5ca;
-  border-radius: 18px;
   background: #fffdfb;
-  color: #2c211b;
+  border: 1px solid #e6d5ca;
+  border-radius: 18px;
+  padding: 13px 18px;
+  margin-bottom: 12px;
+  color: #2a211d;
   text-decoration: none;
-  box-shadow: 0 12px 35px rgba(116, 78, 50, 0.06);
+  box-shadow: 0 14px 35px rgba(105, 73, 50, 0.06);
+  transition: 0.3s ease;
 }
 
-.icon {
-  width: 38px;
-  height: 38px;
+.link-card:hover {
+  transform: translateY(-3px);
+  border-color: #cda18c;
+  box-shadow: 0 18px 45px rgba(105, 73, 50, 0.12);
+}
+
+.circle {
+  width: 39px;
+  height: 39px;
   border-radius: 50%;
-  background: #d8ad9d;
+  background: #d7aa99;
   color: white;
   display: grid;
   place-items: center;
-  font-weight: 600;
+  font-size: 1.3rem;
 }
 
-.side-link strong {
+.link-text strong {
   display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.28rem;
+  font-weight: 500;
 }
 
-.side-link small {
-  color: #6f625a;
+.link-text small {
+  color: #6f625b;
+  font-size: 0.92rem;
 }
 
-.side-link b {
+.arrow {
+  color: #8a634e;
   font-size: 1.8rem;
-  color: #9b745c;
   font-weight: 300;
 }
 
-.feature-cards {
+.right-column {
   display: grid;
   gap: 22px;
 }
@@ -261,13 +310,19 @@ const cards = [
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 230px;
-  border: 1px solid #e5d5ca;
-  border-radius: 18px;
   overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #e6d5ca;
   background: #fffdfb;
-  color: #2c211b;
+  color: #2a211d;
   text-decoration: none;
-  box-shadow: 0 18px 45px rgba(116, 78, 50, 0.07);
+  box-shadow: 0 18px 45px rgba(105, 73, 50, 0.07);
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #cda18c;
 }
 
 .feature-card img {
@@ -276,56 +331,77 @@ const cards = [
   object-fit: cover;
 }
 
-.feature-card div {
-  padding: 34px;
+.feature-text {
+  padding: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.feature-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.4rem;
+.feature-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
   font-weight: 400;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 
-.feature-card p {
+.feature-text p {
   margin: 0;
   line-height: 1.5;
 }
 
-.feature-card span {
+.round-arrow {
   margin-top: 24px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid #b58b63;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #b98d67;
+  color: #b98d67;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: #b58b63;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .thank-you {
-  border: 1px solid #e5d5ca;
-  border-radius: 18px;
-  padding: 45px;
+  padding: 48px 24px;
   text-align: center;
+  border-radius: 18px;
+  border: 1px solid #e6d5ca;
   background: linear-gradient(135deg, #fffdfb, #faeee8);
-  color: #b58b63;
+  color: #b98d67;
 }
 
 .thank-you p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  margin: 0 0 10px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin: 0 0 8px;
+}
+
+.thank-you strong {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
 }
 
 @media (max-width: 850px) {
-  .content {
+  .hero {
+    min-height: 420px;
+    background-position: center top;
+  }
+
+  .hero-text h1 {
+    font-size: 4.7rem;
+  }
+
+  .hero-text p {
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+  }
+
+  .links-wrapper {
     grid-template-columns: 1fr;
-    padding: 30px 16px 60px;
+    padding: 20px 16px 60px;
+    gap: 30px;
   }
 
   .feature-card {
@@ -336,12 +412,8 @@ const cards = [
     height: 220px;
   }
 
-  .hero {
-    min-height: 360px;
-  }
-
-  .hero p {
-    letter-spacing: 0.22em;
+  .feature-text h3 {
+    font-size: 2.2rem;
   }
 }
 </style>
