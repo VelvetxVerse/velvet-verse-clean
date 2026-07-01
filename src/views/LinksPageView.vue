@@ -1,7 +1,7 @@
 <template>
   <main class="links-page">
     <section class="hero">
-      <img class="hero-image" src="/images/renata-hero.jpg" alt="Renata Oliveira" />
+      <img class="hero-image" src="/mk1.png" alt="Renata Oliveira" />
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
@@ -17,7 +17,7 @@
 
     <section class="content">
       <aside class="profile">
-        <img class="avatar" src="/images/renata-profile.jpg" alt="Renata Oliveira" />
+        <img class="avatar" src="/mk3.png" alt="Renata Oliveira" />
         <h2>@renataoliveiraofficial</h2>
         <p class="bio">Curated beauty, travel, lifestyle and favorite finds.</p>
 
