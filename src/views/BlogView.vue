@@ -10,21 +10,23 @@
 
     <!-- ── NAVIGATION ── -->
     <nav class="nav">
-      <div class="nav-left">
-        <a href="/">HOME</a>
-        <a href="/makeup#about">ABOUT</a>
-        <a href="/makeup#services">SERVICES</a>
-      </div>
       <div class="nav-logo">
         <a href="/">
-          <span class="logo-name">Velvet Verse</span>
-          <small class="logo-sub">by Renata Oliveira</small>
+          <span class="logo-name">Renata Oliver</span>
+          <small class="logo-sub">Makeup &amp; Beauty</small>
         </a>
       </div>
-      <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">HOME</a>
         <a href="/blog" class="active">BLOG</a>
+        <a href="/makeup">MAKEUP</a>
+        <a href="/skincare">SKINCARE</a>
         <a href="/shop">SHOP</a>
+        <a href="/makeup#about">ABOUT</a>
         <a href="/makeup#contact">CONTACT</a>
+      </div>
+      <div class="nav-collab">
+        <a href="/makeup#contact" class="collab-btn">COLLABORATE</a>
       </div>
     </nav>
 
@@ -45,7 +47,7 @@
       <section class="intro-section">
         <p class="intro-eyebrow">Welcome to the Journal</p>
         <h2 class="intro-heading">Love Your Beauty Routine Again</h2>
-        <p class="intro-body">At Velvet Verse, I believe beauty should feel effortless and joyful. Here you'll find honest product reviews, step-by-step tutorials, skincare rituals, and beauty discoveries from my travels around the world.</p>
+        <p class="intro-body">Here you'll find honest product reviews, step-by-step tutorials, skincare rituals, and beauty discoveries from my travels around the world.</p>
         <a href="#posts" class="intro-btn">EXPLORE ARTICLES</a>
       </section>
 
@@ -66,32 +68,32 @@
       <section class="post-grid-section">
         <div class="post-grid">
           <article v-for="post in filteredPosts" :key="post.title" class="post-card">
-            <a href="#" class="post-card-img-wrap">
+            <a :href="post.slug" class="post-card-img-wrap">
               <img :src="post.img" :alt="post.title" />
             </a>
             <div class="post-card-body">
-              <p class="post-card-cat">{{ post.cat }}</p>
-              <h3 class="post-card-title"><a href="#">{{ post.title }}</a></h3>
+              <p class="post-card-cat" @click="activeTab = post.cat" style="cursor:pointer">{{ post.cat }}</p>
+              <h3 class="post-card-title"><a :href="post.slug">{{ post.title }}</a></h3>
               <p class="post-card-meta">{{ post.date }} · {{ post.read }}</p>
             </div>
           </article>
         </div>
         <div class="grid-cta">
-          <a href="#" class="view-all-btn">View All Articles</a>
+          <a href="/blog/all" class="view-all-btn">View All Articles</a>
         </div>
       </section>
 
       <!-- ── FEATURED POST (arch accent) ── -->
       <section class="featured-section">
         <div class="featured-inner">
-          <div class="featured-img-wrap">
+          <a href="/blog/bronzed-soft-glam" class="featured-img-wrap">
             <img src="/mk5.png" alt="Featured post" class="featured-img" />
-          </div>
+          </a>
           <div class="featured-text">
             <p class="featured-eyebrow">FEATURED ARTICLE</p>
             <h2 class="featured-title">Step-by-Step:<br><em>Bronzed Soft Glam</em></h2>
             <p class="featured-body">Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish. Perfect for everyday wear or a special occasion.</p>
-            <a href="#" class="featured-btn">READ ARTICLE →</a>
+            <a href="/blog/bronzed-soft-glam" class="featured-btn">READ ARTICLE →</a>
           </div>
           <div class="featured-arch">
             <div class="arch-shape">
@@ -142,7 +144,7 @@
 
       <!-- ── TESTIMONIAL ── -->
       <section class="testimonial-section">
-        <h2 class="testimonial-heading">The Velvet Experience</h2>
+        <h2 class="testimonial-heading">What Readers Are Saying</h2>
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-quote">"Renata's tutorials changed the way I do my makeup. Her product recommendations are always spot-on — I've never felt more confident in my skin."</p>
         <div class="testimonial-author">
@@ -155,7 +157,7 @@
       <section class="newsletter-section">
         <p class="newsletter-eyebrow">JOIN THE COMMUNITY</p>
         <h2 class="newsletter-heading">Join Our List</h2>
-        <p class="newsletter-sub">Subscribe and stay updated with the latest beauty tips, tutorials &amp; exclusive picks.</p>
+        <p class="newsletter-sub">Subscribe for the latest beauty tips, tutorials &amp; exclusive picks.</p>
         <form class="newsletter-form" @submit.prevent>
           <div class="newsletter-field">
             <input type="email" placeholder="Email" class="newsletter-input" />
@@ -169,7 +171,7 @@
         <h2 class="instagram-heading">Follow Along</h2>
         <a href="https://instagram.com/renataoliveiraofficial" target="_blank" class="instagram-handle-btn">@renataoliveiraofficial</a>
         <div class="instagram-grid">
-          <a href="https://instagram.com/renataoliveiraofficial" target="_blank" class="insta-img" v-for="img in instaImgs" :key="img">
+          <a v-for="img in instaImgs" :key="img" href="https://instagram.com/renataoliveiraofficial" target="_blank" class="insta-img">
             <img :src="img" alt="Instagram" />
           </a>
         </div>
@@ -179,44 +181,20 @@
 
     <!-- ── FOOTER ── -->
     <footer class="footer">
-      <div class="footer-top">
+      <div class="footer-inner">
         <div class="footer-logo">
-          <span class="footer-logo-name">Velvet Verse</span>
-          <small class="footer-logo-sub">by Renata Oliveira</small>
+          <a href="/"><span class="footer-logo-name">Renata Oliver</span></a>
+          <small class="footer-logo-sub">Makeup &amp; Beauty</small>
         </div>
-        <div class="footer-cols">
-          <div class="footer-col">
-            <p class="footer-col-heading">QUICK LINKS</p>
-            <a href="/">Home</a>
-            <a href="/makeup#about">About</a>
-            <a href="/blog">Blog</a>
-            <a href="/shop">Shop</a>
-            <a href="/makeup#contact">Contact</a>
-          </div>
-          <div class="footer-col">
-            <p class="footer-col-heading">LEGAL</p>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-          </div>
-          <div class="footer-col">
-            <p class="footer-col-heading">CONNECT</p>
-            <a href="https://instagram.com/renataoliveiraofficial" target="_blank">Instagram</a>
-            <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank">TikTok</a>
-            <a href="https://pinterest.com" target="_blank">Pinterest</a>
-            <a href="https://youtube.com" target="_blank">YouTube</a>
-          </div>
-          <div class="footer-col footer-newsletter-col">
-            <p class="footer-col-heading">STAY IN TOUCH</p>
-            <form class="footer-form" @submit.prevent>
-              <div class="footer-field">
-                <input type="email" placeholder="Email" class="footer-input" />
-                <button type="submit" class="footer-arrow">→</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/makeup">Makeup</a>
+          <a href="/skincare">Skincare</a>
+          <a href="/shop">Shop</a>
+          <a href="/makeup#about">About</a>
+          <a href="/makeup#contact">Contact</a>
+        </nav>
         <div class="footer-socials">
           <a href="https://instagram.com/renataoliveiraofficial" target="_blank" aria-label="Instagram">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -231,8 +209,8 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6a3 3 0 00-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
           </a>
         </div>
-        <p class="footer-copy">© 2025 Velvet Verse by Renata Oliveira · All rights reserved</p>
       </div>
+      <p class="footer-copy">© 2025 Renata Oliver · All rights reserved · <a href="/privacy">Privacy Policy</a></p>
     </footer>
 
   </div>
@@ -252,18 +230,18 @@ function scrollFavs(dir) {
 }
 
 const allPosts = [
-  { cat: 'MAKEUP', title: '10 Must-Have Products for Your Makeup Bag', date: 'June 20, 2025', read: '4 MIN READ', img: '/mk9.png', tags: ['MAKEUP'] },
-  { cat: 'REVIEWS', title: 'Foundation Showdown: Dewy vs. Matte', date: 'June 14, 2025', read: '5 MIN READ', img: '/mk10.png', tags: ['REVIEWS'] },
-  { cat: 'TUTORIALS', title: 'How to Make Your Makeup Last All Day', date: 'June 8, 2025', read: '3 MIN READ', img: '/mk11.png', tags: ['TUTORIALS'] },
-  { cat: 'TUTORIALS', title: 'The Perfect Smoky Eye in 10 Minutes', date: 'May 30, 2025', read: '4 MIN READ', img: '/mk12.png', tags: ['TUTORIALS'] },
-  { cat: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin', date: 'May 22, 2025', read: '3 MIN READ', img: '/mk13.png', tags: ['LIFESTYLE'] },
-  { cat: 'REVIEWS', title: 'Dior Addict Lip Maximizer: Worth the Hype?', date: 'May 15, 2025', read: '5 MIN READ', img: '/mk2.png', tags: ['REVIEWS'] },
-  { cat: 'SKINCARE', title: 'Skin Prep: My Glowing Base Routine', date: 'May 8, 2025', read: '4 MIN READ', img: '/mk4.png', tags: ['SKINCARE'] },
-  { cat: 'MAKEUP', title: 'My Go-To Everyday Makeup Routine', date: 'April 28, 2025', read: '3 MIN READ', img: '/mk6.png', tags: ['MAKEUP'] },
-  { cat: 'SKINCARE', title: 'The Sunscreen Edit: My Top 5 Picks', date: 'April 10, 2025', read: '4 MIN READ', img: '/mk7.png', tags: ['SKINCARE'] },
-  { cat: 'LIFESTYLE', title: 'Paris Beauty Finds: What I Bought & Loved', date: 'April 20, 2025', read: '6 MIN READ', img: '/mk8.png', tags: ['LIFESTYLE'] },
-  { cat: 'TUTORIALS', title: 'No-Makeup Makeup: A Step-by-Step Guide', date: 'March 28, 2025', read: '5 MIN READ', img: '/mk3.png', tags: ['TUTORIALS'] },
-  { cat: 'REVIEWS', title: 'Charlotte Tilbury Pillow Talk: Full Review', date: 'March 15, 2025', read: '4 MIN READ', img: '/mk5.png', tags: ['REVIEWS'] },
+  { cat: 'MAKEUP',    title: '10 Must-Have Products for Your Makeup Bag',    date: 'June 20, 2025',  read: '4 MIN READ', img: '/mk9.png',  tags: ['MAKEUP'],    slug: '/blog/must-have-products' },
+  { cat: 'REVIEWS',   title: 'Foundation Showdown: Dewy vs. Matte',          date: 'June 14, 2025',  read: '5 MIN READ', img: '/mk10.png', tags: ['REVIEWS'],   slug: '/blog/foundation-showdown' },
+  { cat: 'TUTORIALS', title: 'How to Make Your Makeup Last All Day',          date: 'June 8, 2025',   read: '3 MIN READ', img: '/mk11.png', tags: ['TUTORIALS'], slug: '/blog/makeup-last-all-day' },
+  { cat: 'TUTORIALS', title: 'The Perfect Smoky Eye in 10 Minutes',           date: 'May 30, 2025',   read: '4 MIN READ', img: '/mk12.png', tags: ['TUTORIALS'], slug: '/blog/smoky-eye' },
+  { cat: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin',     date: 'May 22, 2025',   read: '3 MIN READ', img: '/mk13.png', tags: ['LIFESTYLE'], slug: '/blog/morning-ritual' },
+  { cat: 'REVIEWS',   title: 'Dior Addict Lip Maximizer: Worth the Hype?',    date: 'May 15, 2025',   read: '5 MIN READ', img: '/mk2.png',  tags: ['REVIEWS'],   slug: '/blog/dior-lip-maximizer' },
+  { cat: 'SKINCARE',  title: 'Skin Prep: My Glowing Base Routine',            date: 'May 8, 2025',    read: '4 MIN READ', img: '/mk4.png',  tags: ['SKINCARE'],  slug: '/blog/skin-prep' },
+  { cat: 'MAKEUP',    title: 'My Go-To Everyday Makeup Routine',              date: 'April 28, 2025', read: '3 MIN READ', img: '/mk6.png',  tags: ['MAKEUP'],    slug: '/blog/everyday-makeup' },
+  { cat: 'SKINCARE',  title: 'The Sunscreen Edit: My Top 5 Picks',            date: 'April 10, 2025', read: '4 MIN READ', img: '/mk7.png',  tags: ['SKINCARE'],  slug: '/blog/sunscreen-edit' },
+  { cat: 'LIFESTYLE', title: 'Paris Beauty Finds: What I Bought & Loved',     date: 'April 20, 2025', read: '6 MIN READ', img: '/mk8.png',  tags: ['LIFESTYLE'], slug: '/blog/paris-beauty' },
+  { cat: 'TUTORIALS', title: 'No-Makeup Makeup: A Step-by-Step Guide',        date: 'March 28, 2025', read: '5 MIN READ', img: '/mk3.png',  tags: ['TUTORIALS'], slug: '/blog/no-makeup-look' },
+  { cat: 'REVIEWS',   title: 'Charlotte Tilbury Pillow Talk: Full Review',    date: 'March 15, 2025', read: '4 MIN READ', img: '/mk5.png',  tags: ['REVIEWS'],   slug: '/blog/charlotte-tilbury' },
 ]
 
 const filteredPosts = computed(() => {
@@ -272,13 +250,13 @@ const filteredPosts = computed(() => {
 })
 
 const favBrands = [
-  { name: 'Dior Beauty', img: '/mk2.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'Chanel', img: '/mk3.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'Medicube', img: '/mk4.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'Beauty of Joseon', img: '/mk6.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'Tirtir', img: '/mk7.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'YSL Beauty', img: '/mk8.png', link: 'https://www.amazon.com/shop/welovejetlag' },
-  { name: 'Hourglass', img: '/mk13.png', link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Dior Beauty',       img: '/mk2.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Chanel',            img: '/mk3.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Medicube',          img: '/mk4.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Beauty of Joseon',  img: '/mk6.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Tirtir',            img: '/mk7.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'YSL Beauty',        img: '/mk8.png',  link: 'https://www.amazon.com/shop/welovejetlag' },
+  { name: 'Hourglass',         img: '/mk13.png', link: 'https://www.amazon.com/shop/welovejetlag' },
   { name: 'Charlotte Tilbury', img: '/mk12.png', link: 'https://www.amazon.com/shop/welovejetlag' },
 ]
 
@@ -317,7 +295,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   padding-right: 60px;
 }
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
@@ -329,37 +307,23 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  height: 72px;
+  height: 68px;
   position: sticky;
   top: 0;
   z-index: 30;
 }
-.nav-left, .nav-right {
-  display: flex;
-  gap: 32px;
-}
-.nav-left a, .nav-right a {
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #5a3a3a;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-left a:hover, .nav-right a:hover, .nav-right a.active { color: #c8848a; }
 .nav-logo a {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3px;
+  align-items: flex-start;
+  gap: 2px;
 }
 .logo-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #1a1a1a;
 }
 .logo-sub {
@@ -368,6 +332,34 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #c8848a;
   text-transform: uppercase;
 }
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5a3a3a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: #c8848a; }
+.collab-btn {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c8848a;
+  text-decoration: none;
+  border: 1px solid #c8848a;
+  padding: 7px 18px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.collab-btn:hover { background: #c8848a; color: #fff; }
 
 /* ── HERO ── */
 .hero {
@@ -429,16 +421,15 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   padding: 13px 32px;
   font-weight: 500;
   transition: all 0.25s;
-  background: transparent;
 }
-.hero-btn:hover { background: #f2c4c4; border-color: #f2c4c4; color: #fff; }
+.hero-btn:hover { background: #f2c4c4; border-color: #f2c4c4; }
 
 /* ── INTRO ── */
 .intro-section {
   background: #fff;
   text-align: center;
-  padding: 80px 24px;
-  max-width: 640px;
+  padding: 72px 24px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .intro-eyebrow {
@@ -447,22 +438,22 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-transform: uppercase;
   color: #c8848a;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .intro-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.15;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .intro-body {
-  font-size: 15px;
+  font-size: 14px;
   color: #6a4a4a;
   line-height: 1.85;
   font-weight: 300;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .intro-btn {
   display: inline-block;
@@ -472,7 +463,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #fff;
   text-decoration: none;
   background: #f2c4c4;
-  padding: 14px 36px;
+  padding: 13px 32px;
   font-weight: 500;
   transition: background 0.2s;
 }
@@ -483,7 +474,6 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   background: #fdf5f5;
   border-top: 1px solid #f0e0e0;
   border-bottom: 1px solid #f0e0e0;
-  padding: 0;
 }
 .tabs-row {
   max-width: 1100px;
@@ -514,20 +504,20 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 .post-grid-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 56px 24px;
 }
 .post-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 28px;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 .post-card { display: flex; flex-direction: column; }
 .post-card-img-wrap {
   display: block;
   overflow: hidden;
   aspect-ratio: 4/5;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   background: #fdf0f0;
 }
 .post-card-img-wrap img {
@@ -545,7 +535,9 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 8px;
+  transition: opacity 0.2s;
 }
+.post-card-cat:hover { opacity: 0.7; }
 .post-card-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px;
@@ -556,7 +548,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 }
 .post-card-title a { text-decoration: none; color: inherit; transition: color 0.2s; }
 .post-card-title a:hover { color: #c8848a; }
-.post-card-meta { font-size: 11px; color: #b09090; letter-spacing: 0.5px; }
+.post-card-meta { font-size: 11px; color: #b09090; }
 
 .grid-cta { text-align: center; }
 .view-all-btn {
@@ -575,19 +567,20 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 /* ── FEATURED POST ── */
 .featured-section {
   background: #fdf5f5;
-  padding: 80px 24px;
+  padding: 72px 24px;
 }
 .featured-inner {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 280px;
+  grid-template-columns: 1fr 1fr 260px;
   gap: 48px;
   align-items: center;
 }
 .featured-img-wrap {
+  display: block;
   overflow: hidden;
-  height: 480px;
+  height: 460px;
 }
 .featured-img {
   width: 100%;
@@ -604,15 +597,15 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #c8848a;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .featured-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 3.5vw, 46px);
+  font-size: clamp(30px, 3.5vw, 44px);
   font-weight: 300;
   color: #1a1a1a;
   line-height: 1.15;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .featured-title em { font-style: italic; }
 .featured-body {
@@ -620,7 +613,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #6a4a4a;
   line-height: 1.85;
   font-weight: 300;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 .featured-btn {
   font-size: 10px;
@@ -635,29 +628,20 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   transition: color 0.2s;
 }
 .featured-btn:hover { color: #a06068; border-color: #a06068; }
-.featured-arch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.featured-arch { display: flex; justify-content: center; align-items: center; }
 .arch-shape {
-  width: 220px;
-  height: 320px;
-  border-radius: 110px 110px 0 0;
+  width: 210px;
+  height: 300px;
+  border-radius: 105px 105px 0 0;
   overflow: hidden;
   background: #f2c4c4;
 }
-.arch-shape img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.arch-shape img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ── PRESS ── */
 .press-section {
   background: #f2c4c4;
-  padding: 32px 24px;
+  padding: 28px 24px;
   text-align: center;
 }
 .press-label {
@@ -666,13 +650,13 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-transform: uppercase;
   color: rgba(255,255,255,0.7);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .press-logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 .press-logo {
@@ -687,7 +671,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 /* ── FAVORITES ── */
 .favorites-section {
   background: #fff;
-  padding: 72px 0 60px;
+  padding: 64px 0 52px;
   text-align: center;
 }
 .favorites-eyebrow {
@@ -696,11 +680,11 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #c8848a;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .favorites-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 400;
   color: #1a1a1a;
   margin-bottom: 10px;
@@ -709,7 +693,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   font-size: 13px;
   color: #8a6060;
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 .favorites-track-wrap {
   display: flex;
@@ -721,8 +705,8 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 .fav-arrow {
   background: none;
   border: 1px solid #f0d0d0;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   font-size: 18px;
   color: #c8848a;
@@ -736,7 +720,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 .fav-arrow:hover { background: #f2c4c4; color: #fff; border-color: #f2c4c4; }
 .favorites-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -748,16 +732,16 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
-  width: 160px;
+  width: 150px;
   transition: opacity 0.2s;
 }
 .fav-item:hover { opacity: 0.8; }
 .fav-img-wrap {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   background: #fdf0f0;
   overflow: hidden;
   border-radius: 4px;
@@ -765,7 +749,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 .fav-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fav-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #1a1a1a;
   text-align: center;
@@ -777,7 +761,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-transform: uppercase;
   font-weight: 600;
 }
-.favorites-cta { margin-top: 40px; }
+.favorites-cta { margin-top: 36px; }
 .amazon-btn {
   display: inline-block;
   font-size: 10px;
@@ -786,7 +770,7 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   color: #fff;
   text-decoration: none;
   background: #f2c4c4;
-  padding: 15px 40px;
+  padding: 14px 36px;
   font-weight: 500;
   transition: background 0.2s;
 }
@@ -795,23 +779,23 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 /* ── TESTIMONIAL ── */
 .testimonial-section {
   background: #fdf5f5;
-  padding: 80px 24px;
+  padding: 72px 24px;
   text-align: center;
   border-top: 1px solid #f0e0e0;
   border-bottom: 1px solid #f0e0e0;
 }
 .testimonial-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 400;
   color: #1a1a1a;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .testimonial-stars {
   font-size: 20px;
   color: #f2c4c4;
   letter-spacing: 4px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 .testimonial-quote {
   font-family: 'Cormorant Garamond', serif;
@@ -819,8 +803,8 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   font-style: italic;
   font-weight: 300;
   color: #3a2a2a;
-  max-width: 680px;
-  margin: 0 auto 28px;
+  max-width: 640px;
+  margin: 0 auto 24px;
   line-height: 1.6;
 }
 .testimonial-author {
@@ -830,22 +814,17 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   gap: 12px;
 }
 .testimonial-avatar {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
 }
-.testimonial-name {
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  color: #8a6060;
-  font-weight: 500;
-}
+.testimonial-name { font-size: 12px; letter-spacing: 1.5px; color: #8a6060; font-weight: 500; }
 
 /* ── NEWSLETTER ── */
 .newsletter-section {
   background: #f2c4c4;
-  padding: 80px 24px;
+  padding: 72px 24px;
   text-align: center;
 }
 .newsletter-eyebrow {
@@ -854,26 +833,26 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-transform: uppercase;
   color: rgba(255,255,255,0.7);
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .newsletter-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .newsletter-sub {
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(255,255,255,0.8);
   font-weight: 300;
-  margin-bottom: 36px;
-  max-width: 440px;
+  margin-bottom: 32px;
+  max-width: 420px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
 }
-.newsletter-form { max-width: 400px; margin: 0 auto; }
+.newsletter-form { max-width: 380px; margin: 0 auto; }
 .newsletter-field {
   display: flex;
   align-items: flex-end;
@@ -906,15 +885,15 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 /* ── INSTAGRAM ── */
 .instagram-section {
   background: #fff;
-  padding: 72px 24px 60px;
+  padding: 64px 24px 52px;
   text-align: center;
 }
 .instagram-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 400;
   color: #1a1a1a;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .instagram-handle-btn {
   display: inline-block;
@@ -925,24 +904,20 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
   text-decoration: none;
   background: #1a1a1a;
   border-radius: 100px;
-  padding: 10px 28px;
+  padding: 10px 26px;
   font-weight: 500;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   transition: background 0.2s;
 }
 .instagram-handle-btn:hover { background: #c8848a; }
 .instagram-grid {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.insta-img {
-  display: block;
-  aspect-ratio: 1;
-  overflow: hidden;
-}
+.insta-img { display: block; aspect-ratio: 1; overflow: hidden; }
 .insta-img img {
   width: 100%;
   height: 100%;
@@ -952,121 +927,83 @@ const instaImgs = ['/mk1.png', '/mk5.png', '/mk9.png', '/mk11.png']
 }
 .insta-img:hover img { transform: scale(1.06); }
 
-/* ── FOOTER ── */
-.footer { background: #f2c4c4; }
-.footer-top {
+/* ── FOOTER (compact) ── */
+.footer {
+  background: #f2c4c4;
+  padding: 36px 48px 20px;
+}
+.footer-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 64px 24px 48px;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
+  margin-bottom: 16px;
 }
-.footer-logo { display: flex; flex-direction: column; gap: 6px; }
+.footer-logo { display: flex; flex-direction: column; gap: 4px; }
+.footer-logo a { text-decoration: none; }
 .footer-logo-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: 2px;
   color: #fff;
 }
 .footer-logo-sub {
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 2.5px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
 }
-.footer-cols {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-.footer-col { display: flex; flex-direction: column; gap: 10px; }
-.footer-col-heading {
-  font-size: 9px;
-  letter-spacing: 2.5px;
+.footer-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-nav a {
+  font-size: 10px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.footer-col a {
-  font-size: 13px;
   color: rgba(255,255,255,0.85);
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 500;
   transition: color 0.2s;
 }
-.footer-col a:hover { color: #fff; }
-.footer-field {
-  display: flex;
-  align-items: flex-end;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
-  padding-bottom: 6px;
-  margin-top: 4px;
-}
-.footer-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 13px;
-  font-family: 'Jost', sans-serif;
-  color: #fff;
-  font-weight: 300;
-}
-.footer-input::placeholder { color: rgba(255,255,255,0.5); }
-.footer-arrow {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #fff;
-  cursor: pointer;
-  padding: 0;
-  transition: transform 0.2s;
-}
-.footer-arrow:hover { transform: translateX(3px); }
-.footer-bottom {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-socials { display: flex; gap: 16px; }
+.footer-nav a:hover { color: #fff; }
+.footer-socials { display: flex; gap: 14px; }
 .footer-socials a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
 .footer-socials a:hover { color: #fff; }
 .footer-copy {
+  max-width: 1100px;
+  margin: 0 auto;
   font-size: 10px;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 1px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+  text-align: center;
 }
+.footer-copy a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.footer-copy a:hover { color: #fff; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .featured-inner { grid-template-columns: 1fr 1fr; }
   .featured-arch { display: none; }
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-cols { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .nav { padding: 0 24px; }
-  .nav-left { display: none; }
-  .nav-right { display: none; }
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-collab { display: none; }
   .post-grid { grid-template-columns: repeat(2, 1fr); }
   .featured-inner { grid-template-columns: 1fr; }
   .instagram-grid { grid-template-columns: repeat(2, 1fr); }
   .tabs-row { flex-wrap: wrap; }
   .tab-btn { flex: none; width: 50%; border-bottom: 1px solid #f0e0e0; }
+  .footer { padding: 28px 24px 16px; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  .footer-nav { justify-content: center; }
 }
 @media (max-width: 480px) {
   .post-grid { grid-template-columns: 1fr; }
   .hero { height: 380px; }
-  .footer-cols { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
 }
 </style>
