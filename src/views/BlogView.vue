@@ -3,953 +3,661 @@
 
     <!-- ── NAV ── -->
     <nav class="nav">
-      <div class="logo">
-        <span>RENATA</span>
-        <small>MAKEUP & BEAUTY</small>
+      <div class="nav-top-bar">
+        <div class="nav-socials">
+          <a href="https://instagram.com/renataoliveiraofficial" target="_blank" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" aria-label="TikTok">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.37 1.27-5.37s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.21-2.46 3.21-5.37 0-2.22-1.5-3.88-4.22-3.88-3.08 0-5 2.3-5 4.87 0 .88.26 1.5.67 1.98.19.22.21.31.14.57-.05.18-.16.63-.2.8-.07.27-.28.37-.51.27-1.44-.6-2.11-2.21-2.11-4.02 0-2.98 2.52-6.56 7.54-6.56 4.03 0 6.68 2.93 6.68 6.07 0 4.16-2.3 7.27-5.68 7.27-1.14 0-2.21-.61-2.57-1.3l-.7 2.69c-.25.97-.93 2.18-1.39 2.92.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6a3 3 0 00-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+        </div>
+        <p class="nav-announce">BEAUTY · MAKEUP · LIFESTYLE · TRAVEL</p>
+        <a class="nav-collab-btn" href="https://www.velvetxverse.com/collaborate">COLLABORATE</a>
       </div>
-      <div class="nav-links">
-        <a href="/makeup">Home</a>
-        <a href="/makeup#about">About</a>
-        <a href="/makeup#brands">Brands</a>
-        <a href="/makeup#services">Services</a>
-        <a href="/blog" class="active">Blog</a>
-        <a href="/makeup#contact">Contact</a>
+      <div class="nav-main">
+        <div class="logo">
+          <a href="/">
+            <span class="logo-name">RENATA OLIVEIRA</span>
+            <small class="logo-sub">BEAUTY &amp; MAKEUP</small>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="/makeup">HOME</a>
+          <a href="/makeup#about">ABOUT</a>
+          <a href="/makeup#services">SERVICES</a>
+          <a href="/blog" class="active">BLOG</a>
+          <a href="/makeup#contact">CONTACT</a>
+        </div>
       </div>
-      <a class="nav-btn" href="https://www.velvetxverse.com/collaborate">Collaborate</a>
     </nav>
 
     <main>
 
-      <!-- ── HERO ── -->
-      <section class="hero box">
-        <img src="/mk1.png" alt="Blog hero" class="hero-img" />
-        <div class="hero-overlay">
-          <p class="eyebrow-light">NEW ON THE BLOG</p>
-          <h1>EFFORTLESS<br>EVERYDAY GLAM</h1>
-          <div class="hero-divider"></div>
-          <p>A soft, radiant makeup look that enhances your natural beauty and boosts your confidence.</p>
-          <a href="#featured" class="hero-btn">Read the Post</a>
+      <!-- ── HERO BANNER ── -->
+      <section class="hero-banner">
+        <img src="/mk1.png" alt="Blog hero" class="hero-banner-img" />
+        <div class="hero-banner-overlay">
+          <p class="hero-eyebrow">THE JOURNAL</p>
+          <h1 class="hero-title">Beauty, Makeup  
+<em>&amp; Lifestyle</em></h1>
+          <p class="hero-sub">Tips, tutorials, and honest reviews from a professional makeup artist</p>
         </div>
       </section>
 
-      <!-- ── BRANDS STRIP ── -->
-      <section class="brands-strip">
-        <p class="brands-eyebrow">FEATURED & COLLABORATED WITH</p>
-        <div class="brands-row">
-          <span>Dior</span><span class="div">|</span>
-          <span>Pixi Beauty</span><span class="div">|</span>
-          <span>YSL</span><span class="div">|</span>
-          <span>IT Cosmetics</span><span class="div">|</span>
-          <span>NYX Cosmetics</span><span class="div">|</span>
-          <span>Eucerin</span><span class="div">|</span>
-          <span>L'Oréal</span><span class="div">|</span>
-          <span>Bobbi Brown</span>
-        </div>
-      </section>
-
-      <!-- ── BROWSE BY CATEGORY ── -->
-      <section class="box cats-section">
-        <div class="cats-header">
-          <h2 class="script-heading">Browse by <em>Category</em></h2>
-          <div class="cats-arrows">
-            <button class="arrow-btn">&#8592;</button>
-            <button class="arrow-btn">&#8594;</button>
+      <!-- ── LATEST POST ── -->
+      <section class="latest-post-section">
+        <div class="latest-post-inner">
+          <div class="latest-post-img">
+            <img src="/mk5.png" alt="Latest post" />
           </div>
-        </div>
-        <div class="cats-grid">
-          <div v-for="(cat, i) in categories" :key="i" class="cat-card">
-            <img :src="cat.img" :alt="cat.label" />
-            <p class="cat-label">{{ cat.label }}</p>
+          <div class="latest-post-text">
+            <p class="section-eyebrow">LATEST POST</p>
+            <p class="post-cat-tag">MAKEUP TUTORIAL</p>
+            <h2 class="latest-post-title">Step-by-Step:  
+<em>Bronzed Soft Glam</em></h2>
+            <p class="latest-post-date">June 28, 2025</p>
+            <p class="latest-post-excerpt">Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish. Perfect for everyday wear or a special occasion — this look works for every skin tone.</p>
+            <a href="#" class="read-more-arrow">Read More →</a>
           </div>
         </div>
       </section>
 
-      <!-- ── FEATURED + SIDEBAR ── -->
-      <section id="featured" class="featured-layout">
-
-        <!-- Featured posts -->
-        <div class="box featured-box">
-          <p class="eyebrow">FEATURED POSTS</p>
-          <div class="featured-inner">
-            <div class="feat-post">
-              <div class="featured-img-wrap">
-                <img src="/mk5.png" alt="Featured post 1" />
-              </div>
-              <div class="featured-text">
-                <p class="category">MAKEUP TUTORIAL</p>
-                <h2>STEP-BY-STEP:<br><em>Bronzed Soft Glam</em></h2>
-                <p>Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish.</p>
-                <a href="#" class="read-btn">Read More</a>
-              </div>
-            </div>
-            <div class="feat-post">
-              <div class="featured-img-wrap">
-                <img src="/mk4.png" alt="Featured post 2" />
-              </div>
-              <div class="featured-text">
-                <p class="category">SKINCARE</p>
-                <h2>SKIN PREP:<br><em>Glowing Base Routine</em></h2>
-                <p>The exact steps I follow before every makeup application for a flawless, long-lasting finish.</p>
-                <a href="#" class="read-btn">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-          <div class="box sidebar-welcome">
-            <p class="eyebrow center">WELCOME</p>
-            <div class="welcome-photo">
-              <img src="/mk3.png" alt="Renata Oliveira" />
-            </div>
-            <p>Hi, I'm obsessed with all things beauty! I love sharing makeup tips, product reviews, and tutorials to help you feel your most beautiful.</p>
-            <p class="signature">xo, Renata</p>
-          </div>
-
-          <div class="box sidebar-popular">
-            <p class="eyebrow">POPULAR POSTS</p>
-            <div v-for="(post, i) in popularPosts" :key="i" class="pop-post">
-              <img :src="post.img" :alt="post.title" />
-              <div>
-                <p class="category">{{ post.cat }}</p>
-                <p class="pop-title">{{ post.title }}</p>
-              </div>
-            </div>
-            <a href="#recent" class="view-all-btn">View All Posts</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── WHAT'S ON THE BLOG ── -->
-      <section class="whats-on-blog">
-        <h2 class="script-heading-lg">what's on the blog</h2>
-        <div class="filter-tabs">
-          <button v-for="tab in tabs" :key="tab"
-            class="tab-btn"
+      <!-- ── CATEGORY TABS ── -->
+      <section class="category-tabs-section">
+        <div class="category-tabs">
+          <button
+            v-for="tab in tabs"
+            :key="tab"
+            class="cat-tab"
             :class="{ active: activeTab === tab }"
-            @click="activeTab = tab">{{ tab }}</button>
+            @click="activeTab = tab"
+          >{{ tab }}</button>
+          <button class="cat-tab read-all-tab">READ ALL</button>
         </div>
       </section>
 
-      <!-- ── RECENT POSTS ── -->
-      <section id="recent" class="box posts-box">
-        <p class="eyebrow">RECENT POSTS</p>
-        <div class="blog-grid">
-          <article v-for="post in recentPosts" :key="post.title" class="post-card">
-            <div class="post-img-wrap">
+      <!-- ── POST GRID ── -->
+      <section class="post-grid-section">
+        <div class="post-grid">
+          <article
+            v-for="post in filteredPosts"
+            :key="post.title"
+            class="post-card"
+          >
+            <a href="#" class="post-card-img-wrap">
               <img :src="post.img" :alt="post.title" />
-            </div>
-            <div class="post-body">
-              <p class="category">{{ post.cat }}</p>
-              <h3>{{ post.title }}</h3>
-              <p>{{ post.excerpt }}</p>
-              <a href="#">Read More →</a>
+            </a>
+            <div class="post-card-body">
+              <p class="post-card-cat">{{ post.cat }}</p>
+              <h3 class="post-card-title">
+                <a href="#">{{ post.title }}</a>
+              </h3>
+              <p class="post-card-date">{{ post.date }}</p>
             </div>
           </article>
         </div>
-      </section>
-
-      <!-- ── MORE POSTS ── -->
-      <section class="box posts-box">
-        <div class="blog-grid">
-          <article v-for="post in morePosts" :key="post.title" class="post-card">
-            <div class="post-img-wrap">
-              <img :src="post.img" :alt="post.title" />
-            </div>
-            <div class="post-body">
-              <p class="category">{{ post.cat }}</p>
-              <h3>{{ post.title }}</h3>
-              <a href="#">Read More →</a>
-            </div>
-          </article>
+        <div class="load-more-wrap">
+          <a href="#" class="load-more-btn">VIEW ALL POSTS</a>
         </div>
       </section>
 
       <!-- ── NEWSLETTER ── -->
-      <section class="box contact">
-        <p class="eyebrow">JOIN THE COMMUNITY</p>
-        <h2>Beauty in Your Inbox</h2>
-        <p>Subscribe to get the latest beauty tips, product picks, and blog updates!</p>
-        <div class="subscribe-row">
-          <input type="email" placeholder="Enter your email..." />
-          <button>Subscribe</button>
+      <section class="newsletter-section">
+        <div class="newsletter-inner">
+          <p class="section-eyebrow">JOIN THE COMMUNITY</p>
+          <h2 class="newsletter-title">Beauty in Your Inbox</h2>
+          <p class="newsletter-sub">Subscribe for the latest beauty tips, product picks, and blog updates.</p>
+          <form class="newsletter-form" @submit.prevent>
+            <input type="email" placeholder="Your email address" class="newsletter-input" />
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </form>
         </div>
       </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ── FOOTER ── -->
     <footer class="footer">
-      <div class="footer-social">
-        <a href="https://instagram.com/renataoliveiraofficial" target="_blank" class="social-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          @renataoliveiraofficial
-        </a>
-        <a href="https://instagram.com/renataxolivermakeup" target="_blank" class="social-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          @renataxolivermakeup
-        </a>
-        <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" class="social-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
-          TikTok
-        </a>
-        <a href="https://pinterest.com" target="_blank" class="social-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.37 1.27-5.37s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.21-2.46 3.21-5.37 0-2.22-1.5-3.88-4.22-3.88-3.08 0-5 2.3-5 4.87 0 .88.26 1.5.67 1.98.19.22.21.31.14.57-.05.18-.16.63-.2.8-.07.27-.28.37-.51.27-1.44-.6-2.11-2.21-2.11-4.02 0-2.98 2.52-6.56 7.54-6.56 4.03 0 6.68 2.93 6.68 6.07 0 4.16-2.3 7.27-5.68 7.27-1.14 0-2.21-.61-2.57-1.3l-.7 2.69c-.25.97-.93 2.18-1.39 2.92.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-          Pinterest
-        </a>
-        <a href="mailto:velvetverse@velvetxverse.com" class="social-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          velvetverse@velvetxverse.com
-        </a>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="footer-logo-name">RENATA OLIVEIRA</span>
+          <small class="footer-logo-sub">BEAUTY &amp; MAKEUP</small>
+        </div>
+        <nav class="footer-links">
+          <a href="/makeup">Home</a>
+          <a href="/makeup#about">About</a>
+          <a href="/blog">Blog</a>
+          <a href="/makeup#contact">Contact</a>
+          <a href="/collaborate">Collaborate</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://instagram.com/renataoliveiraofficial" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.37 1.27-5.37s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.21-2.46 3.21-5.37 0-2.22-1.5-3.88-4.22-3.88-3.08 0-5 2.3-5 4.87 0 .88.26 1.5.67 1.98.19.22.21.31.14.57-.05.18-.16.63-.2.8-.07.27-.28.37-.51.27-1.44-.6-2.11-2.21-2.11-4.02 0-2.98 2.52-6.56 7.54-6.56 4.03 0 6.68 2.93 6.68 6.07 0 4.16-2.3 7.27-5.68 7.27-1.14 0-2.21-.61-2.57-1.3l-.7 2.69c-.25.97-.93 2.18-1.39 2.92.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6a3 3 0 00-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+        </div>
       </div>
-      <p class="footer-copy">&copy; 2024 Renata Oliveira &middot; All rights reserved</p>
+      <p class="footer-copy">&copy; 2025 Renata Oliveira &middot; All rights reserved &middot; <a href="/privacy">Privacy Policy</a></p>
     </footer>
+
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const activeTab = ref('REVIEWS')
+const activeTab = ref('ALL' )
 
-const tabs = ['REVIEWS', 'SKIN', 'MAKEUP', 'HAIR', 'BODY', 'FRAGRANCE', 'NAILS']
+const tabs = ['ALL', 'MAKEUP', 'SKINCARE', 'TUTORIALS', 'REVIEWS', 'LIFESTYLE']
 
-const categories = [
-  { label: 'REVIEWS', img: '/mk4.png' },
-  { label: 'MAKEUP', img: '/mk5.png' },
-  { label: 'BEAUTY TIPS', img: '/mk6.png' },
-  { label: 'SKINCARE', img: '/mk7.png' },
-  { label: 'TUTORIALS', img: '/mk8.png' },
-  { label: 'FAVORITES', img: '/mk9.png' },
+const allPosts = [
+  { cat: 'MAKEUP', title: '10 Must-Have Products for Your Makeup Bag', date: 'June 20, 2025', img: '/mk9.png', tags: ['MAKEUP'] },
+  { cat: 'REVIEWS', title: 'Foundation Showdown: Dewy vs. Matte', date: 'June 14, 2025', img: '/mk10.png', tags: ['REVIEWS'] },
+  { cat: 'TUTORIALS', title: 'How to Make Your Makeup Last All Day', date: 'June 8, 2025', img: '/mk11.png', tags: ['TUTORIALS'] },
+  { cat: 'TUTORIALS', title: 'The Perfect Smoky Eye in 10 Minutes', date: 'May 30, 2025', img: '/mk12.png', tags: ['TUTORIALS'] },
+  { cat: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin', date: 'May 22, 2025', img: '/mk13.png', tags: ['LIFESTYLE'] },
+  { cat: 'REVIEWS', title: 'Dior Addict Lip Maximizer: Worth the Hype?', date: 'May 15, 2025', img: '/mk2.png', tags: ['REVIEWS'] },
+  { cat: 'SKINCARE', title: 'Skin Prep: My Glowing Base Routine', date: 'May 8, 2025', img: '/mk4.png', tags: ['SKINCARE'] },
+  { cat: 'MAKEUP', title: 'My Go-To Everyday Makeup Routine', date: 'April 28, 2025', img: '/mk6.png', tags: ['MAKEUP'] },
+  { cat: 'REVIEWS', title: 'The Best Foundations for Glowing Skin', date: 'April 20, 2025', img: '/mk7.png', tags: ['REVIEWS'] },
 ]
 
-const popularPosts = [
-  { cat: 'MAKEUP', title: 'My Go-To Everyday Makeup Routine', img: '/mk6.png' },
-  { cat: 'REVIEWS', title: 'The Best Foundations for Glowing Skin', img: '/mk7.png' },
-  { cat: 'TIPS', title: '5 Makeup Tips That Changed My Game', img: '/mk8.png' },
-]
-
-const recentPosts = [
-  { cat: 'MAKEUP', title: '10 Must-Have Products for Your Makeup Bag', excerpt: 'These are the products I reach for every single day — from a flawless base to the perfect lip.', img: '/mk9.png' },
-  { cat: 'REVIEWS', title: 'Foundation Showdown: Dewy vs. Matte', excerpt: 'I tested 6 luxury foundations side by side to find the ultimate winner for every skin type.', img: '/mk10.png' },
-  { cat: 'TIPS', title: 'How to Make Your Makeup Last All Day', excerpt: 'My professional secrets for a long-lasting, fresh look from morning to night.', img: '/mk11.png' },
-]
-
-const morePosts = [
-  { cat: 'TUTORIAL', title: 'The Perfect Smoky Eye in 10 Minutes', img: '/mk12.png' },
-  { cat: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin', img: '/mk13.png' },
-  { cat: 'REVIEW', title: 'Dior Addict Lip Maximizer: Worth the Hype?', img: '/mk2.png' },
-]
+const filteredPosts = computed(() => {
+  if (activeTab.value === 'ALL') return allPosts
+  return allPosts.filter(p => p.tags.includes(activeTab.value))
+})
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap' );
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 .blog-page {
   min-height: 100vh;
-  background: #faf7f2;
-  color: #2a2a2a;
-  font-family: 'Montserrat', sans-serif;
+  background: #f5ede4;
+  color: #2a2218;
+  font-family: 'Jost', sans-serif;
 }
 
-main {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 28px 22px 70px;
-}
-
-/* NAV */
-.nav {
-  height: 62px;
-  padding: 0 34px;
-  background: #fffaf5;
-  border-bottom: 1px solid #e8ddd0;
+.nav-top-bar {
+  background: #2a2218;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 8px 40px;
+}
+
+.nav-socials { display: flex; gap: 14px; }
+.nav-socials a { color: #c8a97a; transition: color 0.2s; }
+.nav-socials a:hover { color: #fff; }
+
+.nav-announce {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+
+.nav-collab-btn {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #c8a97a;
+  text-decoration: none;
+  border: 1px solid #c8a97a;
+  padding: 5px 16px;
+  transition: all 0.2s;
+}
+.nav-collab-btn:hover { background: #c8a97a; color: #2a2218; }
+
+.nav-main {
+  background: #fdf8f3;
+  border-bottom: 1px solid #e8ddd0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 40px 16px;
+  gap: 16px;
   position: sticky;
   top: 0;
   z-index: 20;
 }
 
-.logo {
+.logo a {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  align-items: center;
+  gap: 4px;
 }
 
-.logo span {
+.logo-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 23px;
-  letter-spacing: 3px;
-  color: #2a2a2a;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: #2a2218;
 }
 
-.logo small {
-  margin-top: 5px;
+.logo-sub {
   font-size: 8px;
-  letter-spacing: 3px;
-  color: #c8a16b;
+  letter-spacing: 4px;
+  color: #c8a97a;
+  text-transform: uppercase;
 }
 
-.nav-links {
-  display: flex;
-  gap: 26px;
-}
+.nav-links { display: flex; gap: 32px; }
 
 .nav-links a {
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #6c625b;
+  color: #6c5c4e;
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
+.nav-links a:hover, .nav-links a.active { color: #c8a97a; }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #c8a16b;
-}
-
-.nav-btn {
-  border: 1px solid #c8a16b;
-  padding: 9px 22px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #c8a16b;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.nav-btn:hover {
-  background: #c8a16b;
-  color: #fff;
-}
-
-/* BRANDS STRIP */
-.brands-strip {
-  background: #fff;
-  border: 1px solid #e8ddd0;
-  border-radius: 18px;
-  padding: 22px 36px;
-  margin-bottom: 26px;
-  text-align: center;
-}
-
-.brands-eyebrow {
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #c8a16b;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.brands-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.brands-row span {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #2a2a2a;
-}
-
-.brands-row .div {
-  color: #e8ddd0;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-/* BOX */
-.box {
-  background: #ffffff;
-  border: 1px solid #e8ddd0;
-  border-radius: 22px;
-  box-shadow: 0 18px 45px rgba(80, 55, 35, 0.07);
-  overflow: hidden;
-  margin-bottom: 26px;
-}
-
-/* HERO */
-.hero {
+.hero-banner {
   position: relative;
-  height: 440px;
+  height: 420px;
+  overflow: hidden;
 }
 
-.hero-img {
+.hero-banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 25%;
   display: block;
 }
 
-.hero-overlay {
+.hero-banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(15,10,8,0.75) 42%, rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(to bottom, rgba(20,14,8,0.45) 0%, rgba(20,14,8,0.65) 100%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 0 56px;
-  max-width: 540px;
+  text-align: center;
+  padding: 0 24px;
 }
 
-.eyebrow-light {
+.hero-eyebrow {
   font-size: 10px;
-  letter-spacing: 3px;
-  color: #c8a16b;
+  letter-spacing: 4px;
+  color: #c8a97a;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  font-weight: 600;
+  margin-bottom: 16px;
+  font-weight: 500;
 }
 
-.hero-overlay h1 {
+.hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 400;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 300;
   color: #fff;
-  line-height: 1.05;
-  margin-bottom: 14px;
-}
-
-.hero-divider {
-  width: 40px;
-  height: 1px;
-  background: #c8a16b;
+  line-height: 1.1;
   margin-bottom: 16px;
 }
+.hero-title em { font-style: italic; font-weight: 300; }
 
-.hero-overlay p {
-  color: rgba(255,255,255,0.82);
-  font-size: 14px;
-  line-height: 1.75;
-  margin-bottom: 22px;
+.hero-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
   font-weight: 300;
+  max-width: 480px;
 }
 
-.hero-btn {
-  display: inline-block;
-  background: #c8a16b;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  width: fit-content;
-  transition: background 0.2s;
-}
+.latest-post-section { background: #fdf8f3; padding: 0; }
 
-.hero-btn:hover {
-  background: #b5905a;
-}
-
-/* BROWSE BY CATEGORY */
-.cats-section {
-  padding: 36px 36px 32px;
-}
-
-.cats-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.script-heading {
-  font-family: 'Dancing Script', cursive;
-  font-size: 32px;
-  color: #2a2a2a;
-  font-weight: 600;
-  margin: 0;
-}
-
-.script-heading em {
-  font-style: italic;
-}
-
-.cats-arrows {
-  display: flex;
-  gap: 10px;
-}
-
-.arrow-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #e8ddd0;
-  background: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  color: #2a2a2a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.arrow-btn:hover {
-  border-color: #c8a16b;
-  color: #c8a16b;
-}
-
-.cats-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
-}
-
-.cat-card {
-  cursor: pointer;
-  text-align: center;
-}
-
-.cat-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.cat-card:hover img {
-  transform: scale(1.03);
-}
-
-.cat-label {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #2a2a2a;
-  font-weight: 600;
-  margin: 10px 0 0;
-}
-
-/* FEATURED + SIDEBAR */
-.featured-layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 26px;
-  margin-bottom: 26px;
-}
-
-.featured-box {
-  padding: 36px;
-}
-
-.featured-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 20px;
-}
-
-.feat-post {
+.latest-post-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
-  padding-bottom: 28px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid #e8ddd0;
+  min-height: 480px;
 }
 
-.feat-post:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.featured-img-wrap {
-  overflow: hidden;
-  border-radius: 14px;
-  height: 300px;
-}
-
-.featured-img-wrap img {
+.latest-post-img { overflow: hidden; }
+.latest-post-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
   display: block;
-  transition: transform 0.4s;
+  transition: transform 0.5s ease;
 }
+.latest-post-img:hover img { transform: scale(1.03); }
 
-.featured-img-wrap:hover img {
-  transform: scale(1.04);
-}
-
-.featured-text h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  line-height: 1.2;
-  margin-bottom: 12px;
-  color: #2a2a2a;
-}
-
-.read-btn {
-  display: inline-block;
-  background: #c8a16b;
-  color: #fff;
-  padding: 11px 26px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 8px;
-  transition: background 0.2s;
-}
-
-.read-btn:hover {
-  background: #b5905a;
-}
-
-/* SIDEBAR */
-.sidebar {
+.latest-post-text {
+  padding: 60px 56px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
-}
-
-.sidebar-welcome {
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.welcome-photo {
-  margin: 12px auto 16px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #e8ddd0;
-}
-
-.welcome-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-.signature {
-  font-family: 'Dancing Script', cursive;
-  font-size: 24px;
-  color: #c8a16b;
-  margin-top: 8px;
-}
-
-.sidebar-popular {
-  padding: 28px 24px;
-}
-
-.pop-post {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 14px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #e8ddd0;
-  cursor: pointer;
-}
-
-.pop-post img {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.pop-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  color: #2a2a2a;
-  line-height: 1.35;
-  margin: 0;
-}
-
-.view-all-btn {
-  display: block;
-  text-align: center;
-  border: 1px solid #c8a16b;
-  color: #c8a16b;
-  padding: 10px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 999px;
-  margin-top: 14px;
-  transition: all 0.2s;
-}
-
-.view-all-btn:hover {
-  background: #c8a16b;
-  color: #fff;
-}
-
-/* WHAT'S ON THE BLOG */
-.whats-on-blog {
-  text-align: center;
-  padding: 20px 0 10px;
-}
-
-.script-heading-lg {
-  font-family: 'Dancing Script', cursive;
-  font-size: 52px;
-  color: #2a2a2a;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.filter-tabs {
-  display: flex;
   justify-content: center;
-  gap: 0;
-  border-bottom: 1px solid #e8ddd0;
-  margin-bottom: 26px;
+  background: #fdf8f3;
 }
 
-.tab-btn {
-  background: none;
-  border: none;
-  padding: 10px 22px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
+.section-eyebrow {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #c8a97a;
   text-transform: uppercase;
-  color: #999;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-  margin-bottom: -1px;
-}
-
-.tab-btn:hover {
-  color: #c8a16b;
-}
-
-.tab-btn.active {
-  color: #2a2a2a;
-  border-bottom-color: #2a2a2a;
   font-weight: 600;
+  margin-bottom: 18px;
 }
 
-/* POSTS */
-.posts-box {
-  padding: 36px;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.post-card {
-  border: 1px solid #e8ddd0;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #fffaf5;
-  transition: box-shadow 0.2s;
-}
-
-.post-card:hover {
-  box-shadow: 0 8px 24px rgba(80,55,35,0.1);
-}
-
-.post-img-wrap {
-  height: 220px;
-  overflow: hidden;
-}
-
-.post-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.4s;
-}
-
-.post-card:hover .post-img-wrap img {
-  transform: scale(1.04);
-}
-
-.post-body {
-  padding: 20px;
-}
-
-.post-body h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  margin-bottom: 8px;
-  line-height: 1.35;
-  color: #2a2a2a;
-}
-
-.post-body p {
-  font-size: 13px;
-  color: #888;
-  line-height: 1.7;
+.post-cat-tag {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: #9e8878;
+  text-transform: uppercase;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
-.post-body a {
-  color: #c8a16b;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
+.latest-post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 300;
+  color: #2a2218;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.latest-post-title em { font-style: italic; }
+
+.latest-post-date {
+  font-size: 11px;
+  color: #b0a090;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
 }
 
-/* SHARED */
-.eyebrow {
+.latest-post-excerpt {
+  font-size: 14px;
+  color: #5c4e42;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+.read-more-arrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2a2218;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #c8a97a;
+  padding-bottom: 3px;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+.read-more-arrow:hover { color: #c8a97a; }
+
+.category-tabs-section {
+  background: #f5ede4;
+  border-top: 1px solid #e4d8cc;
+  border-bottom: 1px solid #e4d8cc;
+}
+
+.category-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.cat-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #e4d8cc;
+  padding: 18px 10px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #7a6a5a;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.cat-tab:last-child { border-right: none; }
+.cat-tab:hover { background: #ede3d8; color: #2a2218; }
+.cat-tab.active { background: #2a2218; color: #c8a97a; }
+.read-all-tab { color: #c8a97a; font-weight: 600; }
+
+.post-grid-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 24px 60px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 28px;
+  margin-bottom: 50px;
+}
+
+.post-card { display: flex; flex-direction: column; }
+
+.post-card-img-wrap {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  margin-bottom: 16px;
+}
+.post-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.post-card:hover .post-card-img-wrap img { transform: scale(1.04); }
+
+.post-card-cat {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: #c8a97a;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.post-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #2a2218;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.post-card-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+.post-card-title a:hover { color: #c8a97a; }
+
+.post-card-date {
+  font-size: 11px;
+  color: #b0a090;
+}
+
+.load-more-wrap { text-align: center; }
+
+.load-more-btn {
+  display: inline-block;
   font-size: 10px;
   letter-spacing: 3px;
-  color: #c8a16b;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  font-weight: 600;
+  color: #2a2218;
+  text-decoration: none;
+  border: 1px solid #2a2218;
+  padding: 14px 40px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.load-more-btn:hover { background: #2a2218; color: #f5ede4; }
+
+.newsletter-section {
+  background: #2a2218;
+  padding: 70px 24px;
 }
 
-.category {
-  color: #c8a16b;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  font-weight: 600;
+.newsletter-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-h2 {
+.newsletter-section .section-eyebrow { color: #c8a97a; margin-bottom: 14px; }
+
+.newsletter-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  color: #2a2a2a;
-  margin: 0 0 16px;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 300;
+  color: #fdf8f3;
+  margin-bottom: 12px;
 }
 
-p {
-  color: #7a7a7a;
-  line-height: 1.75;
-  font-size: 14px;
-  margin: 0 0 10px;
+.newsletter-sub {
+  font-size: 13px;
+  color: rgba(253,248,243,0.6);
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.7;
 }
 
-.center {
-  text-align: center;
-}
-
-/* NEWSLETTER */
-.contact {
-  padding: 52px;
-  text-align: center;
-}
-
-.contact p {
-  max-width: 500px;
-  margin: 0 auto 20px;
-}
-
-.subscribe-row {
+.newsletter-form {
   display: flex;
-  max-width: 480px;
+  max-width: 440px;
   margin: 0 auto;
 }
 
-.subscribe-row input {
+.newsletter-input {
   flex: 1;
-  background: #fffaf5;
-  border: 1px solid #e8ddd0;
-  border-right: none;
-  border-radius: 999px 0 0 999px;
-  padding: 13px 20px;
-  color: #2a2a2a;
-  font-family: 'Montserrat', sans-serif;
+  padding: 14px 20px;
   font-size: 13px;
+  font-family: 'Jost', sans-serif;
+  border: 1px solid rgba(200,169,122,0.4);
+  background: rgba(255,255,255,0.06);
+  color: #fdf8f3;
   outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-input::placeholder { color: rgba(253,248,243,0.35); }
+.newsletter-input:focus { border-color: #c8a97a; }
+
+.newsletter-btn {
+  padding: 14px 28px;
+  background: #c8a97a;
+  color: #2a2218;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: #b8956a; }
+
+.footer {
+  background: #1c1510;
+  padding: 48px 40px 28px;
 }
 
-.subscribe-row button {
-  background: #c8a16b;
-  color: #fff;
-  border: none;
-  border-radius: 0 999px 999px 0;
-  padding: 13px 28px;
-  font-family: 'Montserrat', sans-serif;
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px;
+}
+
+.footer-logo { display: flex; flex-direction: column; gap: 5px; }
+.footer-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #fdf8f3;
+}
+.footer-logo-sub {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #c8a97a;
+  text-transform: uppercase;
+}
+
+.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links a {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-
-.subscribe-row button:hover {
-  background: #b5905a;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 40px 22px 28px;
-  border-top: 1px solid #e8ddd0;
-  background: #fffaf5;
-  margin-top: 10px;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-bottom: 20px;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #6c625b;
+  color: rgba(253,248,243,0.5);
   text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
   transition: color 0.2s;
 }
+.footer-links a:hover { color: #c8a97a; }
 
-.social-link:hover {
-  color: #c8a16b;
-}
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a { color: rgba(253,248,243,0.45); transition: color 0.2s; }
+.footer-socials a:hover { color: #c8a97a; }
 
 .footer-copy {
-  font-size: 11px;
-  color: #bbb;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 10px;
+  color: rgba(253,248,243,0.3);
   letter-spacing: 1px;
-  margin: 0;
+  text-align: center;
 }
+.footer-copy a { color: rgba(253,248,243,0.4); text-decoration: none; }
+.footer-copy a:hover { color: #c8a97a; }
 
 @media (max-width: 900px) {
-  .nav-links { display: none; }
-  .featured-layout { grid-template-columns: 1fr; }
-  .featured-inner, .blog-grid { grid-template-columns: 1fr; }
-  .cats-grid { grid-template-columns: repeat(3, 1fr); }
-  .hero-overlay { padding: 0 28px; max-width: 100%; }
-  .filter-tabs { flex-wrap: wrap; }
+  .latest-post-inner { grid-template-columns: 1fr; }
+  .latest-post-img { height: 320px; }
+  .latest-post-text { padding: 36px 28px; }
+  .post-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+  .category-tabs { flex-wrap: wrap; }
+  .cat-tab { flex: none; width: 50%; border-bottom: 1px solid #e4d8cc; }
+  .nav-top-bar { padding: 8px 20px; }
+  .nav-main { padding: 16px 20px 12px; }
+  .nav-links { gap: 18px; }
+}
+
+@media (max-width: 580px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .hero-banner { height: 300px; }
+  .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .nav-announce { display: none; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
 }
 </style>
