@@ -1,0 +1,586 @@
+<template>
+  <div class="post-page" v-if="post">
+
+    <!-- ── MARQUEE BAR ── -->
+    <div class="marquee-bar">
+      <div class="marquee-track">
+        <span>Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦ Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦ Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦ Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦</span>
+      </div>
+    </div>
+
+    <!-- ── NAVIGATION ── -->
+    <nav class="nav">
+      <div class="nav-logo">
+        <a href="/">
+          <span class="logo-name">Renata Oliver</span>
+          <small class="logo-sub">Makeup &amp; Beauty</small>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/">HOME</a>
+        <a href="/blog" class="active">BLOG</a>
+        <a href="/makeup">MAKEUP</a>
+        <a href="/skincare">SKINCARE</a>
+        <a href="/shop">SHOP</a>
+        <a href="/makeup#about">ABOUT</a>
+        <a href="/makeup#contact">CONTACT</a>
+      </div>
+      <div class="nav-collab">
+        <a href="/makeup#contact" class="collab-btn">COLLABORATE</a>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- ── POST HERO ── -->
+      <section class="post-hero">
+        <img :src="post.img" :alt="post.title" class="post-hero-img" />
+        <div class="post-hero-overlay">
+          <p class="post-cat">{{ post.cat }}</p>
+          <h1 class="post-title">{{ post.title }}</h1>
+          <p class="post-meta">{{ post.date }} · {{ post.read }}</p>
+        </div>
+      </section>
+
+      <!-- ── ARTICLE CONTENT ── -->
+      <article class="post-content-wrap">
+        <div class="post-back">
+          <a href="/blog" class="back-link">← Back to Journal</a>
+        </div>
+        <div class="post-body" v-html="post.content"></div>
+
+        <!-- SHARE -->
+        <div class="post-share">
+          <p class="share-label">SHARE THIS POST</p>
+          <div class="share-icons">
+            <a href="https://www.instagram.com/renataoliveiraofficial" target="_blank" class="share-btn">Instagram</a>
+            <a href="https://pinterest.com" target="_blank" class="share-btn">Pinterest</a>
+            <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" class="share-btn">TikTok</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── MORE POSTS ── -->
+      <section class="more-posts-section">
+        <h2 class="more-posts-heading">More From The Journal</h2>
+        <div class="more-posts-grid">
+          <article v-for="related in relatedPosts" :key="related.slug" class="more-card">
+            <a :href="`/blog/${related.slug}`" class="more-card-img-wrap">
+              <img :src="related.img" :alt="related.title" />
+            </a>
+            <div class="more-card-body">
+              <p class="more-card-cat">{{ related.cat }}</p>
+              <h3 class="more-card-title">
+                <a :href="`/blog/${related.slug}`">{{ related.title }}</a>
+              </h3>
+              <p class="more-card-meta">{{ related.date }}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── NEWSLETTER ── -->
+      <section class="newsletter-section">
+        <p class="newsletter-eyebrow">JOIN THE COMMUNITY</p>
+        <h2 class="newsletter-heading">Join Our List</h2>
+        <p class="newsletter-sub">Subscribe for the latest beauty tips, tutorials &amp; exclusive picks.</p>
+        <form class="newsletter-form" @submit.prevent>
+          <div class="newsletter-field">
+            <input type="email" placeholder="Email" class="newsletter-input" />
+            <button type="submit" class="newsletter-arrow">→</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="/"><span class="footer-logo-name">Renata Oliver</span></a>
+          <small class="footer-logo-sub">Makeup &amp; Beauty</small>
+        </div>
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/makeup">Makeup</a>
+          <a href="/skincare">Skincare</a>
+          <a href="/shop">Shop</a>
+          <a href="/makeup#about">About</a>
+          <a href="/makeup#contact">Contact</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://instagram.com/renataoliveiraofficial" target="_blank" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.37 1.27-5.37s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.21-2.46 3.21-5.37 0-2.22-1.5-3.88-4.22-3.88-3.08 0-5 2.3-5 4.87 0 .88.26 1.5.67 1.98.19.22.21.31.14.57-.05.18-.16.63-.2.8-.07.27-.28.37-.51.27-1.44-.6-2.11-2.21-2.11-4.02 0-2.98 2.52-6.56 7.54-6.56 4.03 0 6.68 2.93 6.68 6.07 0 4.16-2.3 7.27-5.68 7.27-1.14 0-2.21-.61-2.57-1.3l-.7 2.69c-.25.97-.93 2.18-1.39 2.92.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6a3 3 0 00-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Renata Oliver · All rights reserved · <a href="/privacy">Privacy Policy</a></p>
+    </footer>
+
+  </div>
+
+  <!-- 404 -->
+  <div class="post-not-found" v-else>
+    <div class="marquee-bar">
+      <div class="marquee-track">
+        <span>Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦ Beauty Without Compromise ✦ Tips, Tutorials &amp; Honest Reviews ✦</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-logo">
+        <a href="/"><span class="logo-name">Renata Oliver</span><small class="logo-sub">Makeup &amp; Beauty</small></a>
+      </div>
+      <div class="nav-links">
+        <a href="/">HOME</a><a href="/blog" class="active">BLOG</a><a href="/makeup">MAKEUP</a><a href="/shop">SHOP</a>
+      </div>
+    </nav>
+    <div class="not-found-body">
+      <h1>Post not found</h1>
+      <a href="/blog" class="back-link">← Back to Journal</a>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const allPosts = [
+  {
+    slug: 'bronzed-soft-glam',
+    cat: 'TUTORIALS',
+    tags: ['TUTORIALS'],
+    title: 'Step-by-Step: Bronzed Soft Glam',
+    date: 'June 28, 2025',
+    read: '5 MIN READ',
+    img: '/mk5.png',
+    excerpt: 'Follow along as I break down this easy soft glam look using my go-to products for a bronzed, radiant finish.',
+    content: `
+      <p>This is one of my all-time favourite looks — bronzed, glowy, and effortlessly beautiful. Whether you're heading to brunch or a night out, this soft glam tutorial will have you looking radiant in under 30 minutes.</p>
+      <h3>What You'll Need</h3>
+      <ul>
+        <li>Lightweight foundation or tinted moisturiser</li>
+        <li>Bronzer (I love Charlotte Tilbury's Filmstar Bronze &amp; Glow)</li>
+        <li>Peachy-nude blush</li>
+        <li>Champagne highlighter</li>
+        <li>Warm brown eyeshadow palette</li>
+        <li>Mascara</li>
+        <li>Nude-pink lip gloss</li>
+      </ul>
+      <h3>Step 1: Skin Prep</h3>
+      <p>Start with a hydrating primer to create a smooth, glowing base. Apply your foundation lightly — we want skin to show through for that natural finish.</p>
+      <h3>Step 2: Bronze &amp; Contour</h3>
+      <p>Sweep bronzer along your temples, cheekbones, and jawline using a fluffy brush. Blend well — no harsh lines!</p>
+      <h3>Step 3: Blush &amp; Highlight</h3>
+      <p>Apply a peachy blush to the apples of your cheeks and blend upward. Add a touch of champagne highlighter to the tops of your cheekbones and the bridge of your nose.</p>
+      <h3>Step 4: Eyes</h3>
+      <p>Use warm brown shades to define your crease and outer corner. Keep the lid light and shimmery. Finish with two coats of mascara.</p>
+      <h3>Step 5: Lips</h3>
+      <p>Line your lips with a nude-pink liner and top with a glossy lip gloss. Done!</p>
+    `,
+  },
+  {
+    slug: 'must-have-products',
+    cat: 'MAKEUP',
+    tags: ['MAKEUP'],
+    title: '10 Must-Have Products for Your Makeup Bag',
+    date: 'June 20, 2025',
+    read: '4 MIN READ',
+    img: '/mk9.png',
+    content: `
+      <p>After years of working as a professional makeup artist, I've narrowed down my kit to the absolute essentials. These 10 products will cover every look, every occasion, and every skin type.</p>
+      <h3>1. A Good Primer</h3>
+      <p>Primer is the foundation of any great makeup look. I love a hydrating formula that blurs pores and extends wear.</p>
+      <h3>2. Skin Tint or Light Foundation</h3>
+      <p>For everyday wear, a skin tint gives you coverage without looking heavy. Save the full-coverage foundation for special occasions.</p>
+      <h3>3. Concealer</h3>
+      <p>A creamy, blendable concealer for under-eye circles and blemishes is non-negotiable.</p>
+      <h3>4. Bronzer</h3>
+      <p>A warm bronzer adds dimension and warmth to any complexion. Choose one that's two shades deeper than your natural skin tone.</p>
+      <h3>5. Blush</h3>
+      <p>A peachy-pink blush instantly brightens your face and gives a healthy flush.</p>
+      <h3>6. Highlighter</h3>
+      <p>A champagne or gold highlighter on the cheekbones, nose tip, and cupid's bow adds that lit-from-within glow.</p>
+      <h3>7. Neutral Eyeshadow Palette</h3>
+      <p>A versatile palette with matte and shimmer neutrals covers everything from a daytime look to a smoky eye.</p>
+      <h3>8. Mascara</h3>
+      <p>Lengthening, volumising, or both — mascara is the one step that makes the biggest difference.</p>
+      <h3>9. Lip Liner</h3>
+      <p>A nude lip liner that matches your natural lip colour is the secret to long-lasting lipstick and a defined pout.</p>
+      <h3>10. Setting Spray</h3>
+      <p>Lock everything in place with a fine-mist setting spray. It also gives a dewy, skin-like finish.</p>
+    `,
+  },
+  {
+    slug: 'foundation-showdown',
+    cat: 'REVIEWS',
+    tags: ['REVIEWS'],
+    title: 'Foundation Showdown: Dewy vs. Matte',
+    date: 'June 14, 2025',
+    read: '5 MIN READ',
+    img: '/mk10.png',
+    content: `
+      <p>The eternal debate: dewy or matte? The truth is, both have their place — it all depends on your skin type, the occasion, and the look you're going for. I spent two weeks testing both formulas to give you my honest verdict.</p>
+      <h3>Dewy Foundations</h3>
+      <p>Dewy foundations are perfect for dry to normal skin types. They give a luminous, skin-like finish that looks fresh and youthful. The downside? They can look oily on combination or oily skin by midday.</p>
+      <p><strong>Best for:</strong> Dry skin, daytime looks, natural makeup, photography</p>
+      <h3>Matte Foundations</h3>
+      <p>Matte foundations control shine and last longer throughout the day. They're ideal for oily or combination skin, and they photograph beautifully. The downside is they can look flat or settle into fine lines if not applied correctly.</p>
+      <p><strong>Best for:</strong> Oily skin, long events, hot weather, full-coverage looks</p>
+      <h3>My Verdict</h3>
+      <p>For everyday wear, I prefer a dewy finish — it looks more natural and flattering. For events or photoshoots, I reach for matte. The key is knowing your skin and the occasion!</p>
+    `,
+  },
+  {
+    slug: 'makeup-last-all-day',
+    cat: 'TUTORIALS',
+    tags: ['TUTORIALS'],
+    title: 'How to Make Your Makeup Last All Day',
+    date: 'June 8, 2025',
+    read: '3 MIN READ',
+    img: '/mk11.png',
+    content: `
+      <p>There's nothing worse than spending time on your makeup only to have it fade by noon. Here are my professional secrets for all-day wear.</p>
+      <h3>Start with Skincare</h3>
+      <p>Well-moisturised skin holds makeup better. Apply a lightweight moisturiser and let it absorb fully before applying primer.</p>
+      <h3>Use a Primer</h3>
+      <p>Primer creates a smooth surface and helps makeup adhere. Choose a formula suited to your skin type — mattifying for oily skin, hydrating for dry skin.</p>
+      <h3>Set with Powder</h3>
+      <p>After applying foundation and concealer, lightly set with a translucent powder. Focus on the T-zone where shine tends to appear first.</p>
+      <h3>Layer Your Products</h3>
+      <p>Build coverage in thin layers rather than one thick application. This prevents creasing and extends wear.</p>
+      <h3>Finish with Setting Spray</h3>
+      <p>A good setting spray is the final step that locks everything in place. Hold the bottle 30cm from your face and mist in an X and T motion.</p>
+    `,
+  },
+  {
+    slug: 'smoky-eye',
+    cat: 'TUTORIALS',
+    tags: ['TUTORIALS'],
+    title: 'The Perfect Smoky Eye in 10 Minutes',
+    date: 'May 30, 2025',
+    read: '4 MIN READ',
+    img: '/mk12.png',
+    content: `
+      <p>The smoky eye is one of the most classic and versatile makeup looks. Once you know the technique, you can do it in under 10 minutes. Here's how.</p>
+      <h3>What You Need</h3>
+      <ul>
+        <li>Dark eyeshadow (black, charcoal, or deep brown)</li>
+        <li>Medium transition shade (taupe or warm brown)</li>
+        <li>Black eyeliner (pencil or gel)</li>
+        <li>Mascara</li>
+        <li>Fluffy blending brush</li>
+      </ul>
+      <h3>Step 1: Apply the Transition Shade</h3>
+      <p>Sweep the medium shade into your crease using a fluffy brush. This creates a soft base for blending.</p>
+      <h3>Step 2: Add the Dark Shade</h3>
+      <p>Apply the dark shade to your outer corner and lower lash line. Use a small brush for precision.</p>
+      <h3>Step 3: Blend, Blend, Blend</h3>
+      <p>The key to a great smoky eye is seamless blending. Use a clean fluffy brush to soften any harsh edges.</p>
+      <h3>Step 4: Line Your Eyes</h3>
+      <p>Apply black eyeliner to your upper and lower waterline. This intensifies the look.</p>
+      <h3>Step 5: Mascara</h3>
+      <p>Finish with two generous coats of mascara. For extra drama, add individual lashes to the outer corners.</p>
+    `,
+  },
+  {
+    slug: 'morning-ritual',
+    cat: 'LIFESTYLE',
+    tags: ['LIFESTYLE'],
+    title: 'My Morning Beauty Ritual for Glowing Skin',
+    date: 'May 22, 2025',
+    read: '3 MIN READ',
+    img: '/mk13.png',
+    content: `
+      <p>Whether I'm in Paris, Tokyo, or at home in Miami, my morning beauty ritual stays the same. It takes less than 15 minutes and makes a huge difference in how my skin looks and feels all day.</p>
+      <h3>Step 1: Gentle Cleanser</h3>
+      <p>I start with a gentle, hydrating cleanser to remove any overnight products and refresh my skin without stripping it.</p>
+      <h3>Step 2: Vitamin C Serum</h3>
+      <p>A few drops of Vitamin C serum brighten my complexion and protect against environmental damage.</p>
+      <h3>Step 3: Eye Cream</h3>
+      <p>A lightweight eye cream applied with my ring finger keeps dark circles and puffiness at bay.</p>
+      <h3>Step 4: Moisturiser with SPF</h3>
+      <p>I never skip SPF — ever. I use a moisturiser with SPF 50 every single morning, even on cloudy days.</p>
+      <h3>Step 5: Lip Balm</h3>
+      <p>A nourishing lip balm is the final step before I start my makeup. Hydrated lips make any lip colour look better.</p>
+    `,
+  },
+  {
+    slug: 'dior-lip-maximizer',
+    cat: 'REVIEWS',
+    tags: ['REVIEWS'],
+    title: 'Dior Addict Lip Maximizer: Worth the Hype?',
+    date: 'May 15, 2025',
+    read: '5 MIN READ',
+    img: '/mk2.png',
+    content: `
+      <p>The Dior Addict Lip Maximizer has been all over my feed for years. After finally trying it myself, here's my honest take.</p>
+      <h3>What It Claims</h3>
+      <p>Dior promises immediate plumping, long-lasting hydration, and a glossy finish. It contains hyaluronic acid and a plumping complex.</p>
+      <h3>Texture &amp; Application</h3>
+      <p>The formula is thick but not sticky. It goes on smoothly and feels comfortable. The doe-foot applicator makes it easy to apply precisely.</p>
+      <h3>The Plumping Effect</h3>
+      <p>Yes, it does plump! There's a mild tingling sensation as it works. The effect is subtle but noticeable — my lips look fuller and more defined.</p>
+      <h3>My Verdict</h3>
+      <p>Worth it? Yes — especially if you love a glossy, plumped lip. It's a luxury product but it delivers on its promises. My favourite shade is 001 Universal Clear.</p>
+    `,
+  },
+  {
+    slug: 'skin-prep',
+    cat: 'SKINCARE',
+    tags: ['SKINCARE'],
+    title: 'Skin Prep: My Glowing Base Routine',
+    date: 'May 8, 2025',
+    read: '4 MIN READ',
+    img: '/mk4.png',
+    content: `
+      <p>I always say: great makeup starts with great skin prep. No matter how good your foundation is, if your skin isn't prepped properly, it won't look its best. Here's exactly what I do before every makeup application.</p>
+      <h3>Cleanse</h3>
+      <p>Start with a clean canvas. I use a gentle gel cleanser that removes impurities without drying out the skin.</p>
+      <h3>Exfoliate (2-3x per week)</h3>
+      <p>A light chemical exfoliant (AHA or BHA) removes dead skin cells and creates a smoother surface for foundation.</p>
+      <h3>Hydrating Toner</h3>
+      <p>I pat a hydrating toner into my skin to add a layer of moisture and balance the skin's pH.</p>
+      <h3>Serum</h3>
+      <p>A hyaluronic acid serum plumps the skin and creates a dewy, hydrated base.</p>
+      <h3>Moisturiser + SPF</h3>
+      <p>Lock in all that hydration with a lightweight moisturiser. Always, always SPF 50.</p>
+    `,
+  },
+  {
+    slug: 'everyday-makeup',
+    cat: 'MAKEUP',
+    tags: ['MAKEUP'],
+    title: 'My Go-To Everyday Makeup Routine',
+    date: 'April 28, 2025',
+    read: '3 MIN READ',
+    img: '/mk6.png',
+    content: `
+      <p>On busy days, I need a routine that's fast but still makes me look put-together. This 10-minute routine is my go-to — it works for any occasion and any skin tone.</p>
+      <h3>1. Tinted Moisturiser (1 min)</h3>
+      <p>I blend a tinted moisturiser all over my face with my fingers. It's quick, natural-looking, and lets my skin breathe.</p>
+      <h3>2. Concealer (1 min)</h3>
+      <p>A small amount of concealer under my eyes and on any blemishes. Blend with a damp sponge.</p>
+      <h3>3. Bronzer + Blush (2 min)</h3>
+      <p>A quick sweep of bronzer to add warmth, followed by a peachy blush on the cheeks.</p>
+      <h3>4. Brow Gel (1 min)</h3>
+      <p>A tinted brow gel to define and set my brows. This step makes the biggest difference in how polished I look.</p>
+      <h3>5. Mascara + Lip Gloss (3 min)</h3>
+      <p>Two coats of mascara and a swipe of peachy-nude gloss. Total time: under 10 minutes!</p>
+    `,
+  },
+  {
+    slug: 'sunscreen-edit',
+    cat: 'SKINCARE',
+    tags: ['SKINCARE'],
+    title: 'The Sunscreen Edit: My Top 5 Picks',
+    date: 'April 10, 2025',
+    read: '4 MIN READ',
+    img: '/mk7.png',
+    content: `
+      <p>I've tested dozens of sunscreens over the years, and these are the five I keep coming back to. No white cast, no greasy finish — just effective sun protection that works under makeup.</p>
+      <h3>1. Beauty of Joseon Relief Sun</h3>
+      <p>My current everyday favourite. SPF 50+, lightweight, and leaves a beautiful glow. Perfect under makeup.</p>
+      <h3>2. La Roche-Posay Anthelios</h3>
+      <p>A dermatologist favourite and for good reason. Excellent protection, comfortable wear, and suitable for sensitive skin.</p>
+      <h3>3. Supergoop! Unseen Sunscreen</h3>
+      <p>A cult favourite in the US. Primer-like texture that blurs pores and keeps makeup in place all day.</p>
+      <h3>4. Isntree Hyaluronic Acid Watery Sun Gel</h3>
+      <p>A Korean sunscreen with a watery, hydrating formula. Feels like skincare, not sunscreen.</p>
+      <h3>5. Altamura Invisible Sunscreen SPF 50</h3>
+      <p>Truly invisible — no white cast at all. Great for deeper skin tones.</p>
+    `,
+  },
+  {
+    slug: 'paris-beauty',
+    cat: 'LIFESTYLE',
+    tags: ['LIFESTYLE'],
+    title: 'Paris Beauty Finds: What I Bought & Loved',
+    date: 'April 20, 2025',
+    read: '6 MIN READ',
+    img: '/mk8.png',
+    content: `
+      <p>Paris is a beauty lover's paradise. On my last trip, I made it my mission to explore every pharmacy, boutique, and beauty store I could find. Here's everything I bought and what I thought of it.</p>
+      <h3>Pharmacie Finds</h3>
+      <p>French pharmacies are legendary for a reason. I stocked up on La Roche-Posay, Avène, and Bioderma — all significantly cheaper than buying them at home. My must-haves: Bioderma Micellar Water and La Roche-Posay Cicaplast Baume B5.</p>
+      <h3>Sephora Exclusives</h3>
+      <p>The Sephora on the Champs-Élysées is enormous and carries brands we don't get in the US. I picked up a few Charlotte Tilbury products and a beautiful French perfume I'd been eyeing for months.</p>
+      <h3>My Top Pick</h3>
+      <p>The Embryolisse Lait-Crème Concentré — a cult French moisturiser that makeup artists swear by. It's a primer, moisturiser, and makeup remover in one. Absolutely worth it.</p>
+    `,
+  },
+  {
+    slug: 'no-makeup-look',
+    cat: 'TUTORIALS',
+    tags: ['TUTORIALS'],
+    title: 'No-Makeup Makeup: A Step-by-Step Guide',
+    date: 'March 28, 2025',
+    read: '5 MIN READ',
+    img: '/mk3.png',
+    content: `
+      <p>The "no-makeup makeup" look is one of the most requested tutorials I get. It's all about enhancing your natural features while looking effortlessly fresh.</p>
+      <h3>The Key: Skin First</h3>
+      <p>This look lives and dies by your skin prep. Hydrated, glowing skin is the foundation. Use a good moisturiser and let it fully absorb before applying anything.</p>
+      <h3>Step 1: Skin Tint</h3>
+      <p>Skip heavy foundation. Use a skin tint or BB cream that matches your skin tone exactly. Apply with your fingers for the most natural finish.</p>
+      <h3>Step 2: Cream Blush</h3>
+      <p>A cream blush in a natural pink or peach shade, blended with your fingers, looks the most skin-like.</p>
+      <h3>Step 3: Brow Gel + Mascara</h3>
+      <p>Brush your brows up and set with a clear gel. One coat of brown mascara (not black) for a softer look.</p>
+      <h3>Step 4: Tinted Lip Balm</h3>
+      <p>A tinted lip balm adds a hint of colour without looking "done".</p>
+    `,
+  },
+  {
+    slug: 'charlotte-tilbury',
+    cat: 'REVIEWS',
+    tags: ['REVIEWS'],
+    title: 'Charlotte Tilbury Pillow Talk: Full Review',
+    date: 'March 15, 2025',
+    read: '4 MIN READ',
+    img: '/mk5.png',
+    content: `
+      <p>Charlotte Tilbury's Pillow Talk collection is one of the most iconic in beauty. The dusty-rose nude shade has become a signature look for millions of people. But is it worth the price? After 3 months of daily use, here's my honest review.</p>
+      <h3>Pillow Talk Lip Liner</h3>
+      <p>This is the hero product of the collection. The shade is universally flattering — it works on every skin tone. The formula is creamy, long-lasting, and doesn't feather. 10/10.</p>
+      <h3>Pillow Talk Lipstick</h3>
+      <p>A beautiful matte-satin finish that's comfortable to wear. The colour payoff is excellent and it lasts about 4-5 hours. Worth every penny.</p>
+      <h3>My Overall Verdict</h3>
+      <p>The Pillow Talk collection lives up to the hype. Yes, it's expensive, but the quality is exceptional and the shade is genuinely flattering on everyone. Start with the lip liner — it's the best product in the range.</p>
+    `,
+  },
+]
+
+const post = computed(() => allPosts.find(p => p.slug === route.params.slug))
+
+const relatedPosts = computed(() => {
+  if (!post.value) return []
+  return allPosts.filter(p => p.slug !== post.value.slug).slice(0, 3)
+})
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.post-page { min-height: 100vh; background: #fff; color: #1a1a1a; font-family: 'Jost', sans-serif; }
+
+/* ── MARQUEE ── */
+.marquee-bar { background: #f2c4c4; overflow: hidden; padding: 10px 0; white-space: nowrap; }
+.marquee-track { display: inline-block; animation: marquee 28s linear infinite; }
+.marquee-track span { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; font-weight: 500; padding-right: 60px; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ── NAV ── */
+.nav { background: #fff; border-bottom: 1px solid #f0e4e4; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 68px; position: sticky; top: 0; z-index: 30; }
+.nav-logo a { text-decoration: none; display: flex; flex-direction: column; gap: 2px; }
+.logo-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 2px; color: #1a1a1a; }
+.logo-sub { font-size: 8px; letter-spacing: 2.5px; color: #c8848a; text-transform: uppercase; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5a3a3a; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #c8848a; }
+.collab-btn { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #c8848a; text-decoration: none; border: 1px solid #c8848a; padding: 7px 18px; font-weight: 500; transition: all 0.2s; }
+.collab-btn:hover { background: #c8848a; color: #fff; }
+
+/* ── POST HERO ── */
+.post-hero { position: relative; height: 480px; overflow: hidden; }
+.post-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+.post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,5,5,0.25) 0%, rgba(10,5,5,0.65) 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding: 0 24px 60px; }
+.post-cat { font-size: 9px; letter-spacing: 3px; color: #f2c4c4; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.post-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 14px; }
+.post-meta { font-size: 12px; color: rgba(255,255,255,0.65); letter-spacing: 1px; }
+
+/* ── CONTENT ── */
+.post-content-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px; }
+.post-back { margin-bottom: 32px; }
+.back-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8848a; text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+.back-link:hover { opacity: 0.7; }
+.post-body { font-size: 16px; line-height: 1.9; color: #2a1a1a; font-weight: 300; }
+.post-body :deep(h3) { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: #1a1a1a; margin: 36px 0 14px; }
+.post-body :deep(p) { margin-bottom: 18px; }
+.post-body :deep(ul) { margin: 0 0 18px 24px; }
+.post-body :deep(li) { margin-bottom: 8px; }
+.post-body :deep(strong) { font-weight: 600; color: #1a1a1a; }
+
+/* ── SHARE ── */
+.post-share { margin-top: 48px; padding-top: 32px; border-top: 1px solid #f0e0e0; }
+.share-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #c8848a; font-weight: 600; margin-bottom: 16px; }
+.share-icons { display: flex; gap: 12px; }
+.share-btn { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5a3a3a; text-decoration: none; border: 1px solid #f0d0d0; padding: 8px 20px; font-weight: 500; transition: all 0.2s; }
+.share-btn:hover { background: #f2c4c4; color: #fff; border-color: #f2c4c4; }
+
+/* ── MORE POSTS ── */
+.more-posts-section { background: #fdf5f5; padding: 64px 24px; border-top: 1px solid #f0e0e0; }
+.more-posts-heading { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: #1a1a1a; text-align: center; margin-bottom: 40px; }
+.more-posts-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.more-card { display: flex; flex-direction: column; background: #fff; }
+.more-card-img-wrap { display: block; overflow: hidden; aspect-ratio: 4/5; }
+.more-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
+.more-card:hover .more-card-img-wrap img { transform: scale(1.04); }
+.more-card-body { padding: 16px; }
+.more-card-cat { font-size: 9px; letter-spacing: 2.5px; color: #c8848a; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.more-card-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: #1a1a1a; line-height: 1.3; margin-bottom: 8px; }
+.more-card-title a { text-decoration: none; color: inherit; transition: color 0.2s; }
+.more-card-title a:hover { color: #c8848a; }
+.more-card-meta { font-size: 11px; color: #b09090; }
+
+/* ── NEWSLETTER ── */
+.newsletter-section { background: #f2c4c4; padding: 64px 24px; text-align: center; }
+.newsletter-eyebrow { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 600; margin-bottom: 12px; }
+.newsletter-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 400; color: #fff; margin-bottom: 10px; }
+.newsletter-sub { font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 300; margin-bottom: 28px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.newsletter-form { max-width: 360px; margin: 0 auto; }
+.newsletter-field { display: flex; align-items: flex-end; border-bottom: 1.5px solid rgba(255,255,255,0.7); padding-bottom: 8px; }
+.newsletter-input { flex: 1; background: transparent; border: none; outline: none; font-size: 15px; font-family: 'Jost', sans-serif; color: #fff; font-weight: 300; }
+.newsletter-input::placeholder { color: rgba(255,255,255,0.6); }
+.newsletter-arrow { background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; padding: 0; transition: transform 0.2s; }
+.newsletter-arrow:hover { transform: translateX(4px); }
+
+/* ── FOOTER ── */
+.footer { background: #f2c4c4; padding: 36px 48px 20px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.3); margin-bottom: 16px; }
+.footer-logo { display: flex; flex-direction: column; gap: 4px; }
+.footer-logo a { text-decoration: none; }
+.footer-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: 2px; color: #fff; }
+.footer-logo-sub { font-size: 8px; letter-spacing: 2.5px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+.footer-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-nav a { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.footer-nav a:hover { color: #fff; }
+.footer-socials { display: flex; gap: 14px; }
+.footer-socials a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+.footer-socials a:hover { color: #fff; }
+.footer-copy { max-width: 1100px; margin: 0 auto; font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; text-align: center; }
+.footer-copy a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.footer-copy a:hover { color: #fff; }
+
+/* ── 404 ── */
+.post-not-found { min-height: 100vh; background: #fff; font-family: 'Jost', sans-serif; }
+.not-found-body { min-height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+.not-found-body h1 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #1a1a1a; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-collab { display: none; }
+  .more-posts-grid { grid-template-columns: 1fr; }
+  .post-hero { height: 340px; }
+  .footer { padding: 24px 20px 14px; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  .footer-nav { justify-content: center; }
+}
+</style>

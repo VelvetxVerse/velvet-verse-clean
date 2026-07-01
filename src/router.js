@@ -13,6 +13,8 @@ import CollaborateView from './views/CollaborateView.vue'
 import MakeupView from './views/MakeupView.vue'
 import MakeupMediaKit from './views/MakeupMediaKit.vue'
 import BlogView from './views/BlogView.vue'
+import BlogPostView from './views/BlogPostView.vue'
+import AllPostsView from './views/AllPostsView.vue'
 import LinksPageView from './views/LinksPageView.vue'
 
 /* PARIS */
@@ -113,6 +115,16 @@ const routes = [
     path: '/blog',
     name: 'blog',
     component: BlogView,
+  },
+  {
+    path: '/blog/all',
+    name: 'blog-all',
+    component: AllPostsView,
+  },
+  {
+    path: '/blog/:slug',
+    name: 'blog-post',
+    component: BlogPostView,
   },
 
   /* LINKS PAGE */
