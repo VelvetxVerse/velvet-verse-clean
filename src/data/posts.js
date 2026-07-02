@@ -1,0 +1,15 @@
+export const allPosts = [
+  { cat: 'TUTORIALS', title: 'Step-by-Step: Bronzed Soft Glam', date: 'June 28, 2025', read: '5 MIN READ', img: '/mk5.png', tags: ['TUTORIALS'], slug: 'bronzed-soft-glam', excerpt: 'Follow along as I break down this easy soft glam look.' },
+  { cat: 'MAKEUP', title: '10 Must-Have Products for Your Makeup Bag', date: 'June 20, 2025', read: '4 MIN READ', img: '/mk9.png', tags: ['MAKEUP'], slug: 'must-have-products', excerpt: 'These are the 10 products I always have in my kit.' },
+  { cat: 'REVIEWS', title: 'Foundation Showdown: Dewy vs. Matte', date: 'June 14, 2025', read: '5 MIN READ', img: '/mk10.png', tags: ['REVIEWS'], slug: 'foundation-showdown', excerpt: 'Which finish is right for you?' },
+  { cat: 'TUTORIALS', title: 'How to Make Your Makeup Last All Day', date: 'June 8, 2025', read: '3 MIN READ', img: '/mk11.png', tags: ['TUTORIALS'], slug: 'makeup-last-all-day', excerpt: 'My professional tips for all-day wear.' },
+  { cat: 'TUTORIALS', title: 'The Perfect Smoky Eye in 10 Minutes', date: 'May 30, 2025', read: '4 MIN READ', img: '/mk12.png', tags: ['TUTORIALS'], slug: 'smoky-eye', excerpt: 'A stunning smoky look in under 10 minutes.' },
+  { cat: 'LIFESTYLE', title: 'My Morning Beauty Ritual for Glowing Skin', date: 'May 22, 2025', read: '3 MIN READ', img: '/mk13.png', tags: ['LIFESTYLE'], slug: 'morning-ritual', excerpt: 'The simple morning routine I follow every day.' },
+  { cat: 'REVIEWS', title: 'Dior Addict Lip Maximizer: Worth the Hype?', date: 'May 15, 2025', read: '5 MIN READ', img: '/mk2.png', tags: ['REVIEWS'], slug: 'dior-lip-maximizer', excerpt: 'My honest, unsponsored review after 6 months.' },
+  { cat: 'SKINCARE', title: 'Skin Prep: My Glowing Base Routine', date: 'May 8, 2025', read: '4 MIN READ', img: '/mk4.png', tags: ['SKINCARE'], slug: 'skin-prep', excerpt: 'The prep routine I use before every application.' },
+  { cat: 'MAKEUP', title: 'My Go-To Everyday Makeup Routine', date: 'April 28, 2025', read: '3 MIN READ', img: '/mk6.png', tags: ['MAKEUP'], slug: 'everyday-makeup', excerpt: 'Quick, easy, and always polished.' },
+  { cat: 'SKINCARE', title: 'The Sunscreen Edit: My Top 5 Picks', date: 'April 10, 2025', read: '4 MIN READ', img: '/mk7.png', tags: ['SKINCARE'], slug: 'sunscreen-edit', excerpt: 'The best sunscreens I have ever tried.' },
+  { cat: 'LIFESTYLE', title: 'Paris Beauty Finds: What I Bought & Loved', date: 'April 20, 2025', read: '6 MIN READ', img: '/mk8.png', tags: ['LIFESTYLE'], slug: 'paris-beauty', excerpt: 'Everything I bought on my last Paris trip.' },
+  { cat: 'TUTORIALS', title: 'No-Makeup Makeup: A Step-by-Step Guide', date: 'March 28, 2025', read: '5 MIN READ', img: '/mk3.png', tags: ['TUTORIALS'], slug: 'no-makeup-look', excerpt: 'Looking like you are wearing nothing while wearing everything.' },
+  { cat: 'REVIEWS', title: 'Charlotte Tilbury Pillow Talk: Full Review', date: 'March 15, 2025', read: '4 MIN READ', img: '/mk5.png', tags: ['REVIEWS'], slug: 'charlotte-tilbury', excerpt: 'Is it really worth the hype? My verdict after 3 months.' },
+]
