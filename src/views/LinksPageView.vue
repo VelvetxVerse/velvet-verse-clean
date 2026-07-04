@@ -1,21 +1,12 @@
 <template>
   <div class="links-page">
-
-    <!-- Hero -->
     <section class="hero">
-      <img
-        src="/mk5.png"
-        alt="Renata Oliver"
-        class="profile"
-      />
+      <img src="/mk5.png" alt="Renata Oliver" class="profile" />
 
       <p class="eyebrow">VELVET X VERSE</p>
-
       <h1>Renata Oliver</h1>
 
-      <p class="subtitle">
-        Beauty • Luxury Travel • Lifestyle Creator
-      </p>
+      <p class="subtitle">Beauty • Luxury Travel • Lifestyle Creator</p>
 
       <p class="description">
         Sharing elevated beauty discoveries, luxury destinations,
@@ -23,238 +14,241 @@
       </p>
     </section>
 
-    <!-- Links -->
-    <section class="buttons">
-
-      <a href="/work-with-me" class="link-card">
+    <section class="links-grid">
+      <RouterLink to="/work-with-me" class="link-card">
         <span>Work With Me</span>
         <small>Brand Collaborations</small>
-      </a>
+      </RouterLink>
 
-      <a href="/media-kit" class="link-card">
+      <RouterLink to="/media-kit" class="link-card">
         <span>Media Kit</span>
         <small>Audience & Statistics</small>
-      </a>
+      </RouterLink>
 
-      <a href="/portfolio" class="link-card">
+      <RouterLink to="/portfolio" class="link-card">
         <span>Portfolio</span>
         <small>Past Collaborations</small>
-      </a>
+      </RouterLink>
 
-      <a href="/blog" class="link-card">
-        <span>Beauty & Travel Blog</span>
-        <small>Read the Latest Articles</small>
-      </a>
+      <RouterLink to="/blog" class="link-card featured">
+        <img src="/mk5.png" alt="Beauty Blog" />
+        <div>
+          <span>Beauty & Travel Blog</span>
+          <small>Read the Latest Articles</small>
+        </div>
+      </RouterLink>
 
-      <a href="https://www.amazon.com/shop/yourstore" target="_blank" class="link-card">
+      <a
+        href="https://www.amazon.com/shop/yourstore"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-card"
+      >
         <span>Amazon Storefront</span>
         <small>Favorite Products</small>
       </a>
 
-      <a href="/shop" class="link-card">
+      <RouterLink to="/shop" class="link-card">
         <span>Website Templates</span>
         <small>Luxury Premade Designs</small>
-      </a>
+      </RouterLink>
 
-      <a href="/contact" class="link-card">
+      <RouterLink to="/contact" class="link-card">
         <span>Contact</span>
         <small>Let's Connect</small>
-      </a>
-
+      </RouterLink>
     </section>
 
-    <!-- Social -->
     <section class="socials">
-
-      <a href="#">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="#">
-        <i class="fab fa-facebook"></i>
-      </a>
-
-      <a href="#">
-        <i class="fab fa-pinterest"></i>
-      </a>
-
-      <a href="#">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-      <a href="#">
-        <i class="fab fa-youtube"></i>
-      </a>
-
+      <a href="https://instagram.com/renataoliveiraofficial" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
     </section>
 
     <footer>
       © 2026 Velvet X Verse · Designed by Renata Oliver
     </footer>
-
   </div>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
-
-.links-page{
-    min-height:100vh;
-    background:#FAF8F6;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:70px 20px 60px;
+.links-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(242, 196, 196, 0.22), transparent 35%),
+    #faf8f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 20px 55px;
 }
 
-.hero{
-    text-align:center;
-    max-width:600px;
+.hero {
+  text-align: center;
+  max-width: 610px;
 }
 
-.profile{
-    width:145px;
-    height:145px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid white;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-    margin-bottom:30px;
+.profile {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 7px solid #fff;
+  box-shadow: 0 22px 55px rgba(120, 80, 60, 0.12);
+  margin-bottom: 30px;
 }
 
-.eyebrow{
-    font-size:.75rem;
-    letter-spacing:5px;
-    color:#b88b73;
-    margin-bottom:18px;
-    text-transform:uppercase;
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 5px;
+  color: #b88b73;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
-h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3.3rem;
-    color:#2b2b2b;
-    font-weight:500;
-    margin-bottom:12px;
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  color: #2b2b2b;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
-.subtitle{
-    color:#8a7b73;
-    font-size:1rem;
-    letter-spacing:1px;
-    margin-bottom:22px;
+.subtitle {
+  color: #8a7b73;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
 }
 
-.description{
-    color:#666;
-    line-height:1.9;
-    max-width:480px;
-    margin:auto;
-    font-size:1rem;
+.description {
+  color: #666;
+  line-height: 1.9;
+  max-width: 480px;
+  margin: auto;
+  font-size: 1rem;
 }
 
-.buttons{
-    width:100%;
-    max-width:500px;
-    margin-top:55px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.links-grid {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.link-card{
-
-    background:white;
-    border:1px solid #efe7e1;
-    border-radius:18px;
-
-    padding:22px 26px;
-
-    text-decoration:none;
-
-    display:flex;
-    flex-direction:column;
-
-    transition:.35s;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.04);
+.link-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #efe7e1;
+  border-radius: 20px;
+  padding: 22px 26px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: 0.35s ease;
+  box-shadow: 0 10px 30px rgba(80, 55, 45, 0.045);
+  overflow: hidden;
 }
 
-.link-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 18px 35px rgba(0,0,0,.08);
-
-    border-color:#d7b79c;
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(80, 55, 45, 0.1);
+  border-color: #d7b79c;
 }
 
-.link-card span{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:1.8rem;
-
-    color:#222;
-
-    margin-bottom:4px;
+.link-card span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  color: #222;
+  margin-bottom: 4px;
 }
 
-.link-card small{
-
-    color:#8a8179;
-
-    font-size:.92rem;
+.link-card small {
+  color: #8a8179;
+  font-size: 0.9rem;
 }
 
-.socials{
-
-    display:flex;
-
-    gap:28px;
-
-    margin-top:55px;
+.link-card.featured {
+  min-height: 190px;
+  position: relative;
+  justify-content: flex-end;
+  padding: 0;
 }
 
-.socials a{
-
-    font-size:1.4rem;
-
-    color:#8b7d74;
-
-    transition:.3s;
+.link-card.featured img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.socials a:hover{
-
-    color:#b88b73;
-
-    transform:translateY(-3px);
+.link-card.featured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(40, 25, 20, 0.72), rgba(40, 25, 20, 0.12));
 }
 
-footer{
-
-    margin-top:60px;
-
-    color:#9b928d;
-
-    font-size:.82rem;
-
-    letter-spacing:1px;
+.link-card.featured div {
+  position: relative;
+  z-index: 2;
+  padding: 26px;
 }
 
-@media(max-width:768px){
-
-h1{
-    font-size:2.5rem;
+.link-card.featured span,
+.link-card.featured small {
+  color: #fff;
 }
 
-.link-card span{
-    font-size:1.5rem;
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+  margin-top: 48px;
 }
 
+.socials a {
+  font-size: 0.72rem;
+  color: #8b7d74;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
+.socials a:hover {
+  color: #b88b73;
+  transform: translateY(-2px);
+}
+
+footer {
+  margin-top: 52px;
+  color: #9b928d;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .links-page {
+    padding-top: 52px;
+  }
+
+  .link-card span {
+    font-size: 1.48rem;
+  }
+
+  .link-card.featured {
+    min-height: 165px;
+  }
+}
 </style>
