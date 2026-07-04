@@ -5,7 +5,6 @@
 
       <p class="eyebrow">VELVET X VERSE</p>
       <h1>Renata Oliver</h1>
-
       <p class="subtitle">Beauty • Luxury Travel • Lifestyle Creator</p>
 
       <p class="description">
@@ -15,28 +14,28 @@
     </section>
 
     <section class="links-grid">
-      <RouterLink to="/work-with-me" class="link-card">
+      <a href="/work-with-me" class="link-card">
         <span>Work With Me</span>
         <small>Brand Collaborations</small>
-      </RouterLink>
+      </a>
 
-      <RouterLink to="/media-kit" class="link-card">
+      <a href="/media-kit" class="link-card">
         <span>Media Kit</span>
-        <small>Audience & Statistics</small>
-      </RouterLink>
+        <small>Audience &amp; Statistics</small>
+      </a>
 
-      <RouterLink to="/portfolio" class="link-card">
+      <a href="/portfolio" class="link-card">
         <span>Portfolio</span>
         <small>Past Collaborations</small>
-      </RouterLink>
+      </a>
 
-      <RouterLink to="/blog" class="link-card featured">
+      <a href="/blog" class="link-card featured">
         <img src="/mk5.png" alt="Beauty Blog" />
         <div>
-          <span>Beauty & Travel Blog</span>
+          <span>Beauty &amp; Travel Blog</span>
           <small>Read the Latest Articles</small>
         </div>
-      </RouterLink>
+      </a>
 
       <a
         href="https://www.amazon.com/shop/yourstore"
@@ -48,23 +47,15 @@
         <small>Favorite Products</small>
       </a>
 
-      <RouterLink to="/shop" class="link-card">
+      <a href="/shop" class="link-card">
         <span>Website Templates</span>
         <small>Luxury Premade Designs</small>
-      </RouterLink>
+      </a>
 
-      <RouterLink to="/contact" class="link-card">
+      <a href="/contact" class="link-card">
         <span>Contact</span>
         <small>Let's Connect</small>
-      </RouterLink>
-    </section>
-
-    <section class="socials">
-      <a href="https://instagram.com/renataoliveiraofficial" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
-      <a href="https://tiktok.com/@renataoliveiraofficial" target="_blank" rel="noopener noreferrer">TikTok</a>
-      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </a>
     </section>
 
     <footer>
@@ -74,15 +65,12 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
 .links-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(242, 196, 196, 0.22), transparent 35%),
-    #faf8f6;
+  background: #faf8f6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +102,7 @@ import { RouterLink } from 'vue-router'
 
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-size: 3.4rem;
   color: #2b2b2b;
   font-weight: 500;
   margin-bottom: 12px;
@@ -145,7 +133,7 @@ h1 {
 }
 
 .link-card {
-  background: rgba(255, 255, 255, 0.88);
+  background: #fff;
   border: 1px solid #efe7e1;
   border-radius: 20px;
   padding: 22px 26px;
@@ -175,14 +163,14 @@ h1 {
   font-size: 0.9rem;
 }
 
-.link-card.featured {
+.featured {
   min-height: 190px;
   position: relative;
   justify-content: flex-end;
   padding: 0;
 }
 
-.link-card.featured img {
+.featured img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -190,44 +178,22 @@ h1 {
   object-fit: cover;
 }
 
-.link-card.featured::after {
-  content: '';
+.featured::after {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(40, 25, 20, 0.72), rgba(40, 25, 20, 0.12));
 }
 
-.link-card.featured div {
+.featured div {
   position: relative;
   z-index: 2;
   padding: 26px;
 }
 
-.link-card.featured span,
-.link-card.featured small {
+.featured span,
+.featured small {
   color: #fff;
-}
-
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 24px;
-  margin-top: 48px;
-}
-
-.socials a {
-  font-size: 0.72rem;
-  color: #8b7d74;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  color: #b88b73;
-  transform: translateY(-2px);
 }
 
 footer {
@@ -239,15 +205,15 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .links-page {
-    padding-top: 52px;
+  h1 {
+    font-size: 2.5rem;
   }
 
   .link-card span {
     font-size: 1.48rem;
   }
 
-  .link-card.featured {
+  .featured {
     min-height: 165px;
   }
 }
